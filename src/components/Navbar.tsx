@@ -6,6 +6,8 @@ export const Navbar = () => {
   const [menuClick, setMenuClick] = useState(false);
 
   const handleMenuClick = () => setMenuClick(!menuClick);
+  const closeMobileMenu = () => setMenuClick(false);
+
   return (
     <>
       <nav className={'navbar'}>
@@ -26,12 +28,20 @@ export const Navbar = () => {
           </Link>
           <ul className={menuClick ? 'nav-menu active' : 'nav-menu'}>
             <li className="nav-item">
-              <Link to={'/services'} className={'nav-links'}>
+              <Link
+                to={'/services'}
+                className={'nav-links'}
+                onClick={closeMobileMenu}
+              >
                 Services
               </Link>
             </li>
             <li className="nav-item">
-              <Link to={'/about-us'} className={'nav-links'}>
+              <Link
+                to={'/about-us'}
+                className={'nav-links'}
+                onClick={closeMobileMenu}
+              >
                 About us
               </Link>
             </li>
