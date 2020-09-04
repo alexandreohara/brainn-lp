@@ -18,7 +18,7 @@ const StyledCard = styled.div`
 `;
 
 const StyledTextColumn = styled(Col)`
-  padding-left: 4%;
+  padding-left: 6%;
   padding-top: 4%;
   padding-bottom: 4%;
   color: white;
@@ -37,10 +37,28 @@ const StyledDescription = styled.body`
   font-weight: normal;
   font-size: 2em;
   line-height: 39px;
+  padding-bottom: 8%;
 `;
 
 const StyledImage = styled.img`
   width: 512px;
+`;
+
+const StyledButton = styled.button`
+  border: 2px solid white;
+  background-color: transparent;
+  color: white;
+  padding: 2.5% 4%;
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+`;
+
+const StyledLine = styled.div`
+  position: absolute;
+  width: 100px;
+  height: 5px;
+  background-color: white;
 `;
 
 const Card = (props: any) => (
@@ -50,6 +68,8 @@ const Card = (props: any) => (
       <StyledDescription>
         {props.description[0]} <b>{props.description[1]}</b>
       </StyledDescription>
+      <StyledLine className={'linha'} />
+      <StyledButton>Meet our process</StyledButton>
     </StyledTextColumn>
     <Col xs={false} md={6}>
       <StyledImage src={Storming} alt="logo"></StyledImage>
