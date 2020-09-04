@@ -11,16 +11,16 @@ interface CardProps {
 
 const StyledCard = styled.div`
   display: flex;
-  width: 1200px;
+  width: 100%;
   ${(props: CardProps) =>
     `border-radius: 16px;
     background: linear-gradient(${props.deg}deg, ${props.startColor} 0%, ${props.endColor} 100%);`};
 `;
 
 const StyledTextColumn = styled(Col)`
-  padding-left: 64px;
-  padding-top: 64px;
-  padding-bottom: 64px;
+  padding-left: 4%;
+  padding-top: 4%;
+  padding-bottom: 4%;
   color: white;
   width: 653px;
 `;
@@ -28,14 +28,14 @@ const StyledTextColumn = styled(Col)`
 const StyledTitle = styled.body`
   color: white;
   font-weight: bold;
-  font-size: 80px;
+  font-size: 5rem;
   line-height: 101px;
 `;
 
 const StyledDescription = styled.body`
   color: white;
   font-weight: normal;
-  font-size: 32px;
+  font-size: 2em;
   line-height: 39px;
 `;
 
@@ -44,8 +44,8 @@ const StyledImage = styled.img`
 `;
 
 const Card = (props: any) => (
-  <StyledCard {...props}>
-    <StyledTextColumn>
+  <StyledCard className="styled-card" {...props}>
+    <StyledTextColumn className="text-column">
       <StyledTitle>{props.title}</StyledTitle>
       <StyledDescription>
         {props.description[0]} <b>{props.description[1]}</b>
