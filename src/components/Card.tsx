@@ -46,12 +46,16 @@ const StyledImage = styled.img`
 
 const StyledButton = styled.button`
   border: 2px solid white;
+
   background-color: transparent;
   color: white;
   padding: 2.5% 4%;
   font-size: 1.5rem;
   font-weight: bold;
   cursor: pointer;
+  &:focus {
+    outline: 0;
+  }
 `;
 
 const StyledLine = styled.div`
