@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Col } from "react-styled-flexboxgrid";
-import Storming from "./Storming.svg";
+import React from 'react';
+import styled from 'styled-components';
+import { Col } from 'react-styled-flexboxgrid';
+import Storming from './Storming.svg';
 
 interface CardProps {
   deg: number;
