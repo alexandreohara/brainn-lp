@@ -15,15 +15,12 @@
 
 .bars-icon {
   display: none;
-  width: 30px;
-  padding: 10px;
-  float: left;
 }
 
 .navbar-logo {
   color: #fff;
   justify-self: start;
-  margin-left: 20px;
+  margin-left: 4vw;
   cursor: pointer;
   text-decoration: none;
   font-size: 24px;
@@ -64,8 +61,9 @@
     float: left;
     display: block;
     cursor: pointer;
-    margin-left: 2vw;
-    margin-right: 2vw;
+    margin-left: 4vw;
+    margin-right: 4vw;
+    width: 26px;
   }
 
   .navbar-logo {
