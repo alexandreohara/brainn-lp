@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import menuIcon from '../assets/icons/menu.png';
+import barsIcon from '../assets/icons/menu.png';
 
 export const Navbar = () => {
   const [menuClick, setMenuClick] = useState(false);
@@ -12,17 +12,12 @@ export const Navbar = () => {
     <>
       <nav className={'navbar'}>
         <div className={'navbar-container'}>
-          <span className={'bars-icon'} onClick={handleMenuClick}>
-            <img
-              src={menuIcon}
-              alt={'menu-icon'}
-              style={{
-                width: '30px',
-                padding: '10px',
-                float: 'left',
-              }}
-            />
-          </span>
+          <img
+            src={barsIcon}
+            alt={'bars-icon'}
+            className={'bars-icon'}
+            onClick={handleMenuClick}
+          />
           <Link to={'/'} className={'navbar-logo'}>
             brainn.co
           </Link>
