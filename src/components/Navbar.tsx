@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import barsIcon from '../assets/icons/menu.png';
+import { NavButton } from './NavButton';
 
 export const Navbar = () => {
   const [menuClick, setMenuClick] = useState(false);
@@ -41,6 +42,16 @@ export const Navbar = () => {
               </Link>
             </li>
           </ul>
+          <div style={{ position: 'absolute', right: '4vw' }}>
+            <NavButton
+              backgroundColor={'#007CF9'}
+              textColor={'white'}
+              lineHeight={'25px'}
+              border={'2px solid rgba(0, 0, 0, 0.25)'}
+            >
+              Say hello
+            </NavButton>
+          </div>
         </div>
       </nav>
     </>
