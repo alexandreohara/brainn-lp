@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Col } from 'react-styled-flexboxgrid';
-import Storming from './Storming.svg';
 
 interface CardProps {
   deg: number;
@@ -11,6 +10,8 @@ interface CardProps {
 
 const StyledCard = styled.div`
   display: flex;
+  justify-content: space-around;
+  min-width: 700px;
   width: 100%;
   ${(props: CardProps) =>
     `border-radius: 16px;
@@ -18,11 +19,11 @@ const StyledCard = styled.div`
 `;
 
 const StyledTextColumn = styled(Col)`
-  padding-left: 6%;
   padding-top: 4%;
   padding-bottom: 4%;
+  padding-right: 4%
+  padding-left: 4%;
   color: white;
-  width: 653px;
 `;
 
 const StyledTitle = styled.body`
@@ -37,7 +38,8 @@ const StyledDescription = styled.body`
   font-weight: normal;
   font-size: 2em;
   line-height: 39px;
-  padding-bottom: 8%;
+  padding-bottom: 6%;
+  width: 653px;
 `;
 
 const StyledImage = styled.img`
@@ -65,20 +67,40 @@ const StyledLine = styled.div`
   background-color: white;
 `;
 
-const Card = (props: any) => (
-  <StyledCard className="styled-card" {...props}>
-    <StyledTextColumn className="text-column">
-      <StyledTitle>{props.title}</StyledTitle>
-      <StyledDescription>
-        {props.description[0]} <b>{props.description[1]}</b>
-      </StyledDescription>
-      <StyledLine className={'linha'} />
-      <StyledButton>Meet our process</StyledButton>
-    </StyledTextColumn>
-    <Col xs={false} md={6}>
-      <StyledImage src={Storming} alt="logo"></StyledImage>
-    </Col>
-  </StyledCard>
-);
+const Card = (props: any) => {
+  if (props.invertColumns) {
+    return (
+      <StyledCard className="styled-card" {...props}>
+        <StyledTextColumn className="text-column" md={8}>
+          <StyledTitle>{props.title}</StyledTitle>
+          <StyledDescription>
+            {props.description[0]} <b>{props.description[1]}</b>
+          </StyledDescription>
+          <StyledLine className={'linha'} />
+          <StyledButton>Meet our process</StyledButton>
+        </StyledTextColumn>
+        <Col className="image-column" xs={false} md={4}>
+          <StyledImage src={props.image} alt="logo"></StyledImage>
+        </Col>
+      </StyledCard>
+    );
+  }
+
+  return (
+    <StyledCard className="styled-card" {...props}>
+      <Col className="image-column" xs={false} md={6}>
+        <StyledImage src={props.image} alt="logo"></StyledImage>
+      </Col>
+      <StyledTextColumn className="text-column" {...props}>
+        <StyledTitle>{props.title}</StyledTitle>
+        <StyledDescription>
+          {props.description[0]} <b>{props.description[1]}</b>
+        </StyledDescription>
+        <StyledLine className={'linha'} />
+        <StyledButton>Meet our process</StyledButton>
+      </StyledTextColumn>
+    </StyledCard>
+  );
+};
 
 export default Card;
