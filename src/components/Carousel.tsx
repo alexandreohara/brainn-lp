@@ -1,6 +1,7 @@
 import React from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
+import './Carousel.css';
 
 // function SampleNextArrow(props: any) {
 //   const { className, style, onClick } = props;

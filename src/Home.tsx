@@ -6,7 +6,7 @@ export const Home = () => {
   return (
     <div
       style={{
-        backgroundColor: '#021727',
+        backgroundColor: '#072337',
       }}
     >
       <h2>Teste</h2>
