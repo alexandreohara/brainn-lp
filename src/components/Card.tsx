@@ -67,8 +67,8 @@ const StyledLine = styled.div`
   background-color: white;
 `;
 
-const Card = (props: any) => {
-  if (props.invertColumns) {
+const HomeCard = (props: any) => {
+  if (props.textFirst) {
     return (
       <StyledCard className="styled-card" {...props}>
         <StyledTextColumn className="text-column" md={8}>
@@ -103,4 +103,4 @@ const Card = (props: any) => {
   );
 };
 
-export default Card;
+export default HomeCard;

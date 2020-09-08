@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col } from 'react-styled-flexboxgrid';
-import Card from './components/Card';
+import HomeCard from './components/Card';
 import Storming from './assets/Storming.svg';
 import Delivery from './assets/Delivery.svg';
 import Augmentation from './assets/Augmentation.svg';
@@ -9,7 +9,7 @@ export const Home = () => {
   return (
     <Col>
       {cardSections.map((props: any) => {
-        return <Card {...props} />;
+        return <HomeCard {...props} />;
       })}
     </Col>
   );
@@ -21,7 +21,7 @@ const cardSections = [
     startColor: '#00BEFB',
     endColor: '#007CF9',
     title: 'Storming',
-    invertColumns: true,
+    textFirst: true,
     image: Storming,
     description: [
       `We help innovators quickly understand how we will build their digital
@@ -35,7 +35,7 @@ const cardSections = [
     startColor: '#FFD15C',
     endColor: '#FF912C',
     title: 'Delivery',
-    invertColumns: false,
+    textFirst: false,
     image: Delivery,
     description: [
       `We build high-quality digital products that scale. We do that through new technologies,
@@ -49,7 +49,7 @@ const cardSections = [
     startColor: '#19EE94',
     endColor: '#04B375',
     title: 'Augmentation',
-    invertColumns: false,
+    textFirst: false,
     image: Augmentation,
     description: [
       `We provide staff augmentation to high-growth tech companies using new programming languages to move faster.`,
