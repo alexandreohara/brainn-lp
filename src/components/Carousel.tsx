@@ -2,6 +2,8 @@ import React from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import './Carousel.css';
+import Forbes from '../assets/Forbes.svg';
+import PlugAndPlay from '../assets/PlugAndPlay.svg';
 
 // function SampleNextArrow(props: any) {
 //   const { className, style, onClick } = props;
@@ -74,9 +76,23 @@ const StyledCard = styled.div`
     `}
 `;
 
+const StyledWrapper = styled.div`
+  width: 100%;
+  text-align: center;
+`;
+
+const StyledText = styled.div`
+  font-size: 16px;
+  color: white;
+  opacity: 0.25;
+`;
+
+const StyledImageWrapper = styled.span`
+  margin: 0 10px;
+`;
+
 export const Carousel = () => {
   const settings = {
-    dots: true,
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: true,
@@ -100,33 +116,46 @@ export const Carousel = () => {
     ],
   };
   return (
-    <div
-      style={{
-        padding: '50px',
-      }}
-    >
-      <Slider {...settings}>
-        <StyledDiv>
-          <StyledCard>
-            <h1 style={{ textAlign: 'center' }}>potato</h1>
-          </StyledCard>
-        </StyledDiv>
-        <StyledDiv backgroundColor={'blue'}>
-          <StyledCard>
-            <h1 style={{ textAlign: 'center' }}>potato</h1>
-          </StyledCard>
-        </StyledDiv>
-        <StyledDiv backgroundColor={'green'}>
-          <StyledCard>
-            <h1 style={{ textAlign: 'center' }}>potato</h1>
-          </StyledCard>
-        </StyledDiv>
-        <StyledDiv backgroundColor={'yellow'}>
-          <StyledCard>
-            <h1 style={{ textAlign: 'center' }}>potato</h1>
-          </StyledCard>
-        </StyledDiv>
-      </Slider>
-    </div>
+    <>
+      <div
+        style={{
+          padding: '20px 50px',
+        }}
+      >
+        <Slider {...settings}>
+          <StyledDiv>
+            <StyledCard className={'batata'}>
+              <h1 style={{ textAlign: 'center' }}>potato</h1>
+            </StyledCard>
+          </StyledDiv>
+          <StyledDiv backgroundColor={'blue'}>
+            <StyledCard>
+              <h1 style={{ textAlign: 'center' }}>potato</h1>
+            </StyledCard>
+          </StyledDiv>
+          <StyledDiv backgroundColor={'green'}>
+            <StyledCard>
+              <h1 style={{ textAlign: 'center' }}>potato</h1>
+            </StyledCard>
+          </StyledDiv>
+          <StyledDiv backgroundColor={'yellow'}>
+            <StyledCard>
+              <h1 style={{ textAlign: 'center' }}>potato</h1>
+            </StyledCard>
+          </StyledDiv>
+        </Slider>
+      </div>
+      <StyledWrapper>
+        <StyledText>What are they saying about us</StyledText>
+      </StyledWrapper>
+      <StyledWrapper>
+        <StyledImageWrapper>
+          <img src={PlugAndPlay}></img>
+        </StyledImageWrapper>
+        <StyledImageWrapper>
+          <img src={Forbes}></img>
+        </StyledImageWrapper>
+      </StyledWrapper>
+    </>
   );
 };
