@@ -1,36 +1,10 @@
 import React, { useState } from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
-import './Carousel.css';
 import Forbes from '../assets/Forbes.svg';
 import PlugAndPlay from '../assets/PlugAndPlay.svg';
 import ReportCard from '../assets/ReportCard.png';
-
-function SampleNextArrow(props: any) {
-  const { className, style, onClick } = props;
-  console.log('batata');
-  return (
-    <div
-      onClick={onClick}
-      className={className}
-      style={{
-        // ...style,
-        // display: 'block',
-        // position: 'absolute',
-        // right: '-25px',
-        // top: '48%',
-        // backgroundColor: 'red',
-        // textAlign: 'center',
-        // width: '20px',
-        // height: '20px',
-
-        ...style,
-        display: 'block',
-        // background: 'red',
-      }}
-    />
-  );
-}
+import { CarouselArrow } from './CarouselArrow';
 
 interface DivProps {
   backgroundColor?: string;
@@ -94,13 +68,6 @@ const buildReportCard = (card: any, opacity?: string) => (
   </StyledDiv>
 );
 
-const reportCards = [
-  buildReportCard(ReportCard),
-  buildReportCard(ReportCard),
-  buildReportCard(ReportCard),
-  buildReportCard(ReportCard),
-];
-
 const setOpacity = (cardList: any, current, next) => {
   return cardList.map((card, index) => {
     if (index == current) {
@@ -123,6 +90,13 @@ const setOpacity = (cardList: any, current, next) => {
     return card;
   });
 };
+
+const reportCards = [
+  buildReportCard(ReportCard),
+  buildReportCard(ReportCard),
+  buildReportCard(ReportCard),
+  buildReportCard(ReportCard),
+];
 
 const setInitialOpacity = (cardList, windowSize, breakpoint) => {
   if (windowSize > breakpoint) {
@@ -150,13 +124,12 @@ export const Carousel = () => {
     setInitialOpacity(reportCards, windowSize, mediumBreakpoint)
   );
 
-  console.log(windowSize);
-
   const settings = {
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: false,
-    // nextArrow: <SampleNextArrow />,
+    prevArrow: <CarouselArrow next={false} />,
+    nextArrow: <CarouselArrow next={true} />,
     beforeChange: (current, next) => {
       if (windowSize > mediumBreakpoint) {
         setCardList(setOpacity(cardList, current + 1, next + 1));
