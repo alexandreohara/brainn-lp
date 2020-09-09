@@ -46,8 +46,8 @@ const StyledImage = styled.img`
   width: 100%;
 `;
 
-const buildReportCard = (image: any, opacity?: string) => (
-  <StyledCardWrapper opacity={opacity}>
+const buildReportCard = (image: any, key, opacity?: string) => (
+  <StyledCardWrapper opacity={opacity} key={key}>
     <StyledCard>
       <StyledImage src={image} />
     </StyledCard>
@@ -57,32 +57,33 @@ const buildReportCard = (image: any, opacity?: string) => (
 const setOpacity = (cardList: any, next) => {
   return cardList.map((card, index) => {
     if (index !== next) {
-      return buildReportCard(card, '0.8');
+      return buildReportCard(card, index, '0.8');
     }
-    return buildReportCard(card);
+    return buildReportCard(card, index);
   });
 };
 
 const reportCards = [ReportCard, ReportCard, ReportCard, ReportCard];
 
-const setInitialOpacity = (cardList, windowSize, breakpoint) => {
+const buildCardList = (cardList, windowSize, breakpoint) => {
   if (windowSize > breakpoint) {
     return cardList.map((card, index) => {
       if (index !== 1) {
-        return buildReportCard(card, '0.8');
+        return buildReportCard(card, index, '0.8');
       }
-      return buildReportCard(card);
+      return buildReportCard(card, index);
     });
   }
 
-  return cardList.map((card) => buildReportCard(card));
+  return cardList.map((card, index) => buildReportCard(card, index));
 };
 
 export const Carousel = () => {
   const windowSize = window.innerWidth;
   const mediumBreakpoint = 600;
+  const smallBreakpoint = 480;
   const [cardList, setCardList] = useState(
-    setInitialOpacity(reportCards, windowSize, mediumBreakpoint)
+    buildCardList(reportCards, windowSize, mediumBreakpoint)
   );
 
   const settings = {
@@ -106,7 +107,7 @@ export const Carousel = () => {
         },
       },
       {
-        breakpoint: 480,
+        breakpoint: smallBreakpoint,
         settings: {
           slidesToShow: 1,
           slidesToScroll: 1,
