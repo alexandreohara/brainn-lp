@@ -32,21 +32,6 @@ function SampleNextArrow(props: any) {
   );
 }
 
-const customPaging = (i: any) => {
-  console.log(i);
-  return (
-    <div
-      style={{
-        width: '30px',
-        color: 'blue',
-        border: '1px blue solid',
-      }}
-    >
-      {i + 1}
-    </div>
-  );
-};
-
 interface DivProps {
   backgroundColor?: string;
   padding?: string;
@@ -61,8 +46,6 @@ interface DivProps {
 }
 
 const StyledDiv = styled.div`
-  opacity: 0.8;
-
   ${(props: DivProps) =>
     props &&
     `
@@ -111,19 +94,40 @@ const buildReportCard = (card: any, opacity?: string) => (
   </StyledDiv>
 );
 
-const list = [
+const reportCards = [
   buildReportCard(ReportCard),
-  buildReportCard(ReportCard, '1'),
+  buildReportCard(ReportCard),
   buildReportCard(ReportCard),
   buildReportCard(ReportCard),
 ];
 
-export const Carousel = () => {
-  const [cardList, setCardList] = useState(list);
+const setOpacity = (cardList: any, current, next) => {
+  return cardList.map((card, index) => {
+    if (index == current) {
+      return (
+        <StyledDiv opacity={'0.8'}>
+          <StyledCard>
+            <img src={ReportCard} width={'100%'} />
+          </StyledCard>
+        </StyledDiv>
+      );
+    } else if (index == next) {
+      return (
+        <StyledDiv opacity={'1'}>
+          <StyledCard>
+            <img src={ReportCard} width={'100%'} />
+          </StyledCard>
+        </StyledDiv>
+      );
+    }
+    return card;
+  });
+};
 
-  const setOpacity = (cardList: any, current, next) => {
+const setInitialOpacity = (cardList, windowSize, breakpoint) => {
+  if (windowSize > breakpoint) {
     return cardList.map((card, index) => {
-      if (index == current) {
+      if (index != 1) {
         return (
           <StyledDiv opacity={'0.8'}>
             <StyledCard>
@@ -131,32 +135,36 @@ export const Carousel = () => {
             </StyledCard>
           </StyledDiv>
         );
-      } else if (index == next) {
-        return (
-          <StyledDiv opacity={'1'}>
-            <StyledCard>
-              <img src={ReportCard} width={'100%'} />
-            </StyledCard>
-          </StyledDiv>
-        );
-      } else {
-        return card;
       }
+      return card;
     });
-  };
+  }
+
+  return cardList;
+};
+
+export const Carousel = () => {
+  const windowSize = window.innerWidth;
+  const mediumBreakpoint = 600;
+  const [cardList, setCardList] = useState(
+    setInitialOpacity(reportCards, windowSize, mediumBreakpoint)
+  );
+
+  console.log(windowSize);
 
   const settings = {
     slidesToShow: 3,
     slidesToScroll: 1,
     infinite: false,
-    // customPaging: customPaging,
     // nextArrow: <SampleNextArrow />,
     beforeChange: (current, next) => {
-      setCardList(setOpacity(list, current + 1, next + 1));
+      if (windowSize > mediumBreakpoint) {
+        setCardList(setOpacity(cardList, current + 1, next + 1));
+      }
     },
     responsive: [
       {
-        breakpoint: 600,
+        breakpoint: mediumBreakpoint,
         settings: {
           slidesToShow: 2,
           slidesToScroll: 2,

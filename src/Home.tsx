@@ -9,7 +9,7 @@ export const Home = () => {
         backgroundColor: '#072337',
       }}
     >
-      <h2>Teste</h2>
+      <div style={{ height: '100px' }}></div>
       <Carousel />
     </div>
   );
