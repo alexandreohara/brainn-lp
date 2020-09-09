@@ -1,34 +1,51 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import './Carousel.css';
 import Forbes from '../assets/Forbes.svg';
 import PlugAndPlay from '../assets/PlugAndPlay.svg';
+import ReportCard from '../assets/ReportCard.png';
 
-// function SampleNextArrow(props: any) {
-//   const { className, style, onClick } = props;
-//   return (
-//     <div
-//       onClick={onClick}
-//       className={className}
-//       style={{
-//         // ...style,
-//         // display: 'block',
-//         // position: 'absolute',
-//         // right: '-25px',
-//         // top: '48%',
-//         // backgroundColor: 'red',
-//         // textAlign: 'center',
-//         // width: '20px',
-//         // height: '20px',
+function SampleNextArrow(props: any) {
+  const { className, style, onClick } = props;
+  console.log('batata');
+  return (
+    <div
+      onClick={onClick}
+      className={className}
+      style={{
+        // ...style,
+        // display: 'block',
+        // position: 'absolute',
+        // right: '-25px',
+        // top: '48%',
+        // backgroundColor: 'red',
+        // textAlign: 'center',
+        // width: '20px',
+        // height: '20px',
 
-//         ...style,
-//         display: 'block',
-//         background: 'red',
-//       }}
-//     />
-//   );
-// }
+        ...style,
+        display: 'block',
+        // background: 'red',
+      }}
+    />
+  );
+}
+
+const customPaging = (i: any) => {
+  console.log(i);
+  return (
+    <div
+      style={{
+        width: '30px',
+        color: 'blue',
+        border: '1px blue solid',
+      }}
+    >
+      {i + 1}
+    </div>
+  );
+};
 
 interface DivProps {
   backgroundColor?: string;
@@ -40,12 +57,11 @@ interface DivProps {
   transform?: string;
   top?: string;
   left?: string;
+  opacity?: string;
 }
 
 const StyledDiv = styled.div`
-  background-color: red;
-  height: 300px;
-  position: relative;
+  opacity: 0.8;
 
   ${(props: DivProps) =>
     props &&
@@ -59,16 +75,12 @@ const StyledDiv = styled.div`
       transform: ${props.transform};
       top: ${props.top};
       left: ${props.left};
-    `}
+      opacity: ${props.opacity};
+    `};
 `;
 
 const StyledCard = styled.div`
-  background-color: gray;
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  width: 85%;
-  transform: translate(-50%, -50%);
+  width: 95%;
 
   ${(props: DivProps) =>
     `
@@ -91,11 +103,57 @@ const StyledImageWrapper = styled.span`
   margin: 0 10px;
 `;
 
+const buildReportCard = (card: any, opacity?: string) => (
+  <StyledDiv opacity={opacity}>
+    <StyledCard>
+      <img src={card} width={'100%'} />
+    </StyledCard>
+  </StyledDiv>
+);
+
+const list = [
+  buildReportCard(ReportCard),
+  buildReportCard(ReportCard, '1'),
+  buildReportCard(ReportCard),
+  buildReportCard(ReportCard),
+];
+
 export const Carousel = () => {
+  const [cardList, setCardList] = useState(list);
+
+  const setOpacity = (cardList: any, current, next) => {
+    return cardList.map((card, index) => {
+      if (index == current) {
+        return (
+          <StyledDiv opacity={'0.8'}>
+            <StyledCard>
+              <img src={ReportCard} width={'100%'} />
+            </StyledCard>
+          </StyledDiv>
+        );
+      } else if (index == next) {
+        return (
+          <StyledDiv opacity={'1'}>
+            <StyledCard>
+              <img src={ReportCard} width={'100%'} />
+            </StyledCard>
+          </StyledDiv>
+        );
+      } else {
+        return card;
+      }
+    });
+  };
+
   const settings = {
     slidesToShow: 3,
     slidesToScroll: 1,
-    infinite: true,
+    infinite: false,
+    // customPaging: customPaging,
+    // nextArrow: <SampleNextArrow />,
+    beforeChange: (current, next) => {
+      setCardList(setOpacity(list, current + 1, next + 1));
+    },
     responsive: [
       {
         breakpoint: 600,
@@ -119,31 +177,11 @@ export const Carousel = () => {
     <>
       <div
         style={{
-          padding: '20px 50px',
+          padding: '0 50px',
+          marginBottom: '10px',
         }}
       >
-        <Slider {...settings}>
-          <StyledDiv>
-            <StyledCard className={'batata'}>
-              <h1 style={{ textAlign: 'center' }}>potato</h1>
-            </StyledCard>
-          </StyledDiv>
-          <StyledDiv backgroundColor={'blue'}>
-            <StyledCard>
-              <h1 style={{ textAlign: 'center' }}>potato</h1>
-            </StyledCard>
-          </StyledDiv>
-          <StyledDiv backgroundColor={'green'}>
-            <StyledCard>
-              <h1 style={{ textAlign: 'center' }}>potato</h1>
-            </StyledCard>
-          </StyledDiv>
-          <StyledDiv backgroundColor={'yellow'}>
-            <StyledCard>
-              <h1 style={{ textAlign: 'center' }}>potato</h1>
-            </StyledCard>
-          </StyledDiv>
-        </Slider>
+        <Slider {...settings}>{cardList}</Slider>
       </div>
       <StyledWrapper>
         <StyledText>What are they saying about us</StyledText>
