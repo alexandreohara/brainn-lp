@@ -54,53 +54,28 @@ const buildReportCard = (image: any, opacity?: string) => (
   </StyledCardWrapper>
 );
 
-const setOpacity = (cardList: any, current, next) => {
+const setOpacity = (cardList: any, next) => {
   return cardList.map((card, index) => {
-    if (index == current) {
-      return (
-        <StyledCardWrapper opacity={'0.8'}>
-          <StyledCard>
-            <StyledImage src={ReportCard} />
-          </StyledCard>
-        </StyledCardWrapper>
-      );
-    } else if (index == next) {
-      return (
-        <StyledCardWrapper opacity={'1'}>
-          <StyledCard>
-            <StyledImage src={ReportCard} />
-          </StyledCard>
-        </StyledCardWrapper>
-      );
+    if (index !== next) {
+      return buildReportCard(card, '0.8');
     }
-    return card;
+    return buildReportCard(card);
   });
 };
 
-const reportCards = [
-  buildReportCard(ReportCard),
-  buildReportCard(ReportCard),
-  buildReportCard(ReportCard),
-  buildReportCard(ReportCard),
-];
+const reportCards = [ReportCard, ReportCard, ReportCard, ReportCard];
 
 const setInitialOpacity = (cardList, windowSize, breakpoint) => {
   if (windowSize > breakpoint) {
     return cardList.map((card, index) => {
-      if (index != 1) {
-        return (
-          <StyledCardWrapper opacity={'0.8'}>
-            <StyledCard>
-              <StyledImage src={ReportCard} />
-            </StyledCard>
-          </StyledCardWrapper>
-        );
+      if (index !== 1) {
+        return buildReportCard(card, '0.8');
       }
-      return card;
+      return buildReportCard(card);
     });
   }
 
-  return cardList;
+  return cardList.map((card) => buildReportCard(card));
 };
 
 export const Carousel = () => {
@@ -118,7 +93,7 @@ export const Carousel = () => {
     nextArrow: <CarouselArrow next={true} />,
     beforeChange: (current, next) => {
       if (windowSize > mediumBreakpoint) {
-        setCardList(setOpacity(cardList, current + 1, next + 1));
+        setCardList(setOpacity(reportCards, next + 1));
       }
     },
     responsive: [
@@ -150,10 +125,10 @@ export const Carousel = () => {
       </StyledCaptionWrapper>
       <StyledCaptionWrapper>
         <StyledImageWrapper>
-          <img src={PlugAndPlay}></img>
+          <img src={PlugAndPlay} alt={'plugAndPlay'}></img>
         </StyledImageWrapper>
         <StyledImageWrapper>
-          <img src={Forbes}></img>
+          <img src={Forbes} alt={'forbes'}></img>
         </StyledImageWrapper>
       </StyledCaptionWrapper>
     </>
