@@ -7,45 +7,27 @@ import ReportCard from '../assets/ReportCard.png';
 import { CarouselArrow } from './CarouselArrow';
 
 interface DivProps {
-  backgroundColor?: string;
-  padding?: string;
-  margin?: string;
-  height?: string;
-  width?: string;
-  position?: string;
-  transform?: string;
-  top?: string;
-  left?: string;
   opacity?: string;
 }
 
-const StyledDiv = styled.div`
+const StyledCarouselDiv = styled.div`
+  padding: 0 50px;
+  margin-bottom: 10px;
+`;
+
+const StyledCardWrapper = styled.div`
   ${(props: DivProps) =>
     props &&
     `
-      background-color: ${props.backgroundColor};
-      padding: ${props.padding};
-      margin: ${props.margin};
-      height: ${props.height};
-      width: ${props.width};
-      position: ${props.position};
-      transform: ${props.transform};
-      top: ${props.top};
-      left: ${props.left};
       opacity: ${props.opacity};
     `};
 `;
 
 const StyledCard = styled.div`
   width: 95%;
-
-  ${(props: DivProps) =>
-    `
-        background-color: ${props.backgroundColor};
-    `}
 `;
 
-const StyledWrapper = styled.div`
+const StyledCaptionWrapper = styled.div`
   width: 100%;
   text-align: center;
 `;
@@ -60,31 +42,35 @@ const StyledImageWrapper = styled.span`
   margin: 0 10px;
 `;
 
-const buildReportCard = (card: any, opacity?: string) => (
-  <StyledDiv opacity={opacity}>
+const StyledImage = styled.img`
+  width: 100%;
+`;
+
+const buildReportCard = (image: any, opacity?: string) => (
+  <StyledCardWrapper opacity={opacity}>
     <StyledCard>
-      <img src={card} width={'100%'} />
+      <StyledImage src={image} />
     </StyledCard>
-  </StyledDiv>
+  </StyledCardWrapper>
 );
 
 const setOpacity = (cardList: any, current, next) => {
   return cardList.map((card, index) => {
     if (index == current) {
       return (
-        <StyledDiv opacity={'0.8'}>
+        <StyledCardWrapper opacity={'0.8'}>
           <StyledCard>
-            <img src={ReportCard} width={'100%'} />
+            <StyledImage src={ReportCard} />
           </StyledCard>
-        </StyledDiv>
+        </StyledCardWrapper>
       );
     } else if (index == next) {
       return (
-        <StyledDiv opacity={'1'}>
+        <StyledCardWrapper opacity={'1'}>
           <StyledCard>
-            <img src={ReportCard} width={'100%'} />
+            <StyledImage src={ReportCard} />
           </StyledCard>
-        </StyledDiv>
+        </StyledCardWrapper>
       );
     }
     return card;
@@ -103,11 +89,11 @@ const setInitialOpacity = (cardList, windowSize, breakpoint) => {
     return cardList.map((card, index) => {
       if (index != 1) {
         return (
-          <StyledDiv opacity={'0.8'}>
+          <StyledCardWrapper opacity={'0.8'}>
             <StyledCard>
-              <img src={ReportCard} width={'100%'} />
+              <StyledImage src={ReportCard} />
             </StyledCard>
-          </StyledDiv>
+          </StyledCardWrapper>
         );
       }
       return card;
@@ -156,25 +142,20 @@ export const Carousel = () => {
   };
   return (
     <>
-      <div
-        style={{
-          padding: '0 50px',
-          marginBottom: '10px',
-        }}
-      >
+      <StyledCarouselDiv>
         <Slider {...settings}>{cardList}</Slider>
-      </div>
-      <StyledWrapper>
+      </StyledCarouselDiv>
+      <StyledCaptionWrapper>
         <StyledText>What are they saying about us</StyledText>
-      </StyledWrapper>
-      <StyledWrapper>
+      </StyledCaptionWrapper>
+      <StyledCaptionWrapper>
         <StyledImageWrapper>
           <img src={PlugAndPlay}></img>
         </StyledImageWrapper>
         <StyledImageWrapper>
           <img src={Forbes}></img>
         </StyledImageWrapper>
-      </StyledWrapper>
+      </StyledCaptionWrapper>
     </>
   );
 };
