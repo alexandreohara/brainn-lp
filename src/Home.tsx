@@ -11,6 +11,7 @@ import {
   VerticalSeparator,
   HorizontalSeparator,
 } from './components';
+import { Footer } from './components/Footer';
 
 export const Home = () => {
   return (
@@ -43,6 +44,7 @@ export const Home = () => {
           </>
         ))}
       </HorizontalScroll>
+      <Footer />
     </>
   );
 };
