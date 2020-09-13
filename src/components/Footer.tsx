@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Col, Grid, Row } from 'react-styled-flexboxgrid';
 import WorldMap from '../assets/WorldMap.svg';
 import Pin from '../assets/icons/Pin.svg';
@@ -13,36 +13,26 @@ interface PinProps {
   left?: string;
   right?: string;
   color?: string;
+  backgroundColor?: string;
 }
 
-const StyledSpan = styled.span`
+const StyledPinText = styled.span`
   opacity: 0;
   position: absolute;
-  left: 100%;
-  top: 20%;
-  color: red;
+  left: 110%;
+  top: 25%;
+  color: #fc2d5a;
   transition: all 0.5s ease;
-`;
-
-const StyledPinWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 10%;
 
   ${(props: PinProps) =>
     props &&
     `
-      position: ${props.position};
+      color: ${props.color};
       top: ${props.top};
       bottom: ${props.bottom};
       left: ${props.left};
       right: ${props.right};
-      color: ${props.color};
     `}
-
-  :hover ${StyledSpan} {
-    opacity: 1;
-  }
 `;
 
 const StyledPin = styled.div`
@@ -52,7 +42,13 @@ const StyledPin = styled.div`
   mask-image: url(${Pin});
   mask-size: cover;
   background-size: cover;
-  background-color: black;
+  background-color: #fc2d5a;
+
+  ${(props: PinProps) =>
+    props &&
+    `
+      background-color: ${props.backgroundColor}
+    `}
 
   :hover {
     mask-image: url(${PinSelected});
@@ -61,9 +57,25 @@ const StyledPin = styled.div`
   }
 `;
 
-export const Footer = () => {
-  const [isShown, setIsShown] = useState(false);
+const StyledPinWrapper = styled.div`
+  position: absolute;
 
+  ${(props: PinProps) =>
+    props &&
+    `
+      position: ${props.position};
+      top: ${props.top};
+      bottom: ${props.bottom};
+      left: ${props.left};
+      right: ${props.right};
+    `}
+
+  :hover ${StyledPinText} {
+    opacity: 1;
+  }
+`;
+
+export const Footer = () => {
   return (
     <Grid fluid={true}>
       <Row>
@@ -146,23 +158,15 @@ export const Footer = () => {
               top: '-75px',
             }}
           >
-            <img src={WorldMap} width={'100%'} />
-            <StyledPinWrapper
-              onMouseOver={() => setIsShown(true)}
-              onMouseLeave={() => setIsShown(false)}
-            >
-              <StyledPin></StyledPin>
-              <StyledSpan>Vancouver</StyledSpan>
-              {/* {isShown && <StyledSpan>Vancouver</StyledSpan>} */}
+            <img src={WorldMap} width={'100%'} style={{ opacity: '0.5' }} />
+            <StyledPinWrapper top={'50%'}>
+              <StyledPin />
+              <StyledPinText>Vancouver</StyledPinText>
             </StyledPinWrapper>
 
-            <StyledPinWrapper
-              onMouseOver={() => setIsShown(true)}
-              onMouseLeave={() => setIsShown(false)}
-              top={'0'}
-            >
-              <StyledPin></StyledPin>
-              {isShown && <StyledSpan>Batata</StyledSpan>}
+            <StyledPinWrapper top={'0'}>
+              <StyledPin />
+              <StyledPinText>Batata</StyledPinText>
             </StyledPinWrapper>
           </div>
         </Col>
