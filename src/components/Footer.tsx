@@ -3,8 +3,8 @@ import { Col, Grid, Row } from 'react-styled-flexboxgrid';
 import WorldMap from '../assets/WorldMap.svg';
 import Pin from '../assets/icons/Pin.svg';
 import PinSelected from '../assets/icons/PinSelected.svg';
-import './Footer.css';
 import styled from 'styled-components';
+import { MapPin } from './MapPin';
 
 interface PinProps {
   position?: string;
@@ -25,11 +25,12 @@ interface TextProps {
 
 const StyledPinText = styled.span`
   opacity: 0;
-  position: absolute;
-  left: 110%;
-  top: 25%;
-  color: #fc2d5a;
+  margin: 0 2px;
   transition: all 0.5s ease;
+  font-size: 1vw;
+  position: absolute;
+  top: 30%;
+  left: 100%;
 
   ${(props: PinProps) =>
     props &&
@@ -45,7 +46,6 @@ const StyledPinText = styled.span`
 const StyledPin = styled.div`
   width: 3vw;
   height: 3vw;
-  position: relative;
   mask-image: url(${Pin});
   mask-size: cover;
   background-size: cover;
@@ -66,6 +66,7 @@ const StyledPin = styled.div`
 
 const StyledPinWrapper = styled.div`
   position: absolute;
+  color: #fc2d5a;
 
   ${(props: PinProps) =>
     props &&
@@ -168,15 +169,13 @@ export const Footer = () => {
         </Col>
         <Col xs={false} sm={6}>
           <StyledMapWrapper>
+            <MapPin color={'black'}>Bla</MapPin>
+
             <StyledMap src={WorldMap} />
-            <StyledPinWrapper top={'50%'}>
+
+            <StyledPinWrapper top={'31%'} left={'13%'}>
               <StyledPin />
               <StyledPinText>Vancouver</StyledPinText>
-            </StyledPinWrapper>
-
-            <StyledPinWrapper top={'0'}>
-              <StyledPin />
-              <StyledPinText>Batata</StyledPinText>
             </StyledPinWrapper>
           </StyledMapWrapper>
         </Col>
