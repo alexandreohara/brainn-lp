@@ -16,6 +16,13 @@ interface PinProps {
   backgroundColor?: string;
 }
 
+interface TextProps {
+  fontSize?: string;
+  color?: string;
+  fontWeight?: string;
+  margin?: string;
+}
+
 const StyledPinText = styled.span`
   opacity: 0;
   position: absolute;
@@ -75,90 +82,93 @@ const StyledPinWrapper = styled.div`
   }
 `;
 
+const StyledMap = styled.img`
+  opacity: 0.5;
+  width: 100%;
+`;
+
+const StyledMapWrapper = styled.div`
+  position: relative;
+`;
+
+const StyledDivider = styled.div`
+  background-color: #ffffff;
+  width: 100%;
+  height: 1px;
+  opacity: 0.15;
+  margin: 10px 0;
+`;
+
+const StyledTextWithLeftBorder = styled.div`
+  border-left: 1px solid #007cf9;
+  padding-left: 5px;
+  margin: 5px 0;
+  font-weight: bold;
+  font-size: 1.3vw;
+`;
+
+const StyledSubtitle = styled.div`
+  margin: 5px 8px;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 1vw;
+`;
+
+const StyledTextWrapper = styled.div`
+  margin: 25px 0;
+  color: white;
+
+  ${(props: TextProps) =>
+    props &&
+    `
+      font-size: ${props.fontSize};
+      color: ${props.color};
+      font-weight: ${props.fontWeight};
+      margin: ${props.margin};
+    `}
+`;
+
 export const Footer = () => {
   return (
     <Grid fluid={true}>
       <Row>
         <Col xs={12} sm={6}>
-          <div style={{ backgroundColor: 'yellow' }}>
-            <h1>We do digital.</h1>
-            <h1>You grow faster.</h1>
-          </div>
-          <div
-            style={{
-              backgroundColor: '#FFFFFF',
-              width: '100%',
-              height: '1px',
-              opacity: '0.15',
-              margin: '10px 0',
-            }}
-          />
-          <div>
-            <div
-              style={{
-                borderLeft: '1px solid #007CF9',
-                paddingLeft: '5px',
-              }}
-            >
-              <h3>Become a Client</h3>
-            </div>
-            <p style={{ marginLeft: '8px' }}>hello@brainn.co</p>
-          </div>
+          <StyledTextWrapper
+            color={'#546E82'}
+            fontSize={'6vw'}
+            fontWeight={'bold'}
+          >
+            We do digital.
+          </StyledTextWrapper>
+          <StyledTextWrapper fontSize={'6vw'} fontWeight={'bold'}>
+            You grow faster.
+          </StyledTextWrapper>
 
-          <div
-            style={{
-              backgroundColor: '#FFFFFF',
-              width: '100%',
-              height: '1px',
-              opacity: '0.15',
-              margin: '10px 0',
-            }}
-          />
-          <div>
-            <div
-              style={{
-                borderLeft: '1px solid #007CF9',
-                paddingLeft: '5px',
-              }}
-            >
-              <h3>Open Source</h3>
-            </div>
-            <p style={{ margin: '10px 8px' }}>Github</p>
-          </div>
+          <StyledDivider />
 
-          <div
-            style={{
-              backgroundColor: '#FFFFFF',
-              width: '100%',
-              height: '1px',
-              opacity: '0.15',
-              margin: '10px 0',
-            }}
-          />
-          <div>
-            <div
-              style={{
-                borderLeft: '1px solid #007CF9',
-                paddingLeft: '5px',
-              }}
-            >
-              <h3>Headquarter</h3>
-            </div>
-            <p style={{ margin: '10px 8px' }}>
+          <StyledTextWrapper>
+            <StyledTextWithLeftBorder>Become a Client</StyledTextWithLeftBorder>
+            <StyledSubtitle>hello@brainn.co</StyledSubtitle>
+          </StyledTextWrapper>
+
+          <StyledDivider />
+
+          <StyledTextWrapper>
+            <StyledTextWithLeftBorder>Open Source</StyledTextWithLeftBorder>
+            <StyledSubtitle>Github</StyledSubtitle>
+          </StyledTextWrapper>
+
+          <StyledDivider />
+
+          <StyledTextWrapper>
+            <StyledTextWithLeftBorder>Headquarter</StyledTextWithLeftBorder>
+            <StyledSubtitle>
               30 Fradique Coutinho St. São Paulo - Brazil
-            </p>
-          </div>
+            </StyledSubtitle>
+          </StyledTextWrapper>
         </Col>
         <Col xs={false} sm={6}>
-          <div
-            className={'worldMap'}
-            style={{
-              overflow: 'auto',
-              position: 'relative',
-              top: '-75px',
-            }}
-          >
-            <img src={WorldMap} width={'100%'} style={{ opacity: '0.5' }} />
+          <StyledMapWrapper>
+            <StyledMap src={WorldMap} />
             <StyledPinWrapper top={'50%'}>
               <StyledPin />
               <StyledPinText>Vancouver</StyledPinText>
@@ -168,7 +178,7 @@ export const Footer = () => {
               <StyledPin />
               <StyledPinText>Batata</StyledPinText>
             </StyledPinWrapper>
-          </div>
+          </StyledMapWrapper>
         </Col>
       </Row>
     </Grid>
