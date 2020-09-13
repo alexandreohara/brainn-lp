@@ -1,87 +1,14 @@
 import React from 'react';
 import { Col, Grid, Row } from 'react-styled-flexboxgrid';
 import WorldMap from '../assets/WorldMap.svg';
-import Pin from '../assets/icons/Pin.svg';
-import PinSelected from '../assets/icons/PinSelected.svg';
 import styled from 'styled-components';
 import { MapPin } from './MapPin';
-
-interface PinProps {
-  position?: string;
-  top?: string;
-  bottom?: string;
-  left?: string;
-  right?: string;
-  color?: string;
-  backgroundColor?: string;
-}
-
 interface TextProps {
   fontSize?: string;
   color?: string;
   fontWeight?: string;
   margin?: string;
 }
-
-const StyledPinText = styled.span`
-  opacity: 0;
-  margin: 0 2px;
-  transition: all 0.5s ease;
-  font-size: 1vw;
-  position: absolute;
-  top: 30%;
-  left: 100%;
-
-  ${(props: PinProps) =>
-    props &&
-    `
-      color: ${props.color};
-      top: ${props.top};
-      bottom: ${props.bottom};
-      left: ${props.left};
-      right: ${props.right};
-    `}
-`;
-
-const StyledPin = styled.div`
-  width: 3vw;
-  height: 3vw;
-  mask-image: url(${Pin});
-  mask-size: cover;
-  background-size: cover;
-  background-color: #fc2d5a;
-
-  ${(props: PinProps) =>
-    props &&
-    `
-      background-color: ${props.backgroundColor}
-    `}
-
-  :hover {
-    mask-image: url(${PinSelected});
-    -webkit-mask-image: url(${PinSelected});
-    transition: all 0.5s ease;
-  }
-`;
-
-const StyledPinWrapper = styled.div`
-  position: absolute;
-  color: #fc2d5a;
-
-  ${(props: PinProps) =>
-    props &&
-    `
-      position: ${props.position};
-      top: ${props.top};
-      bottom: ${props.bottom};
-      left: ${props.left};
-      right: ${props.right};
-    `}
-
-  :hover ${StyledPinText} {
-    opacity: 1;
-  }
-`;
 
 const StyledMap = styled.img`
   opacity: 0.5;
@@ -169,14 +96,54 @@ export const Footer = () => {
         </Col>
         <Col xs={false} sm={6}>
           <StyledMapWrapper>
-            <MapPin color={'black'}>Bla</MapPin>
+            <MapPin top={'31%'} left={'13%'}>
+              Vancouver
+            </MapPin>
+            <MapPin color={'#00BEFB'} top={'38%'} left={'14%'}>
+              San Francisco
+            </MapPin>
+            <MapPin color={'#00BEFB'} top={'31%'} left={'60.5%'}>
+              Amsterdam
+            </MapPin>
+            <MapPin color={'#FFB92C'} top={'26%'} left={'56%'}>
+              Dublin
+            </MapPin>
+            <MapPin color={'#8450F9'} top={'36.5%'} left={'57%'}>
+              Lisboa
+            </MapPin>
+            <MapPin color={'#00BA79'} top={'28%'} left={'63.5%'}>
+              Berlin
+            </MapPin>
+            <MapPin top={'32%'} left={'64.5%'}>
+              Trento
+            </MapPin>
+
+            <MapPin color={'#007CF9'} top={'52%'} left={'45%'}>
+              bla
+            </MapPin>
+            <MapPin color={'#FFB92C'} top={'54.2%'} left={'43.8%'}>
+              ble
+            </MapPin>
+            <MapPin color={'#8450F9'} top={'55.8%'} left={'43%'}>
+              bli
+            </MapPin>
+            <MapPin top={'58.3%'} left={'40%'}>
+              blo
+            </MapPin>
+            <MapPin color={'#00BEFB'} top={'56.5%'} left={'40%'}>
+              blu
+            </MapPin>
+            <MapPin color={'#8450F9'} top={'58.7%'} left={'37.7%'}>
+              bah
+            </MapPin>
+            <MapPin color={'#00BA79'} top={'53.9%'} left={'38.4%'}>
+              beh
+            </MapPin>
+            <MapPin top={'52.2%'} left={'40.7%'}>
+              bih
+            </MapPin>
 
             <StyledMap src={WorldMap} />
-
-            <StyledPinWrapper top={'31%'} left={'13%'}>
-              <StyledPin />
-              <StyledPinText>Vancouver</StyledPinText>
-            </StyledPinWrapper>
           </StyledMapWrapper>
         </Col>
       </Row>

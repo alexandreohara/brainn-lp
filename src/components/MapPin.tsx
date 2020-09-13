@@ -26,17 +26,17 @@ interface PinProps {
 }
 
 const StyledPinText = styled.span`
-  opacity: 0;
-  transition: all 0.5s ease;
-  font-size: 1.5vw;
+  visibility: hidden;
+  font-size: 1vw;
   position: absolute;
+  width: 10vw;
 
   ${(props: PinProps) =>
     props &&
     `
       color: ${props.color};
       top: ${
-        props.top == undefined && props.bottom == undefined ? '22%' : props.top
+        props.top == undefined && props.bottom == undefined ? '30%' : props.top
       };
       bottom: ${props.bottom};
       left: ${
@@ -85,7 +85,7 @@ const StyledPinWrapper = styled.div`
     `}
 
   :hover ${StyledPinText} {
-    opacity: 1;
+    visibility: visible;
   }
 `;
 
