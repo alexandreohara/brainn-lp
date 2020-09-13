@@ -6,34 +6,51 @@ import PinSelected from '../assets/icons/PinSelected.svg';
 import './Footer.css';
 import styled from 'styled-components';
 
-const StyledPinWrapper = styled.div`
-  position: absolute;
-  top: 50%;
-  left: 10%;
-`;
+interface PinProps {
+  position?: string;
+  top?: string;
+  bottom?: string;
+  left?: string;
+  right?: string;
+  color?: string;
+}
+
 const StyledSpan = styled.span`
-  visibility: visible;
+  opacity: 0;
   position: absolute;
   left: 100%;
   top: 20%;
   color: red;
+  transition: all 0.5s ease;
+`;
+
+const StyledPinWrapper = styled.div`
+  position: absolute;
+  top: 50%;
+  left: 10%;
+
+  ${(props: PinProps) =>
+    props &&
+    `
+      position: ${props.position};
+      top: ${props.top};
+      bottom: ${props.bottom};
+      left: ${props.left};
+      right: ${props.right};
+      color: ${props.color};
+    `}
+
+  :hover ${StyledSpan} {
+    opacity: 1;
+  }
 `;
 
 const StyledPin = styled.div`
   width: 3vw;
   height: 3vw;
   position: relative;
-  /* mask-image: url(${Pin}); */
-
-  /* mask-position: center;
-  mask-repeat: no-repeat; */
   mask-image: url(${Pin});
   mask-size: cover;
-  /* -webkit-mask-image: url(${Pin});
-  -webkit-mask-size: cover; */
-  /* -webkit-mask-position: center;
-  -webkit-mask-repeat: no-repeat; */
-  /* background-image: url(${Pin}); */
   background-size: cover;
   background-color: black;
 
@@ -129,13 +146,23 @@ export const Footer = () => {
               top: '-75px',
             }}
           >
-            <img src={WorldMap} width={'100%'}></img>
+            <img src={WorldMap} width={'100%'} />
             <StyledPinWrapper
               onMouseOver={() => setIsShown(true)}
               onMouseLeave={() => setIsShown(false)}
             >
               <StyledPin></StyledPin>
-              {isShown && <StyledSpan>Vancouver</StyledSpan>}
+              <StyledSpan>Vancouver</StyledSpan>
+              {/* {isShown && <StyledSpan>Vancouver</StyledSpan>} */}
+            </StyledPinWrapper>
+
+            <StyledPinWrapper
+              onMouseOver={() => setIsShown(true)}
+              onMouseLeave={() => setIsShown(false)}
+              top={'0'}
+            >
+              <StyledPin></StyledPin>
+              {isShown && <StyledSpan>Batata</StyledSpan>}
             </StyledPinWrapper>
           </div>
         </Col>
