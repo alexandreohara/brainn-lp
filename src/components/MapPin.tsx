@@ -1,6 +1,6 @@
 import React from 'react';
-import Pin from '../assets/icons/Pin.svg';
-import PinSelected from '../assets/icons/PinSelected.svg';
+import Pin from 'assets/icons/Pin.svg';
+import PinSelected from 'assets/icons/PinSelected.svg';
 import styled from 'styled-components';
 
 interface MapPinProps {
@@ -36,11 +36,13 @@ const StyledPinText = styled.span`
     `
       color: ${props.color};
       top: ${
-        props.top == undefined && props.bottom == undefined ? '30%' : props.top
+        props.top === undefined && props.bottom === undefined
+          ? '30%'
+          : props.top
       };
       bottom: ${props.bottom};
       left: ${
-        props.left == undefined && props.right == undefined
+        props.left === undefined && props.right === undefined
           ? '105%'
           : props.left
       } ;
