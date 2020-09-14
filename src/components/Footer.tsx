@@ -3,6 +3,7 @@ import { Col, Grid, Row } from 'react-styled-flexboxgrid';
 import WorldMap from 'assets/WorldMap.svg';
 import styled from 'styled-components';
 import { MapPin } from './MapPin';
+import { Colors } from 'consts/colors';
 interface TextProps {
   fontSize?: string;
   color?: string;
@@ -20,7 +21,7 @@ const StyledMapWrapper = styled.div`
 `;
 
 const StyledDivider = styled.div`
-  background-color: #ffffff;
+  background-color: ${Colors.white};
   width: 100%;
   height: 1px;
   opacity: 0.15;
@@ -28,7 +29,7 @@ const StyledDivider = styled.div`
 `;
 
 const StyledTextWithLeftBorder = styled.div`
-  border-left: 1px solid #007cf9;
+  border-left: 1px solid ${Colors.blue};
   padding-left: 5px;
   margin: 5px 0;
   font-weight: bold;
@@ -37,13 +38,14 @@ const StyledTextWithLeftBorder = styled.div`
 
 const StyledSubtitle = styled.div`
   margin: 5px 8px;
-  color: rgba(255, 255, 255, 0.8);
+  color: ${Colors.white};
+  opacity: 0.8;
   font-size: 1vw;
 `;
 
 const StyledTextWrapper = styled.div`
   margin: 25px 0;
-  color: white;
+  color: ${Colors.white};
 
   ${(props: TextProps) =>
     props &&
@@ -99,44 +101,44 @@ export const Footer = () => {
             <MapPin top={'31%'} left={'13%'}>
               Vancouver
             </MapPin>
-            <MapPin color={'#00BEFB'} top={'38%'} left={'14%'}>
+            <MapPin color={Colors.lightBlue} top={'38%'} left={'14%'}>
               San Francisco
             </MapPin>
-            <MapPin color={'#00BEFB'} top={'31%'} left={'60.5%'}>
+            <MapPin color={Colors.lightBlue} top={'31%'} left={'60.5%'}>
               Amsterdam
             </MapPin>
-            <MapPin color={'#FFB92C'} top={'26%'} left={'56%'}>
+            <MapPin color={Colors.yellow} top={'26%'} left={'56%'}>
               Dublin
             </MapPin>
-            <MapPin color={'#8450F9'} top={'36.5%'} left={'57%'}>
+            <MapPin color={Colors.purple} top={'36.5%'} left={'57%'}>
               Lisboa
             </MapPin>
-            <MapPin color={'#00BA79'} top={'28%'} left={'63.5%'}>
+            <MapPin color={Colors.green} top={'28%'} left={'63.5%'}>
               Berlin
             </MapPin>
             <MapPin top={'32%'} left={'64.5%'}>
               Trento
             </MapPin>
 
-            <MapPin color={'#007CF9'} top={'52%'} left={'45%'}>
+            <MapPin color={Colors.blue} top={'52%'} left={'45%'}>
               bla
             </MapPin>
-            <MapPin color={'#FFB92C'} top={'54.2%'} left={'43.8%'}>
+            <MapPin color={Colors.yellow} top={'54.2%'} left={'43.8%'}>
               ble
             </MapPin>
-            <MapPin color={'#8450F9'} top={'55.8%'} left={'43%'}>
+            <MapPin color={Colors.purple} top={'55.8%'} left={'43%'}>
               bli
             </MapPin>
             <MapPin top={'58.3%'} left={'40%'}>
               blo
             </MapPin>
-            <MapPin color={'#00BEFB'} top={'56.5%'} left={'40%'}>
+            <MapPin color={Colors.lightBlue} top={'56.5%'} left={'40%'}>
               blu
             </MapPin>
-            <MapPin color={'#8450F9'} top={'58.7%'} left={'37.7%'}>
+            <MapPin color={Colors.purple} top={'58.7%'} left={'37.7%'}>
               bah
             </MapPin>
-            <MapPin color={'#00BA79'} top={'53.9%'} left={'38.4%'}>
+            <MapPin color={Colors.green} top={'53.9%'} left={'38.4%'}>
               beh
             </MapPin>
             <MapPin top={'52.2%'} left={'40.7%'}>

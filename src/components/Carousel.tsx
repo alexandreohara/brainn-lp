@@ -1,3 +1,4 @@
+import { Colors } from 'consts/colors';
 import React, { useState } from 'react';
 import Slider from 'react-slick';
 import styled from 'styled-components';
@@ -34,7 +35,7 @@ const StyledCaptionWrapper = styled.div`
 
 const StyledText = styled.div`
   font-size: 16px;
-  color: white;
+  color: ${Colors.white};
   opacity: 0.25;
 `;
 

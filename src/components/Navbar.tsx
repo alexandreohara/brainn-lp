@@ -1,3 +1,4 @@
+import { Colors } from 'consts/colors';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import barsIcon from '../assets/icons/menu.png';
@@ -44,8 +45,8 @@ export const Navbar = () => {
           </ul>
           <div style={{ position: 'absolute', right: '4vw' }}>
             <NavButton
-              backgroundColor={'#007CF9'}
-              textColor={'white'}
+              backgroundColor={Colors.blue}
+              textColor={Colors.white}
               lineHeight={'25px'}
               border={'2px solid rgba(0, 0, 0, 0.25)'}
             >
