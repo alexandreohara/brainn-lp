@@ -11,10 +11,11 @@ import {
   VerticalSeparator,
   HorizontalSeparator,
 } from './components';
+import { Footer } from './components/Footer';
 
 export const Home = () => {
   return (
-    <>
+    <div style={{ backgroundColor: '#021727' }}>
       <Col>
         {cardSections.map((props: any) => {
           return <HomeCard key={props.id} {...props} />;
@@ -43,7 +44,8 @@ export const Home = () => {
           </>
         ))}
       </HorizontalScroll>
-    </>
+      <Footer />
+    </div>
   );
 };
 
