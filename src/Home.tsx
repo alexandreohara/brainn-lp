@@ -1,4 +1,5 @@
 import React from 'react';
+import './components/Navbar.css';
 import { Col } from 'react-styled-flexboxgrid';
 import HomeCard from './components/Card';
 import Storming from './assets/Storming.svg';
