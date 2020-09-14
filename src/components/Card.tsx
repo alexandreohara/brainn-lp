@@ -70,7 +70,7 @@ const StyledLine = styled.div`
 const HomeCard = (props: any) => {
   if (props.textFirst) {
     return (
-      <StyledCard key={props.key} {...props}>
+      <StyledCard {...props}>
         <StyledTextColumn md={8}>
           <StyledTitle>{props.title}</StyledTitle>
           <StyledDescription>

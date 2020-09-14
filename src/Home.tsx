@@ -10,7 +10,7 @@ export const Home = () => {
   return (
     <Col>
       {cardSections.map((props: any) => {
-        return <HomeCard {...props} />;
+        return <HomeCard key={props.id} {...props} />;
       })}
     </Col>
   );
