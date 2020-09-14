@@ -2,6 +2,7 @@ import React from 'react';
 import Pin from 'assets/icons/Pin.svg';
 import PinSelected from 'assets/icons/PinSelected.svg';
 import styled from 'styled-components';
+import { Colors } from 'consts/colors';
 
 interface MapPinProps {
   top?: string;
@@ -56,7 +57,7 @@ const StyledPin = styled.div`
   mask-image: url(${Pin});
   mask-size: cover;
   background-size: cover;
-  background-color: #fc2d5a;
+  background-color: ${Colors.pink};
 
   ${(props: PinProps) =>
     props &&
@@ -73,7 +74,7 @@ const StyledPin = styled.div`
 
 const StyledPinWrapper = styled.div`
   position: absolute;
-  color: #fc2d5a;
+  color: ${Colors.pink};
   z-index: 1;
 
   ${(props: PinProps) =>
