@@ -21,7 +21,7 @@ const StyledCard = styled.div`
 const StyledTextColumn = styled(Col)`
   padding-top: 4%;
   padding-bottom: 4%;
-  padding-right: 4%
+  padding-right: 4%;
   padding-left: 4%;
   color: white;
 `;
@@ -70,16 +70,16 @@ const StyledLine = styled.div`
 const HomeCard = (props: any) => {
   if (props.textFirst) {
     return (
-      <StyledCard className="styled-card" {...props}>
-        <StyledTextColumn className="text-column" md={8}>
+      <StyledCard key={props.key} {...props}>
+        <StyledTextColumn md={8}>
           <StyledTitle>{props.title}</StyledTitle>
           <StyledDescription>
             {props.description[0]} <b>{props.description[1]}</b>
           </StyledDescription>
-          <StyledLine className={'linha'} />
+          <StyledLine />
           <StyledButton>Meet our process</StyledButton>
         </StyledTextColumn>
-        <Col className="image-column" xs={false} md={4}>
+        <Col xs={false} md={4}>
           <StyledImage src={props.image} alt="logo"></StyledImage>
         </Col>
       </StyledCard>
@@ -87,16 +87,16 @@ const HomeCard = (props: any) => {
   }
 
   return (
-    <StyledCard className="styled-card" {...props}>
-      <Col className="image-column" xs={false} md={6}>
+    <StyledCard {...props}>
+      <Col xs={false} md={6}>
         <StyledImage src={props.image} alt="logo"></StyledImage>
       </Col>
-      <StyledTextColumn className="text-column" {...props}>
+      <StyledTextColumn {...props}>
         <StyledTitle>{props.title}</StyledTitle>
         <StyledDescription>
           {props.description[0]} <b>{props.description[1]}</b>
         </StyledDescription>
-        <StyledLine className={'linha'} />
+        <StyledLine />
         <StyledButton>Meet our process</StyledButton>
       </StyledTextColumn>
     </StyledCard>

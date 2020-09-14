@@ -17,6 +17,7 @@ export const Home = () => {
 
 const cardSections = [
   {
+    key: 0,
     deg: 260.39,
     startColor: '#00BEFB',
     endColor: '#007CF9',
@@ -31,6 +32,7 @@ const cardSections = [
   },
 
   {
+    key: 1,
     deg: 260.39,
     startColor: '#FFD15C',
     endColor: '#FF912C',
@@ -45,6 +47,7 @@ const cardSections = [
   },
 
   {
+    key: 2,
     deg: 260.39,
     startColor: '#19EE94',
     endColor: '#04B375',
