@@ -5,14 +5,45 @@ import HomeCard from './components/Card';
 import Storming from './assets/Storming.svg';
 import Delivery from './assets/Delivery.svg';
 import Augmentation from './assets/Augmentation.svg';
+import {
+  HorizontalScroll,
+  SliderCard,
+  VerticalSeparator,
+  HorizontalSeparator,
+} from './components';
 
 export const Home = () => {
   return (
-    <Col>
-      {cardSections.map((props: any) => {
-        return <HomeCard key={props.id} {...props} />;
-      })}
-    </Col>
+    <>
+      <Col>
+        {cardSections.map((props: any) => {
+          return <HomeCard key={props.id} {...props} />;
+        })}
+      </Col>
+      <HorizontalScroll>
+        {SLIDER_CARDS.map((card, index) => (
+          <>
+            <SliderCard
+              decorationLine={card.decorationLine}
+              title={card.title}
+            />
+            {index !== SLIDER_CARDS.length && <HorizontalSeparator />}
+          </>
+        ))}
+      </HorizontalScroll>
+      <VerticalSeparator />
+      <HorizontalScroll>
+        {SLIDER_CARDS.map((card, index) => (
+          <>
+            <SliderCard
+              decorationLine={card.decorationLine}
+              title={card.title}
+            />
+            {index !== SLIDER_CARDS.length && <HorizontalSeparator />}
+          </>
+        ))}
+      </HorizontalScroll>
+    </>
   );
 };
 
@@ -59,5 +90,40 @@ const cardSections = [
       `We provide staff augmentation to high-growth tech companies using new programming languages to move faster.`,
       `The team that works.`,
     ],
+  },
+];
+
+const SLIDER_CARDS = [
+  {
+    title: 'Launch innovative digital products',
+    decorationLine: {
+      deg: 260.39,
+      startColor: '#FFD15C',
+      endColor: '#FF912C',
+    },
+  },
+  {
+    title: 'Meet deadlines within your digital products',
+    decorationLine: {
+      deg: 261.18,
+      startColor: '#00BEFB',
+      endColor: '#007CF9',
+    },
+  },
+  {
+    title: 'Increase quality to regain trust from your users',
+    decorationLine: {
+      deg: 263.71,
+      startColor: '#FF6B8B',
+      endColor: '#FC2D5A',
+    },
+  },
+  {
+    title: 'Improve your architecture and scale faster',
+    decorationLine: {
+      deg: 260.39,
+      startColor: '#8C79FF',
+      endColor: '#6850F9',
+    },
   },
 ];
