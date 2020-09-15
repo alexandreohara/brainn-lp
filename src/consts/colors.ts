@@ -17,4 +17,6 @@ export const Gradients = {
   gray: 'linear-gradient(225deg, #153A55 0%, #0F2A3D 100%)',
   yellow: 'linear-gradient(260.39deg, #FFD15C 0%, #FF912C 100%)',
   lightBlue: 'linear-gradient(261.18deg, #8DE3FF -6.78%, #00BEFB 46.15%)',
+  blue: 'linear-gradient(261.18deg, #00BEFB -6.78%, #007CF9 46.15%)',
+  green: 'linear-gradient(260.39deg, #19EE94 0%, #04B375 100%)',
 };

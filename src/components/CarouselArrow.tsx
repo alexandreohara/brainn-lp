@@ -1,6 +1,6 @@
 import React from 'react';
-import RightArrow from '../assets/icons/RightArrow.svg';
-import LeftArrow from '../assets/icons/LeftArrow.svg';
+import RightArrowCircled from '../assets/icons/RightArrowCircled.svg';
+import LeftArrowCircled from '../assets/icons/LeftArrowCircled.svg';
 import styled from 'styled-components';
 
 const StyledNextArrowDiv = styled.div`
@@ -26,14 +26,14 @@ export const CarouselArrow = (props: any) => {
   if (next) {
     return (
       <StyledNextArrowDiv onClick={onClick}>
-        <StyledImage src={RightArrow} />
+        <StyledImage src={RightArrowCircled} />
       </StyledNextArrowDiv>
     );
   }
 
   return (
     <StyledPrevArrowDiv onClick={onClick}>
-      <StyledImage src={LeftArrow} />
+      <StyledImage src={LeftArrowCircled} />
     </StyledPrevArrowDiv>
   );
 };
