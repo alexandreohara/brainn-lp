@@ -24,22 +24,23 @@ const StyledTextColumn = styled(Col)`
   padding-right: 4%;
   padding-left: 4%;
   color: white;
+  /* background-color: red; */
 `;
 
-const StyledTitle = styled.body`
+const StyledTitle = styled.div`
   color: white;
   font-weight: bold;
-  font-size: 5rem;
+  font-size: 80px;
   line-height: 101px;
 `;
 
-const StyledDescription = styled.body`
+const StyledDescription = styled.div`
   color: white;
   font-weight: normal;
-  font-size: 2em;
+  font-size: 32px;
   line-height: 39px;
   padding-bottom: 6%;
-  width: 653px;
+  max-width: 653px;
 `;
 
 const StyledImage = styled.img`
@@ -52,7 +53,7 @@ const StyledButton = styled.button`
   background-color: transparent;
   color: white;
   padding: 2.5% 4%;
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: bold;
   cursor: pointer;
   &:focus {
@@ -71,7 +72,7 @@ const HomeCard = (props: any) => {
   if (props.textFirst) {
     return (
       <StyledCard {...props}>
-        <StyledTextColumn md={8}>
+        <StyledTextColumn {...props} lg={6}>
           <StyledTitle>{props.title}</StyledTitle>
           <StyledDescription>
             {props.description[0]} <b>{props.description[1]}</b>
@@ -79,8 +80,10 @@ const HomeCard = (props: any) => {
           <StyledLine />
           <StyledButton>Meet our process</StyledButton>
         </StyledTextColumn>
-        <Col xs={false} md={4}>
-          <StyledImage src={props.image} alt="logo"></StyledImage>
+        <Col xs={false} lg={6}>
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <StyledImage src={props.image} alt="logo"></StyledImage>
+          </div>
         </Col>
       </StyledCard>
     );
@@ -88,10 +91,10 @@ const HomeCard = (props: any) => {
 
   return (
     <StyledCard {...props}>
-      <Col xs={false} md={6}>
+      <Col xs={false} lg={6}>
         <StyledImage src={props.image} alt="logo"></StyledImage>
       </Col>
-      <StyledTextColumn {...props}>
+      <StyledTextColumn {...props} lg={6}>
         <StyledTitle>{props.title}</StyledTitle>
         <StyledDescription>
           {props.description[0]} <b>{props.description[1]}</b>

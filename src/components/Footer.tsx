@@ -33,20 +33,20 @@ const StyledTextWithLeftBorder = styled.div`
   padding-left: 5px;
   margin: 5px 0;
   font-weight: bold;
-  font-size: 1.3vw;
+  font-size: 24px;
 `;
 
 const StyledSubtitle = styled.div`
   margin: 5px 8px;
   color: ${Colors.white};
   opacity: 0.8;
-  font-size: 1vw;
+  font-size: 16px;
 `;
 
 const StyledTextWrapper = styled.div`
   margin: 25px 0;
   color: ${Colors.white};
-
+  font-size: 80px;
   ${(props: TextProps) =>
     props &&
     `
@@ -59,17 +59,13 @@ const StyledTextWrapper = styled.div`
 
 export const Footer = () => {
   return (
-    <Grid fluid={true}>
+    <div style={{ paddingLeft: '64px', background: '#072337' }}>
       <Row>
         <Col xs={12} sm={6}>
-          <StyledTextWrapper
-            color={'#546E82'}
-            fontSize={'6vw'}
-            fontWeight={'bold'}
-          >
+          <StyledTextWrapper color={'#546E82'} fontWeight={'bold'}>
             We do digital.
           </StyledTextWrapper>
-          <StyledTextWrapper fontSize={'6vw'} fontWeight={'bold'}>
+          <StyledTextWrapper fontWeight={'bold'}>
             You grow faster.
           </StyledTextWrapper>
 
@@ -149,6 +145,6 @@ export const Footer = () => {
           </StyledMapWrapper>
         </Col>
       </Row>
-    </Grid>
+    </div>
   );
 };

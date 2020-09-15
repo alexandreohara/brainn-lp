@@ -1,6 +1,6 @@
 import React from 'react';
 import './components/Navbar.css';
-import { Col, Row } from 'react-flexbox-grid';
+import { Col } from 'react-flexbox-grid';
 
 import HomeCard from './components/Card';
 import Storming from './assets/images/Storming.svg';
@@ -13,71 +13,33 @@ import {
   HorizontalSeparator,
 } from './components';
 import { Footer } from './components/Footer';
-import { ServiceCard } from 'components/ServiceCard';
-import { ServiceAspect } from 'components/ServiceAspect';
-import { Colors, Gradients } from 'consts/colors';
-import Benchmark from 'assets/icons/Benchmark.svg';
-import { ServiceNavButton } from 'components/ServiceNavButton';
 
 export const Home = () => {
   return (
     <div style={{ backgroundColor: '#021727' }}>
-      <Col>
-        {cardSections.map((props: any) => {
-          return <HomeCard key={props.id} {...props} />;
-        })}
-      </Col>
-      <HorizontalScroll>
-        {SLIDER_CARDS.map((card, index) => (
-          <>
-            <SliderCard
-              decorationLine={card.decorationLine}
-              title={card.title}
-            />
-            {index !== SLIDER_CARDS.length && <HorizontalSeparator />}
-          </>
-        ))}
-      </HorizontalScroll>
-      <VerticalSeparator />
-      <HorizontalScroll>
-        {SLIDER_CARDS.map((card, index) => (
-          <>
-            <SliderCard
-              decorationLine={card.decorationLine}
-              title={card.title}
-            />
-            {index !== SLIDER_CARDS.length && <HorizontalSeparator />}
-          </>
-        ))}
-      </HorizontalScroll>
-      <div style={{ height: '100px' }} />
-      <ServiceCard
-        title={'Storming'}
-        description={
-          'We help innovators quickly understand how we will build their digital products and provide a competitive business advantage.'
-        }
-        strongLastPhrase={'The idea that works.'}
-        color={Gradients.blue}
-      />
-      <ServiceAspect
-        color={Colors.purple}
-        icon={Benchmark}
-        title={'Benchmark'}
-        description={
-          'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
-        }
-      />
-
-      <div style={{ height: '40px', width: '100%' }} />
-
-      <Row style={{ margin: '0' }}>
-        <Col xs={6} style={{ padding: '0' }}>
-          <ServiceNavButton title={'Augmentation'} color={Gradients.green} />
+      <div style={{ padding: '64px' }}>
+        <HorizontalScroll>
+          {SLIDER_CARDS.map((card, index) => (
+            <>
+              <SliderCard
+                decorationLine={card.decorationLine}
+                title={card.title}
+              />
+              {index !== SLIDER_CARDS.length && <HorizontalSeparator />}
+            </>
+          ))}
+        </HorizontalScroll>
+        <VerticalSeparator size={64} />
+        <Col>
+          {cardSections.map((props: any) => {
+            return (
+              <>
+                <HomeCard key={props.id} {...props} />;
+              </>
+            );
+          })}
         </Col>
-        <Col xs={6} style={{ padding: '0' }}>
-          <ServiceNavButton title={'Delivery'} color={Gradients.yellow} next />
-        </Col>
-      </Row>
+      </div>
       <Footer />
     </div>
   );
