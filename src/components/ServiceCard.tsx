@@ -13,8 +13,8 @@ interface ServiceCardProps {
 
 const StyledServiceCard = styled.div`
   border-radius: 8px;
-  background-color: ${Gradients.gray};
-  max-width: 500px;
+  background: ${Gradients.gray};
+  max-width: 646px;
 `;
 
 const StyledContentWrapper = styled.div`
@@ -66,7 +66,7 @@ export const ServiceCard = (props: ServiceCardProps) => {
         </Col>
         <Col xs={2}>
           <StyledImgWrapper color={props.color}>
-            <img src={RightArrow} />
+            <img src={RightArrow} alt={'right-arrow'} />
           </StyledImgWrapper>
         </Col>
       </Row>

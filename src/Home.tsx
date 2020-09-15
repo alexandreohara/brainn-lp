@@ -46,16 +46,15 @@ export const Home = () => {
           </>
         ))}
       </HorizontalScroll>
-      <div style={{ backgroundColor: '#031D30' }}>
-        <ServiceCard
-          title={'Storming'}
-          description={
-            'We help innovators quickly understand how we will build their digital products and provide a competitive business advantage.'
-          }
-          strongLastPhrase={'The idea that works.'}
-          color={Gradients.blue}
-        />
-      </div>
+      <div style={{ height: '100px' }} />
+      <ServiceCard
+        title={'Storming'}
+        description={
+          'We help innovators quickly understand how we will build their digital products and provide a competitive business advantage.'
+        }
+        strongLastPhrase={'The idea that works.'}
+        color={Gradients.blue}
+      />
       <Footer />
     </div>
   );
