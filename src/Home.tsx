@@ -13,7 +13,9 @@ import {
 } from './components';
 import { Footer } from './components/Footer';
 import { ServiceCard } from 'components/ServiceCard';
-import { Gradients } from 'consts/colors';
+import { ServiceAspect } from 'components/ServiceAspect';
+import { Colors, Gradients } from 'consts/colors';
+import BenchmarkIcon from 'assets/icons/BenchmarkIcon.svg';
 
 export const Home = () => {
   return (
@@ -55,6 +57,14 @@ export const Home = () => {
         strongLastPhrase={'The idea that works.'}
         color={Gradients.blue}
       />
+      <ServiceAspect
+        color={Colors.purple}
+        icon={BenchmarkIcon}
+        title={'Benchmark'}
+        description={
+          'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
+        }
+      ></ServiceAspect>
       <Footer />
     </div>
   );
