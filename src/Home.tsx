@@ -12,6 +12,8 @@ import {
   HorizontalSeparator,
 } from './components';
 import { Footer } from './components/Footer';
+import { ServiceCard } from 'components/ServiceCard';
+import { Gradients } from 'consts/colors';
 
 export const Home = () => {
   return (
@@ -44,6 +46,15 @@ export const Home = () => {
           </>
         ))}
       </HorizontalScroll>
+      <div style={{ height: '100px' }} />
+      <ServiceCard
+        title={'Storming'}
+        description={
+          'We help innovators quickly understand how we will build their digital products and provide a competitive business advantage.'
+        }
+        strongLastPhrase={'The idea that works.'}
+        color={Gradients.blue}
+      />
       <Footer />
     </div>
   );
