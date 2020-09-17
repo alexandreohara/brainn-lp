@@ -1,6 +1,39 @@
+
+@import url("https://fast.fonts.net/lt/1.css?apiType=css&c=ab30cec2-6f38-44d7-b64f-bf436f11be74&fontids=5127450,5166236,5173976,5364192,5686921");
+@font-face{
+  font-family:"Neue Haas Grotesk";
+  src:url("fonts/5686921/eac78d53-d051-4a14-b9d4-b818761976ab.woff2") format("woff2"),url("fonts/5686921/2f42df46-a36b-4f62-87da-0c16e79ad23d.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face{
+    font-family:"Neue Haas Grotesk";
+    src:url("fonts/5127450/7385504f-3869-44ce-a30b-d568ccf2158c.woff2") format("woff2"),url("fonts/5127450/f981cc0c-5bba-4000-b2cd-bea9358348f5.woff") format("woff");
+    font-weight: bold;
+    font-style: italic;
+}
+@font-face{
+    font-family:"Neue Haas Grotesk";
+    src:url("fonts/5166236/d74f5765-a1aa-4632-8d2f-e3c0ac49f9a5.woff2") format("woff2"),url("fonts/5166236/89a17481-7e2b-444a-9697-9b8f61a96bf8.woff") format("woff");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face{
+    font-family:"Neue Haas Grotesk";
+    src:url("fonts/5173976/42c029be-62c5-47e5-8a58-ebdc702071fe.woff2") format("woff2"),url("fonts/5173976/6e53bbf4-b27e-4caa-8281-019b10892d53.woff") format("woff");
+    font-weight: 500;
+    font-style: normal;
+}
+@font-face{
+    font-family:"Neue Haas Grotesk";
+    src:url("fonts/5364192/73244b8c-d20c-4be0-9428-cc2f0b5e1020.woff2") format("woff2"),url("fonts/5364192/13d7a164-4487-4eea-9382-cd331d744002.woff") format("woff");
+    font-weight: normal;
+    font-style: italic;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family: 'Neue Haas Grotesk', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
