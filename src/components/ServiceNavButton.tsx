@@ -2,7 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { Colors } from 'consts/colors';
 import { Col, Row } from 'react-styled-flexboxgrid';
-import RightArrow from 'assets/icons/RightArrow.svg';
+// import RightArrow from 'assets/icons/RightArrow.svg';
+import LeftArrow from 'assets/icons/LeftArrow.svg';
 
 interface ServiceNavButtonProps {
   color: string;
@@ -17,9 +18,14 @@ const StyledServiceNavButton = styled.div.attrs((props: any) => ({
   background: ${(props) => props.color};
 `;
 
-const StyledContent = styled.div`
+const StyledNextContent = styled.div`
   text-align: right;
-  padding-top: 10px;
+  padding: 10px 0;
+`;
+
+const StyledPreviousContent = styled.div`
+  text-align: left;
+  padding: 10px 0;
 `;
 
 const StyledTitle = styled.div`
@@ -33,23 +39,55 @@ const StyledText = styled.div`
   letter-spacing: 0.24em;
 `;
 
-const StyledImg = styled.img`
-  margin-top: 15px;
+const StyledNextImg = styled.img`
+  margin-top: 17px;
+  width: 52px;
+  filter: drop-shadow(0px 4px 16px rgba(2, 23, 39, 0.25));
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+`;
+
+const StyledPreviousImg = styled.img`
+  margin-top: 17px;
+  width: 52px;
+`;
+
+const StyledPrevImgWrapper = styled.div`
+  text-align: right;
 `;
 
 export const ServiceNavButton = (props: ServiceNavButtonProps) => {
   return (
     <StyledServiceNavButton color={props.color}>
       <Row center={'xs'}>
-        <Col xs={9}>
-          <StyledContent>
-            <StyledTitle>{props.title}</StyledTitle>
-            <StyledText>Next</StyledText>
-          </StyledContent>
-        </Col>
-        <Col xs={3}>
-          <StyledImg src={RightArrow} />
-        </Col>
+        {props.next ? (
+          <>
+            <Col xs={9}>
+              <StyledNextContent>
+                <StyledTitle>{props.title}</StyledTitle>
+                <StyledText>Next</StyledText>
+              </StyledNextContent>
+            </Col>
+            <Col xs={3}>
+              <div>
+                <StyledNextImg src={LeftArrow} />
+              </div>
+            </Col>
+          </>
+        ) : (
+          <>
+            <Col xs={3}>
+              <StyledPrevImgWrapper>
+                <StyledPreviousImg src={LeftArrow} />
+              </StyledPrevImgWrapper>
+            </Col>
+            <Col xs={9}>
+              <StyledPreviousContent>
+                <StyledTitle>{props.title}</StyledTitle>
+                <StyledText>Previous</StyledText>
+              </StyledPreviousContent>
+            </Col>
+          </>
+        )}
       </Row>
     </StyledServiceNavButton>
   );
