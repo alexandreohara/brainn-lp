@@ -16,6 +16,7 @@ import { ServiceCard } from 'components/ServiceCard';
 import { ServiceAspect } from 'components/ServiceAspect';
 import { Colors, Gradients } from 'consts/colors';
 import BenchmarkIcon from 'assets/icons/BenchmarkIcon.svg';
+import { ServiceButton } from 'components/ServiceButton';
 
 export const Home = () => {
   return (
@@ -64,7 +65,9 @@ export const Home = () => {
         description={
           'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
         }
-      ></ServiceAspect>
+      />
+      <div style={{ width: '100%', height: '50px' }} />
+      <ServiceButton></ServiceButton>
       <Footer />
     </div>
   );
