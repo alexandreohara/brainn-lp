@@ -16,7 +16,7 @@ import { ServiceCard } from 'components/ServiceCard';
 import { ServiceAspect } from 'components/ServiceAspect';
 import { Colors, Gradients } from 'consts/colors';
 import BenchmarkIcon from 'assets/icons/BenchmarkIcon.svg';
-import { ServiceButton } from 'components/ServiceButton';
+import { ServiceNavButton } from 'components/ServiceNavButton';
 
 export const Home = () => {
   return (
@@ -67,7 +67,7 @@ export const Home = () => {
         }
       />
       <div style={{ width: '100%', height: '50px' }} />
-      <ServiceButton></ServiceButton>
+      <ServiceNavButton title={'Delivery'} color={Gradients.yellow} />
       <Footer />
     </div>
   );

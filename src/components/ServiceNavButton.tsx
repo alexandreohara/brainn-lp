@@ -1,12 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Colors, Gradients } from 'consts/colors';
+import { Colors } from 'consts/colors';
 import { Col, Row } from 'react-styled-flexboxgrid';
 import RightArrow from 'assets/icons/RightArrow.svg';
 
-const StyledServiceButton = styled.div`
+interface ServiceNavButtonProps {
+  color: string;
+  title: string;
+  next?: boolean;
+}
+
+const StyledServiceNavButton = styled.div.attrs((props: any) => ({
+  color: props.color,
+}))`
   width: 100%;
-  background: ${Gradients.yellow};
+  background: ${(props) => props.color};
 `;
 
 const StyledContent = styled.div`
@@ -29,13 +37,13 @@ const StyledImg = styled.img`
   margin-top: 15px;
 `;
 
-export const ServiceButton = () => {
+export const ServiceNavButton = (props: ServiceNavButtonProps) => {
   return (
-    <StyledServiceButton>
+    <StyledServiceNavButton color={props.color}>
       <Row center={'xs'}>
         <Col xs={9}>
           <StyledContent>
-            <StyledTitle>Delivery</StyledTitle>
+            <StyledTitle>{props.title}</StyledTitle>
             <StyledText>Next</StyledText>
           </StyledContent>
         </Col>
@@ -43,6 +51,6 @@ export const ServiceButton = () => {
           <StyledImg src={RightArrow} />
         </Col>
       </Row>
-    </StyledServiceButton>
+    </StyledServiceNavButton>
   );
 };
