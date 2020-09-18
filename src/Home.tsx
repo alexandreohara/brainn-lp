@@ -1,11 +1,22 @@
 import React from 'react';
 import './components/Navbar.css';
-import { Col } from 'react-flexbox-grid';
-
+import './Home.css';
+import { Col, Row } from 'react-flexbox-grid';
 import HomeCard from './components/Card';
-import Storming from './assets/images/Storming.svg';
-import Delivery from './assets/images/Delivery.svg';
-import Augmentation from './assets/images/Augmentation.svg';
+import Storming from './assets/Storming.svg';
+import Delivery from './assets/Delivery.svg';
+import Augmentation from './assets/Augmentation.svg';
+import TypeLogo from './assets/TypeLogo.png';
+import Suflex from './assets/Suflex.png';
+import Kovi from './assets/Kovi.png';
+import Cvc from './assets/Cvc.png';
+import Bxblue from './assets/Bxblue.png';
+import Bv from './assets/Bv.png';
+import Gupy from './assets/Gupy.png';
+import FindHotel from './assets/FindHotel.png';
+import Poliedro from './assets/Poliedro.png';
+import Pipefy from './assets/Pipefy.png';
+import Neo from './assets/Neo.png';
 import {
   HorizontalScroll,
   SliderCard,
@@ -17,6 +28,65 @@ import { Footer } from './components/Footer';
 export const Home = () => {
   return (
     <div style={{ backgroundColor: '#021727' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+        <div
+          style={{
+            color: 'white',
+            fontWeight: 'bold',
+            fontSize: '88px',
+            maxWidth: '752px',
+            marginLeft: '64px',
+            overflow: 'hidden',
+          }}
+        >
+          <h1>Lean digital innovation that works. </h1>
+        </div>
+        <Col xs={false} lg>
+          <img src={TypeLogo}></img>
+        </Col>
+      </div>
+      <HorizontalScroll>
+        <div
+          style={{
+            padding: '64px',
+            display: 'flex',
+            justifyContent: 'space-between',
+            width: '100%',
+            minWidth: '1200px',
+          }}
+        >
+          <div className={'column'}>
+            <img src={Kovi}></img>
+          </div>
+          <div className={'column'}>
+            <img src={Poliedro}></img>
+          </div>
+          <div className={'column'}>
+            <img src={FindHotel}></img>
+          </div>
+          <div className={'column'}>
+            <img src={Neo}></img>
+          </div>
+          <div className={'column'}>
+            <img src={Suflex}></img>
+          </div>
+          <div className={'column'}>
+            <img src={Cvc}></img>
+          </div>
+          <div className={'column'}>
+            <img src={Pipefy}></img>
+          </div>
+          <div className={'column'}>
+            <img src={Bxblue}></img>
+          </div>
+          <div className={'column'}>
+            <img src={Bv}></img>
+          </div>
+          <div className={'column'}>
+            <img src={Gupy}></img>
+          </div>
+        </div>
+      </HorizontalScroll>
       <div style={{ padding: '64px' }}>
         <HorizontalScroll>
           {SLIDER_CARDS.map((card, index) => (
@@ -35,6 +105,7 @@ export const Home = () => {
             return (
               <>
                 <HomeCard key={props.id} {...props} />;
+                <VerticalSeparator size={64} />
               </>
             );
           })}

@@ -24,7 +24,6 @@ const StyledTextColumn = styled(Col)`
   padding-right: 4%;
   padding-left: 4%;
   color: white;
-  /* background-color: red; */
 `;
 
 const StyledTitle = styled.div`
