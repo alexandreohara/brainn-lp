@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { Colors } from 'consts/colors';
 import { Col, Row } from 'react-styled-flexboxgrid';
-// import RightArrow from 'assets/icons/RightArrow.svg';
+import RightArrow from 'assets/icons/RightArrow.svg';
 import LeftArrow from 'assets/icons/LeftArrow.svg';
 
 interface ServiceNavButtonProps {
@@ -42,8 +42,6 @@ const StyledText = styled.div`
 const StyledNextImg = styled.img`
   margin-top: 17px;
   width: 52px;
-  filter: drop-shadow(0px 4px 16px rgba(2, 23, 39, 0.25));
-  transform: matrix(-1, 0, 0, 1, 0, 0);
 `;
 
 const StyledPreviousImg = styled.img`
@@ -69,7 +67,7 @@ export const ServiceNavButton = (props: ServiceNavButtonProps) => {
             </Col>
             <Col xs={3}>
               <div>
-                <StyledNextImg src={LeftArrow} />
+                <StyledNextImg src={RightArrow} />
               </div>
             </Col>
           </>
