@@ -15,6 +15,8 @@ const StyledServiceCard = styled.div`
   border-radius: 8px;
   background: ${Gradients.gray};
   max-width: 646px;
+  margin-left: auto;
+  margin-right: auto;
 `;
 
 const StyledContentWrapper = styled.div`
