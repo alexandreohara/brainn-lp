@@ -2,9 +2,9 @@ import React from 'react';
 import './components/Navbar.css';
 import { Col } from 'react-styled-flexboxgrid';
 import HomeCard from './components/Card';
-import Storming from './assets/Storming.svg';
-import Delivery from './assets/Delivery.svg';
-import Augmentation from './assets/Augmentation.svg';
+import Storming from './assets/images/Storming.svg';
+import Delivery from './assets/images/Delivery.svg';
+import Augmentation from './assets/images/Augmentation.svg';
 import {
   HorizontalScroll,
   SliderCard,

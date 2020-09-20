@@ -36,7 +36,7 @@ const StyledDescription = styled.div`
 export const ServiceAspect = (props: ServiceAspectProps) => {
   return (
     <StyledServiceAspect>
-      <img src={BenchmarkIcon} />
+      <img src={BenchmarkIcon} alt={'benchmark-icon'} />
       <StyledTitleWithLeftBorder borderColor={props.color}>
         {props.title}
       </StyledTitleWithLeftBorder>

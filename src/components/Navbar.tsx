@@ -1,7 +1,7 @@
 import { Colors } from 'consts/colors';
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import barsIcon from '../assets/icons/menu.png';
+import barsIcon from '../assets/icons/menu.svg';
 import { NavButton } from './NavButton';
 
 export const Navbar = () => {

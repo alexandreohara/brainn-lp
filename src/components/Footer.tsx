@@ -1,6 +1,6 @@
 import React from 'react';
 import { Col, Grid, Row } from 'react-styled-flexboxgrid';
-import WorldMap from 'assets/WorldMap.svg';
+import WorldMap from 'assets/images/WorldMap.svg';
 import styled from 'styled-components';
 import { MapPin } from './MapPin';
 import { Colors } from 'consts/colors';
