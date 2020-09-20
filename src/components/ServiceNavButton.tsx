@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Colors } from 'consts/colors';
-import { Col, Row } from 'react-styled-flexboxgrid';
+import { Col, Row } from 'react-flexbox-grid';
 import RightArrow from 'assets/icons/RightArrow.svg';
 import LeftArrow from 'assets/icons/LeftArrow.svg';
 

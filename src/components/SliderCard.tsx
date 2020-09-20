@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import React from 'react';
-import { Col } from 'react-styled-flexboxgrid';
 
 export const HorizontalScroll = styled.div`
   display: flex;
@@ -74,12 +73,16 @@ const DecorationLine = styled.div`
   background: white;
 `;
 
+const StyledContent = styled.div`
+  padding: 0 8px;
+`;
+
 export const SliderCard = (props: any) => {
   return (
     <MiniCard>
       <StyledLine {...props.decorationLine} />
       <HideLine />
-      <Col>
+      <StyledContent>
         <VerticalSeparator double />
         <VerticalSeparator double />
         <StyledTitle>{props.title}</StyledTitle>
@@ -89,7 +92,7 @@ export const SliderCard = (props: any) => {
         <VerticalSeparator double />
         <VerticalSeparator />
         <StyledBody>SEE MORE</StyledBody>
-      </Col>
+      </StyledContent>
     </MiniCard>
   );
 };
