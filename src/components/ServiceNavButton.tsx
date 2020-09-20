@@ -66,9 +66,7 @@ export const ServiceNavButton = (props: ServiceNavButtonProps) => {
               </StyledNextContent>
             </Col>
             <Col xs={3}>
-              <div>
-                <StyledNextImg src={RightArrow} />
-              </div>
+              <StyledNextImg src={RightArrow} />
             </Col>
           </>
         ) : (

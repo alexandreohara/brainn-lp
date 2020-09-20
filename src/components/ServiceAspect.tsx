@@ -12,7 +12,6 @@ interface ServiceAspectProps {
 
 const StyledServiceAspect = styled.div`
   padding: 8px;
-  max-width: 21vw;
 `;
 
 const StyledTitleWithLeftBorder = styled.div.attrs((props: any) => ({

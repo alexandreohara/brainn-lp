@@ -3,10 +3,18 @@ import React from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Storming from 'assets/images/Storming.svg';
+import { ServiceAspect } from 'components/ServiceAspect';
+import BenchmarkIcon from 'assets/icons/BenchmarkIcon.svg';
+import { Footer } from 'components/Footer';
+import { ServiceNavButton } from 'components/ServiceNavButton';
 
 const StyledHeader = styled.div`
   background: ${Gradients.lightBlue};
   padding: 0 164px;
+
+  @media (max-width: 767px) {
+    padding: 0 20px;
+  }
 `;
 
 const StyledServices = styled.div`
@@ -33,15 +41,16 @@ const StyledStormingShadow = styled.div`
 `;
 
 const StyledHeaderText = styled.div`
-  /* width: fit-content;
-  margin-left: auto;
-  margin-right: auto; */
   margin-bottom: 32px;
 `;
 
 const StyledContentWrapper = styled.div`
   background-color: ${Colors.black};
   padding: 0 164px;
+
+  @media (max-width: 767px) {
+    padding: 0 20px;
+  }
 `;
 
 const StyledPhrase = styled.div`
@@ -75,6 +84,22 @@ const StyledHowWeDoShadow = styled.div`
   left: 6px;
 `;
 
+const StyledServiceAspect = styled(Col)`
+  margin-bottom: 30px;
+`;
+
+const StyledFooterWrapper = styled.div`
+  background-color: #072337;
+`;
+
+const StyledNavButtonCol = styled(Col)`
+  padding: 0;
+`;
+
+const StyledNavButtonRow = styled(Row)`
+  margin: 0;
+`;
+
 const StormingPage = () => {
   return (
     <>
@@ -102,13 +127,93 @@ const StormingPage = () => {
             The idea that works.
           </StyledHighlightedPhrase>
         </StyledPhrase>
+
         <StyledHowWeDoWrapper>
           <StyledHowWeDoPhrase>
             HOW WE DO
             <StyledHowWeDoShadow>HOW WE DO</StyledHowWeDoShadow>
           </StyledHowWeDoPhrase>
         </StyledHowWeDoWrapper>
+
+        <Row>
+          <StyledServiceAspect xs={12} sm={6} md={4}>
+            <ServiceAspect
+              color={Colors.purple}
+              icon={BenchmarkIcon}
+              title={'Benchmark'}
+              description={
+                'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
+              }
+            />
+          </StyledServiceAspect>
+          <StyledServiceAspect xs={12} sm={6} md={4}>
+            <ServiceAspect
+              color={Colors.purple}
+              icon={BenchmarkIcon}
+              title={'Benchmark'}
+              description={
+                'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
+              }
+            />
+          </StyledServiceAspect>
+          <StyledServiceAspect xs={12} sm={6} md={4}>
+            <ServiceAspect
+              color={Colors.purple}
+              icon={BenchmarkIcon}
+              title={'Benchmark'}
+              description={
+                'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
+              }
+            />
+          </StyledServiceAspect>
+        </Row>
+
+        <Row>
+          <StyledServiceAspect xs={12} sm={6} md={4}>
+            <ServiceAspect
+              color={Colors.purple}
+              icon={BenchmarkIcon}
+              title={'Benchmark'}
+              description={
+                'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
+              }
+            />
+          </StyledServiceAspect>
+          <StyledServiceAspect xs={12} sm={6} md={4}>
+            <ServiceAspect
+              color={Colors.purple}
+              icon={BenchmarkIcon}
+              title={'Benchmark'}
+              description={
+                'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
+              }
+            />
+          </StyledServiceAspect>
+          <StyledServiceAspect xs={12} sm={6} md={4}>
+            <ServiceAspect
+              color={Colors.purple}
+              icon={BenchmarkIcon}
+              title={'Benchmark'}
+              description={
+                'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
+              }
+            />
+          </StyledServiceAspect>
+        </Row>
       </StyledContentWrapper>
+
+      <StyledNavButtonRow>
+        <StyledNavButtonCol xs={6}>
+          <ServiceNavButton title={'Augmentation'} color={Gradients.green} />
+        </StyledNavButtonCol>
+        <StyledNavButtonCol xs={6}>
+          <ServiceNavButton title={'Delivery'} color={Gradients.yellow} next />
+        </StyledNavButtonCol>
+      </StyledNavButtonRow>
+
+      <StyledFooterWrapper>
+        <Footer />
+      </StyledFooterWrapper>
     </>
   );
 };
