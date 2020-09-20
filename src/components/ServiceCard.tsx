@@ -53,17 +53,11 @@ export const ServiceCard = (props: ServiceCardProps) => {
       <Row>
         <Col xs={10}>
           <StyledContentWrapper>
-            <Col>
-              <Row>
-                <StyledTitle>{props.title}</StyledTitle>
-              </Row>
-              <Row>
-                <StyledDescription>
-                  {props.description + ' '}
-                  <b>{props.strongLastPhrase ?? ''}</b>
-                </StyledDescription>
-              </Row>
-            </Col>
+            <StyledTitle>{props.title}</StyledTitle>
+            <StyledDescription>
+              {props.description + ' '}
+              <b>{props.strongLastPhrase ?? ''}</b>
+            </StyledDescription>
           </StyledContentWrapper>
         </Col>
         <Col xs={2}>
