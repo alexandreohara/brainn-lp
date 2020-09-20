@@ -3,9 +3,9 @@ import './components/Navbar.css';
 import './Home.css';
 import { Col, Row } from 'react-flexbox-grid';
 import HomeCard from './components/Card';
-import Storming from './assets/Storming.svg';
-import Delivery from './assets/Delivery.svg';
-import Augmentation from './assets/Augmentation.svg';
+import Storming from './assets/images/Storming.svg';
+import Delivery from './assets/images/Delivery.svg';
+import Augmentation from './assets/images/Augmentation.svg';
 import TypeLogo from './assets/TypeLogo.png';
 import Suflex from './assets/Suflex.png';
 import Kovi from './assets/Kovi.png';
@@ -25,26 +25,39 @@ import {
 } from './components';
 import { Footer } from './components/Footer';
 import styled from 'styled-components';
+import { Colors } from 'consts/colors';
+
+const StyledHome = styled.div`
+  background-color: ${Colors.black};
+`;
+
+const StyledHeaderTitle = styled.div`
+  padding: 64px;
+  font-size: 88px;
+  font-weight: bold;
+  color: white;
+
+  @media (max-width: 767px) {
+    font-size: 44px;
+  }
+`;
+
+const StyledImage = styled.div`
+  text-align: right;
+`;
 
 export const Home = () => {
   return (
-    <div style={{ backgroundColor: '#021727' }}>
-      <Row>
+    <StyledHome>
+      <Row middle={'xs'}>
         <Col xs={4} sm={6}>
-          <div
-            style={{
-              color: 'white',
-              fontWeight: 'bold',
-              fontSize: '72px',
-              marginLeft: '64px',
-            }}
-          >
-            <h1>Lean digital innovation that works. </h1>
-          </div>
+          <StyledHeaderTitle>
+            Lean digital innovation that works.
+          </StyledHeaderTitle>
         </Col>
         <Col xs={8} sm={6}>
           <StyledImage>
-            <img src={TypeLogo}></img>
+            <img src={TypeLogo} width={'100%'} />
           </StyledImage>
         </Col>
       </Row>
@@ -115,15 +128,9 @@ export const Home = () => {
         </Col>
       </div>
       <Footer />
-    </div>
+    </StyledHome>
   );
 };
-
-const StyledImage = styled.div`
-  width: 100%;
-  max-width: 800px;
-  min-width: 300px;
-`;
 
 const cardSections = [
   {
