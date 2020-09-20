@@ -4,6 +4,7 @@ import './App.css';
 import { Home } from './Home';
 import { Navbar } from './components/Navbar';
 import Services from 'pages/Services';
+import StormingPage from 'pages/Storming';
 
 const App = () => {
   return (
@@ -13,6 +14,7 @@ const App = () => {
         <Switch>
           <Route exact path={'/'} component={Home} />
           <Route exact path={'/services'} component={Services} />
+          <Route exact path={'/services/storming'} component={StormingPage} />
         </Switch>
       </Router>
     </React.Fragment>
