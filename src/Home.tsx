@@ -24,27 +24,30 @@ import {
   HorizontalSeparator,
 } from './components';
 import { Footer } from './components/Footer';
+import styled from 'styled-components';
 
 export const Home = () => {
   return (
     <div style={{ backgroundColor: '#021727' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-        <div
-          style={{
-            color: 'white',
-            fontWeight: 'bold',
-            fontSize: '88px',
-            maxWidth: '752px',
-            marginLeft: '64px',
-            overflow: 'hidden',
-          }}
-        >
-          <h1>Lean digital innovation that works. </h1>
-        </div>
-        <Col xs={false} lg>
-          <img src={TypeLogo}></img>
+      <Row>
+        <Col xs={4} sm={6}>
+          <div
+            style={{
+              color: 'white',
+              fontWeight: 'bold',
+              fontSize: '72px',
+              marginLeft: '64px',
+            }}
+          >
+            <h1>Lean digital innovation that works. </h1>
+          </div>
         </Col>
-      </div>
+        <Col xs={8} sm={6}>
+          <StyledImage>
+            <img src={TypeLogo}></img>
+          </StyledImage>
+        </Col>
+      </Row>
       <HorizontalScroll>
         <div
           style={{
@@ -115,6 +118,12 @@ export const Home = () => {
     </div>
   );
 };
+
+const StyledImage = styled.div`
+  width: 100%;
+  max-width: 800px;
+  min-width: 300px;
+`;
 
 const cardSections = [
   {
