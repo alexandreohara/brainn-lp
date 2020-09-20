@@ -1,6 +1,6 @@
 import React from 'react';
 import './components/Navbar.css';
-import { Col } from 'react-styled-flexboxgrid';
+import { Col, Row } from 'react-styled-flexboxgrid';
 import HomeCard from './components/Card';
 import Storming from './assets/images/Storming.svg';
 import Delivery from './assets/images/Delivery.svg';
@@ -16,6 +16,7 @@ import { ServiceCard } from 'components/ServiceCard';
 import { ServiceAspect } from 'components/ServiceAspect';
 import { Colors, Gradients } from 'consts/colors';
 import BenchmarkIcon from 'assets/icons/BenchmarkIcon.svg';
+import { ServiceNavButton } from 'components/ServiceNavButton';
 
 export const Home = () => {
   return (
@@ -64,7 +65,18 @@ export const Home = () => {
         description={
           'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
         }
-      ></ServiceAspect>
+      />
+
+      <div style={{ height: '40px', width: '100%' }} />
+
+      <Row style={{ margin: '0' }}>
+        <Col xs={6} style={{ padding: '0' }}>
+          <ServiceNavButton title={'Augmentation'} color={Gradients.green} />
+        </Col>
+        <Col xs={6} style={{ padding: '0' }}>
+          <ServiceNavButton title={'Delivery'} color={Gradients.yellow} next />
+        </Col>
+      </Row>
       <Footer />
     </div>
   );
