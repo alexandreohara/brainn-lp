@@ -1,6 +1,6 @@
 import { Colors, Gradients } from 'consts/colors';
 import React from 'react';
-import { Col, Row } from 'react-styled-flexboxgrid';
+import { Col, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import RightArrow from 'assets/icons/RightArrow.svg';
 
@@ -53,17 +53,11 @@ export const ServiceCard = (props: ServiceCardProps) => {
       <Row>
         <Col xs={10}>
           <StyledContentWrapper>
-            <Col>
-              <Row>
-                <StyledTitle>{props.title}</StyledTitle>
-              </Row>
-              <Row>
-                <StyledDescription>
-                  {props.description + ' '}
-                  <b>{props.strongLastPhrase ?? ''}</b>
-                </StyledDescription>
-              </Row>
-            </Col>
+            <StyledTitle>{props.title}</StyledTitle>
+            <StyledDescription>
+              {props.description + ' '}
+              <b>{props.strongLastPhrase ?? ''}</b>
+            </StyledDescription>
           </StyledContentWrapper>
         </Col>
         <Col xs={2}>

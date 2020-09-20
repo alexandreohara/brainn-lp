@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import { Col } from 'react-styled-flexboxgrid';
+import { Col } from 'react-flexbox-grid';
 
 interface CardProps {
   deg: number;

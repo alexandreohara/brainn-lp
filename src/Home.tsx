@@ -1,6 +1,7 @@
 import React from 'react';
 import './components/Navbar.css';
-import { Col, Row } from 'react-styled-flexboxgrid';
+import { Col, Row } from 'react-flexbox-grid';
+
 import HomeCard from './components/Card';
 import Storming from './assets/images/Storming.svg';
 import Delivery from './assets/images/Delivery.svg';
