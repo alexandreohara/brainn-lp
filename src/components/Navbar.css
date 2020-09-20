@@ -52,8 +52,14 @@
 }
 
 .nav-links:hover {
-  border-bottom: 3px solid #fff;
+  color: #00BEFB;
+  border-bottom: 1px solid #00BEFB;
   transition: all 0.2s ease-out;
+}
+
+.nav-links:focus {
+  color: #00BEFB;
+  border-bottom: 1px solid #00BEFB;
 }
 
 @media screen and (max-width: 540px) {
