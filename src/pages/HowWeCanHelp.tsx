@@ -19,11 +19,19 @@ const StyledHeader = styled.div`
   font-weight: bold;
   color: ${Colors.white};
   overflow-x: hidden;
-  padding-left: 30px;
+  margin-left: 64px;
+  margin-top: 300px;
 
   @media (max-width: 767px) {
     font-size: 44px;
     padding: 40px 20px;
+    margin-top: 0;
+  }
+`;
+
+const StyledInlineHeader = styled.div`
+  @media (max-width: 767px) {
+    display: inline;
   }
 `;
 
@@ -87,10 +95,14 @@ const HowWeCanHelp = () => {
     <>
       <StyledPageWrapper>
         <Row>
-          <Col xs={12} sm={5} style={{ display: 'flex', alignItems: 'center' }}>
-            <StyledHeader>How we can help</StyledHeader>
+          <Col sm={12} md={5} style={{ display: 'flex' }}>
+            <StyledHeader>
+              <StyledInlineHeader>How </StyledInlineHeader>
+              <StyledInlineHeader>we can </StyledInlineHeader>
+              <StyledInlineHeader>help </StyledInlineHeader>
+            </StyledHeader>
           </Col>
-          <Col xs={12} sm={7}>
+          <Col sm={12} md={7}>
             <StyledServiceAspects>
               <StyledAspectWrapper>
                 <ServiceAspect
@@ -136,6 +148,7 @@ const HowWeCanHelp = () => {
                 <StyledButtonTitle>Interested?</StyledButtonTitle>
                 <StyledButtonTitle>Meet our process</StyledButtonTitle>
                 <StyledSeeMore>
+                  See more
                   <StyledVectorRight src={VectorRight} alt={'vector-right'} />
                 </StyledSeeMore>
               </StyledButton>
