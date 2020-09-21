@@ -56,7 +56,7 @@ const StyledPrevImgWrapper = styled.div`
 export const ServiceNavButton = (props: ServiceNavButtonProps) => {
   return (
     <StyledServiceNavButton color={props.color}>
-      <Row center={'xs'}>
+      <Row>
         {props.next ? (
           <>
             <Col xs={9}>

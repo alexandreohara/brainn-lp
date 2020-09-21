@@ -4,7 +4,7 @@ import './App.css';
 import { Home } from './Home';
 import { Navbar } from './components/Navbar';
 import Services from 'pages/Services';
-import StormingPage from 'pages/Storming';
+import StormingPage from 'pages/StormingPage';
 
 const App = () => {
   return (

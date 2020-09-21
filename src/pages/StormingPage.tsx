@@ -4,9 +4,14 @@ import { Col, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Storming from 'assets/images/Storming.svg';
 import { ServiceAspect } from 'components/ServiceAspect';
-import BenchmarkIcon from 'assets/icons/BenchmarkIcon.svg';
 import { Footer } from 'components/Footer';
 import { ServiceNavButton } from 'components/ServiceNavButton';
+import Benchmark from 'assets/icons/Benchmark.svg';
+import Inception from 'assets/icons/Inception.svg';
+import Roadmap from 'assets/icons/Roadmap.svg';
+import Architecture from 'assets/icons/Architecture.svg';
+import Prototype from 'assets/icons/Prototype.svg';
+import Validation from 'assets/icons/Validation.svg';
 
 const StyledHeader = styled.div`
   background: ${Gradients.lightBlue};
@@ -20,6 +25,10 @@ const StyledHeader = styled.div`
 const StyledServices = styled.div`
   color: ${Colors.white};
   font-size: 28px;
+
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
 `;
 
 const StyledStorming = styled.div`
@@ -27,6 +36,10 @@ const StyledStorming = styled.div`
   font-size: 80px;
   font-weight: bold;
   position: relative;
+
+  @media (max-width: 767px) {
+    font-size: 68px;
+  }
 `;
 
 const StyledStormingShadow = styled.div`
@@ -46,7 +59,7 @@ const StyledHeaderText = styled.div`
 
 const StyledContentWrapper = styled.div`
   background-color: ${Colors.black};
-  padding: 0 164px;
+  padding: 0 164px 120px 164px;
 
   @media (max-width: 767px) {
     padding: 0 20px;
@@ -90,6 +103,7 @@ const StyledServiceAspect = styled(Col)`
 
 const StyledFooterWrapper = styled.div`
   background-color: #072337;
+  padding-top: 80px;
 `;
 
 const StyledNavButtonCol = styled(Col)`
@@ -139,7 +153,7 @@ const StormingPage = () => {
           <StyledServiceAspect xs={12} sm={6} md={4}>
             <ServiceAspect
               color={Colors.purple}
-              icon={BenchmarkIcon}
+              icon={Benchmark}
               title={'Benchmark'}
               description={
                 'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
@@ -148,21 +162,21 @@ const StormingPage = () => {
           </StyledServiceAspect>
           <StyledServiceAspect xs={12} sm={6} md={4}>
             <ServiceAspect
-              color={Colors.purple}
-              icon={BenchmarkIcon}
-              title={'Benchmark'}
+              color={Colors.yellow}
+              icon={Inception}
+              title={'Inception'}
               description={
-                'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
+                "There's always an infinite number of good possibilities for solving problems. We should explore the most viable options, focusing on designing loveable experiences."
               }
             />
           </StyledServiceAspect>
           <StyledServiceAspect xs={12} sm={6} md={4}>
             <ServiceAspect
-              color={Colors.purple}
-              icon={BenchmarkIcon}
-              title={'Benchmark'}
+              color={Colors.blue}
+              icon={Roadmap}
+              title={'Roadmap'}
               description={
-                'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
+                'Planning a digital product means getting the hands dirty. Auditing contents, performing heuristic analysis and building a beautiful roadmap that will make everything clear.'
               }
             />
           </StyledServiceAspect>
@@ -171,31 +185,31 @@ const StormingPage = () => {
         <Row>
           <StyledServiceAspect xs={12} sm={6} md={4}>
             <ServiceAspect
-              color={Colors.purple}
-              icon={BenchmarkIcon}
-              title={'Benchmark'}
+              color={Colors.pink}
+              icon={Architecture}
+              title={'Architecture'}
               description={
-                'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
+                'To be ready to scale, we need to think carefully and with a domain-driven design mindset. We must be careful to avoid pitfalls to scale faster later.'
               }
             />
           </StyledServiceAspect>
           <StyledServiceAspect xs={12} sm={6} md={4}>
             <ServiceAspect
-              color={Colors.purple}
-              icon={BenchmarkIcon}
-              title={'Benchmark'}
+              color={Colors.lightBlue}
+              icon={Prototype}
+              title={'Prototype'}
               description={
-                'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
+                "Prototyping is the most efficient way to build a shared product vision. It's fast, valuable, and everybody gets on the same page before any design library is born."
               }
             />
           </StyledServiceAspect>
           <StyledServiceAspect xs={12} sm={6} md={4}>
             <ServiceAspect
-              color={Colors.purple}
-              icon={BenchmarkIcon}
-              title={'Benchmark'}
+              color={Colors.green}
+              icon={Validation}
+              title={'Validation'}
               description={
-                'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
+                'Before building something new, it is necessary to obtain quick feedback from users and stakeholders to validate that we are on the right track and ready to adapt.'
               }
             />
           </StyledServiceAspect>
