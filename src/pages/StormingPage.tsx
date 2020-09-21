@@ -129,7 +129,7 @@ const StormingPage = () => {
             </StyledHeaderText>
           </Col>
           <Col xs={6}>
-            <img src={Storming} width={'100%'} />
+            <img src={Storming} width={'100%'} alt={'storming'} />
           </Col>
         </Row>
       </StyledHeader>

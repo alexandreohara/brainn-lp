@@ -128,7 +128,7 @@ const AugmentationPage = () => {
             </StyledHeaderText>
           </Col>
           <Col xs={6}>
-            <img src={Augmentation} width={'100%'} />
+            <img src={Augmentation} width={'100%'} alt={'augmentation'} />
           </Col>
         </Row>
       </StyledHeader>

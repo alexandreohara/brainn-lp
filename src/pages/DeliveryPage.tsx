@@ -129,7 +129,7 @@ const DeliveryPage = () => {
             </StyledHeaderText>
           </Col>
           <Col xs={6}>
-            <img src={Delivery} width={'100%'} />
+            <img src={Delivery} width={'100%'} alt={'delivery'} />
           </Col>
         </Row>
       </StyledHeader>
