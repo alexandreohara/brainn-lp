@@ -1,6 +1,6 @@
 import { Footer } from 'components/Footer';
 import { ServiceAspect } from 'components/ServiceAspect';
-import { Colors } from 'consts/colors';
+import { Colors, Gradients } from 'consts/colors';
 import React from 'react';
 import { Col, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
@@ -8,6 +8,7 @@ import Rocket from 'assets/icons/Rocket.svg';
 import DataPurple from 'assets/icons/DataPurple.svg';
 import Prototype from 'assets/icons/Prototype.svg';
 import Architecture from 'assets/icons/Architecture.svg';
+import VectorRight from 'assets/icons/VectorRight.svg';
 
 const StyledPageWrapper = styled.div`
   background-color: ${Colors.black};
@@ -28,6 +29,8 @@ const StyledHeader = styled.div`
 
 const StyledServiceAspects = styled.div`
   background-color: #031d30;
+  padding-bottom: 40px;
+  padding-top: 32px;
 `;
 
 const StyledAspectWrapper = styled.div`
@@ -36,6 +39,47 @@ const StyledAspectWrapper = styled.div`
 
 const StyledFooterWrapper = styled.div`
   background-color: #072337;
+`;
+
+const StyledButton = styled.div`
+  background: ${Gradients.blue};
+  margin: 20px 64px;
+  padding: 48px;
+  border-radius: 16px;
+  text-align: center;
+  color: ${Colors.white};
+
+  @media (max-width: 767px) {
+    padding: 22px;
+  }
+`;
+
+const StyledButtonTitle = styled.div`
+  font-size: 48px;
+  font-weight: bold;
+
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
+`;
+
+const StyledSeeMore = styled.div`
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 32px;
+
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
+`;
+
+const StyledVectorRight = styled.img`
+  width: 12px;
+  margin-left: 12px;
+
+  @media (max-width: 767px) {
+    width: 8px;
+  }
 `;
 
 const HowWeCanHelp = () => {
@@ -78,7 +122,6 @@ const HowWeCanHelp = () => {
                   }
                 />
               </StyledAspectWrapper>
-
               <StyledAspectWrapper>
                 <ServiceAspect
                   color={Colors.pink}
@@ -89,6 +132,13 @@ const HowWeCanHelp = () => {
                   }
                 />
               </StyledAspectWrapper>
+              <StyledButton>
+                <StyledButtonTitle>Interested?</StyledButtonTitle>
+                <StyledButtonTitle>Meet our process</StyledButtonTitle>
+                <StyledSeeMore>
+                  <StyledVectorRight src={VectorRight} alt={'vector-right'} />
+                </StyledSeeMore>
+              </StyledButton>
             </StyledServiceAspects>
           </Col>
         </Row>
