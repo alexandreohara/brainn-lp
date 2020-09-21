@@ -32,10 +32,23 @@ const StyledHome = styled.div`
 `;
 
 const StyledHeaderTitle = styled.div`
-  padding: 64px;
+  padding-left: 64px;
+  padding-top: 40px;
   font-size: 88px;
   font-weight: bold;
   color: white;
+
+  @media (max-width: 767px) {
+    font-size: 44px;
+  }
+`;
+
+const StyledCaption = styled.div`
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  opacity: 0.24;
 
   @media (max-width: 767px) {
     font-size: 44px;
@@ -64,7 +77,7 @@ export const Home = () => {
       <HorizontalScroll>
         <div
           style={{
-            padding: '64px',
+            padding: '40px',
             display: 'flex',
             justifyContent: 'space-between',
             width: '100%',
@@ -103,6 +116,8 @@ export const Home = () => {
           </div>
         </div>
       </HorizontalScroll>
+      <StyledCaption>Trusted by global innovators</StyledCaption>
+      <StyledHeaderTitle>How we can help</StyledHeaderTitle>
       <div style={{ padding: '64px' }}>
         <HorizontalScroll>
           {SLIDER_CARDS.map((card, index) => (
