@@ -6,17 +6,17 @@ import HomeCard from './components/Card';
 import Storming from './assets/images/Storming.svg';
 import Delivery from './assets/images/Delivery.svg';
 import Augmentation from './assets/images/Augmentation.svg';
-import TypeLogo from './assets/TypeLogo.png';
-import Suflex from './assets/Suflex.png';
-import Kovi from './assets/Kovi.png';
-import Cvc from './assets/Cvc.png';
-import Bxblue from './assets/Bxblue.png';
-import Bv from './assets/Bv.png';
-import Gupy from './assets/Gupy.png';
-import FindHotel from './assets/FindHotel.png';
-import Poliedro from './assets/Poliedro.png';
-import Pipefy from './assets/Pipefy.png';
-import Neo from './assets/Neo.png';
+import TypeLogo from './assets/images/TypeLogo.png';
+import Suflex from './assets/images/Suflex.png';
+import Kovi from './assets/images/Kovi.png';
+import Cvc from './assets/images/Cvc.png';
+import Bxblue from './assets/images/Bxblue.png';
+import Bv from './assets/images/Bv.png';
+import Gupy from './assets/images/Gupy.png';
+import FindHotel from './assets/images/FindHotel.png';
+import Poliedro from './assets/images/Poliedro.png';
+import Pipefy from './assets/images/Pipefy.png';
+import Neo from './assets/images/Neo.png';
 import {
   HorizontalScroll,
   SliderCard,
@@ -70,7 +70,7 @@ export const Home = () => {
         </Col>
         <Col xs={8} sm={6}>
           <StyledImage>
-            <img src={TypeLogo} width={'100%'} />
+            <img src={TypeLogo} alt={''} width={'100%'} />
           </StyledImage>
         </Col>
       </Row>
@@ -85,34 +85,34 @@ export const Home = () => {
           }}
         >
           <div className={'column'}>
-            <img src={Kovi}></img>
+            <img src={Kovi} alt={'Kovi'}></img>
           </div>
           <div className={'column'}>
-            <img src={Poliedro}></img>
+            <img src={Poliedro} alt={'Poliedro'}></img>
           </div>
           <div className={'column'}>
-            <img src={FindHotel}></img>
+            <img src={FindHotel} alt={'Find Hotel'}></img>
           </div>
           <div className={'column'}>
-            <img src={Neo}></img>
+            <img src={Neo} alt={'Neo'}></img>
           </div>
           <div className={'column'}>
-            <img src={Suflex}></img>
+            <img src={Suflex} alt={'Suflex'}></img>
           </div>
           <div className={'column'}>
-            <img src={Cvc}></img>
+            <img src={Cvc} alt={'CVC'}></img>
           </div>
           <div className={'column'}>
-            <img src={Pipefy}></img>
+            <img src={Pipefy} alt={'Pipefy'}></img>
           </div>
           <div className={'column'}>
-            <img src={Bxblue}></img>
+            <img src={Bxblue} alt={'BxBlue'}></img>
           </div>
           <div className={'column'}>
-            <img src={Bv}></img>
+            <img src={Bv} alt={'BV'}></img>
           </div>
           <div className={'column'}>
-            <img src={Gupy}></img>
+            <img src={Gupy} alt={'Gupy'}></img>
           </div>
         </div>
       </HorizontalScroll>
