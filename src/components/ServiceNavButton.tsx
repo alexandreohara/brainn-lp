@@ -4,10 +4,13 @@ import { Colors } from 'consts/colors';
 import { Col, Row } from 'react-flexbox-grid';
 import RightArrow from 'assets/icons/RightArrow.svg';
 import LeftArrow from 'assets/icons/LeftArrow.svg';
+import { Link } from 'react-router-dom';
 
 interface ServiceNavButtonProps {
   color: string;
   title: string;
+  nextServiceUrl?: string;
+  previousServiceUrl?: string;
   next?: boolean;
 }
 
@@ -53,12 +56,16 @@ const StyledPrevImgWrapper = styled.div`
   text-align: right;
 `;
 
+const StyledLink = styled(Link)`
+  text-decoration: none;
+`;
+
 export const ServiceNavButton = (props: ServiceNavButtonProps) => {
   return (
     <StyledServiceNavButton color={props.color}>
-      <Row>
-        {props.next ? (
-          <>
+      {props.next ? (
+        <StyledLink to={props.nextServiceUrl ?? ''}>
+          <Row>
             <Col xs={9}>
               <StyledNextContent>
                 <StyledTitle>{props.title}</StyledTitle>
@@ -68,9 +75,11 @@ export const ServiceNavButton = (props: ServiceNavButtonProps) => {
             <Col xs={3}>
               <StyledNextImg src={RightArrow} />
             </Col>
-          </>
-        ) : (
-          <>
+          </Row>
+        </StyledLink>
+      ) : (
+        <StyledLink to={props.previousServiceUrl ?? ''}>
+          <Row>
             <Col xs={3}>
               <StyledPrevImgWrapper>
                 <StyledPreviousImg src={LeftArrow} />
@@ -82,9 +91,9 @@ export const ServiceNavButton = (props: ServiceNavButtonProps) => {
                 <StyledText>Previous</StyledText>
               </StyledPreviousContent>
             </Col>
-          </>
-        )}
-      </Row>
+          </Row>
+        </StyledLink>
+      )}
     </StyledServiceNavButton>
   );
 };

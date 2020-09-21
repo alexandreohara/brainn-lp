@@ -218,10 +218,19 @@ const StormingPage = () => {
 
       <StyledNavButtonRow>
         <StyledNavButtonCol xs={6}>
-          <ServiceNavButton title={'Augmentation'} color={Gradients.green} />
+          <ServiceNavButton
+            title={'Augmentation'}
+            color={Gradients.green}
+            previousServiceUrl={'/services/augmentation'}
+          />
         </StyledNavButtonCol>
         <StyledNavButtonCol xs={6}>
-          <ServiceNavButton title={'Delivery'} color={Gradients.yellow} next />
+          <ServiceNavButton
+            title={'Delivery'}
+            color={Gradients.yellow}
+            next
+            nextServiceUrl={'/services/delivery'}
+          />
         </StyledNavButtonCol>
       </StyledNavButtonRow>
 

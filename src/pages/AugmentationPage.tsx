@@ -185,10 +185,19 @@ const AugmentationPage = () => {
 
       <StyledNavButtonRow>
         <StyledNavButtonCol xs={6}>
-          <ServiceNavButton title={'Delivery'} color={Gradients.yellow} />
+          <ServiceNavButton
+            title={'Delivery'}
+            color={Gradients.yellow}
+            previousServiceUrl={'/services/delivery'}
+          />
         </StyledNavButtonCol>
         <StyledNavButtonCol xs={6}>
-          <ServiceNavButton title={'Storming'} color={Gradients.blue} next />
+          <ServiceNavButton
+            title={'Storming'}
+            color={Gradients.blue}
+            next
+            nextServiceUrl={'/services/storming'}
+          />
         </StyledNavButtonCol>
       </StyledNavButtonRow>
 

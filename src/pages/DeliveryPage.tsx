@@ -218,13 +218,18 @@ const DeliveryPage = () => {
 
       <StyledNavButtonRow>
         <StyledNavButtonCol xs={6}>
-          <ServiceNavButton title={'Storming'} color={Gradients.blue} />
+          <ServiceNavButton
+            title={'Storming'}
+            color={Gradients.blue}
+            previousServiceUrl={'/services/storming'}
+          />
         </StyledNavButtonCol>
         <StyledNavButtonCol xs={6}>
           <ServiceNavButton
             title={'Augmentation'}
             color={Gradients.green}
             next
+            nextServiceUrl={'/services/augmentation'}
           />
         </StyledNavButtonCol>
       </StyledNavButtonRow>
