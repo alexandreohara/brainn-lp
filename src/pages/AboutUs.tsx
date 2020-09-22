@@ -98,8 +98,10 @@ const StyledWritingWallPostitPhoto = styled.div`
   }
 `;
 
-const StyledProductCanvasZoomed = styled.div`
+const StyledProductCanvasZoomed = styled.img`
   display: none;
+  max-width: 419px;
+  width: 100%;
 
   @media (max-width: 898px) {
     display: inline;
@@ -107,8 +109,10 @@ const StyledProductCanvasZoomed = styled.div`
   }
 `;
 
-const StyledWritingWallPostitZoomed = styled.div`
+const StyledWritingWallPostitZoomed = styled.img`
   display: none;
+  max-width: 419px;
+  width: 100%;
 
   @media (max-width: 898px) {
     display: inline;
@@ -139,13 +143,10 @@ const AboutUs = () => {
         <StyledProductCanvasPhoto>
           <img src={ProductCanvasPhoto} alt={'product-canvas-photo'} />
         </StyledProductCanvasPhoto>
-        <StyledProductCanvasZoomed>
-          <img
-            src={ProductCanvasZoomed}
-            alt={'product-canvas-zoomed'}
-            width={'100%'}
-          />
-        </StyledProductCanvasZoomed>
+        <StyledProductCanvasZoomed
+          src={ProductCanvasZoomed}
+          alt={'product-canvas-zoomed'}
+        />
         <StyledMeetingPhoto>
           <img src={MeetingPhoto} alt={'meeting-photo'} />
         </StyledMeetingPhoto>
@@ -161,13 +162,10 @@ const AboutUs = () => {
         <StyledWritingWallPostitPhoto>
           <img src={WritingWallPostitPhoto} alt={'writing-wall-postit-photo'} />
         </StyledWritingWallPostitPhoto>
-        <StyledWritingWallPostitZoomed>
-          <img
-            src={WritingWallPostitZoomed}
-            alt={'writing-wall-postit-zoomed'}
-            width={'100%'}
-          />
-        </StyledWritingWallPostitZoomed>
+        <StyledWritingWallPostitZoomed
+          src={WritingWallPostitZoomed}
+          alt={'writing-wall-postit-zoomed'}
+        />
       </StyledPhotosRow>
     </>
   );
