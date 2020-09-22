@@ -1,45 +1,119 @@
 import React from 'react';
-import { Col, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import BoardPostitPhoto from 'assets/images/BoardPostitPhoto.png';
 import CelebratingPhoto from 'assets/images/CelebratingPhoto.png';
 import CodingPhoto from 'assets/images/CodingPhoto.png';
 import MeetingPhoto from 'assets/images/MeetingPhoto.png';
 import ProductCanvasPhoto from 'assets/images/ProductCanvasPhoto.png';
+import ProductCanvasZoomed from 'assets/images/ProductCanvasZoomed.png';
 import WritingWallPostitPhoto from 'assets/images/WritingWallPostitPhoto.png';
+import WritingWallPostitZoomed from 'assets/images/WritingWallPostitZoomed.png';
 
 const StyledHeader = styled.div`
   margin: 80px 288px 37px;
   text-align: center;
+
+  @media (max-width: 1209px) {
+    margin: 80px 240px 37px;
+  }
+
+  @media (max-width: 898px) {
+    margin: 80px 16px 37px;
+  }
 `;
 
 const StyledHeaderTitle = styled.div`
   font-size: 88px;
   font-weight: bold;
+
+  @media (max-width: 898px) {
+    font-size: 40px;
+  }
 `;
 
 const StyledHeaderText = styled.div`
   font-size: 36px;
   padding-top: 32px;
+
+  @media (max-width: 898px) {
+    font-size: 24px;
+  }
 `;
 
-const StyledRow = styled(Row)`
-  margin: 0;
-`;
-
-const StyledCol = styled(Col)`
-  padding: 0;
-`;
-
-const StyledImgWrapper = styled.div`
-  overflow: hidden;
+const StyledPhotosRow = styled.div`
   text-align: center;
 `;
 
-const StyledMiddleImgWrapper = styled.div`
-  overflow: hidden;
+const StyledBoardPostitPhoto = styled.div`
   text-align: center;
-  margin: 0 8px;
+  display: inline-block;
+  margin-right: 8px;
+
+  @media (max-width: 898px) {
+    display: none;
+  }
+`;
+
+const StyledProductCanvasPhoto = styled.div`
+  display: inline-block;
+
+  @media (max-width: 898px) {
+    display: none;
+  }
+`;
+
+const StyledMeetingPhoto = styled.div`
+  display: inline-block;
+  margin-left: 8px;
+
+  @media (max-width: 1439px) {
+    display: none;
+  }
+`;
+
+const StyledCodingPhoto = styled.div`
+  text-align: center;
+  display: inline-block;
+  margin-right: 8px;
+
+  @media (max-width: 898px) {
+    display: none;
+  }
+`;
+
+const StyledCelebratingPhoto = styled.div`
+  display: inline-block;
+  margin-right: 8px;
+
+  @media (max-width: 1439px) {
+    display: none;
+  }
+`;
+
+const StyledWritingWallPostitPhoto = styled.div`
+  display: inline-block;
+
+  @media (max-width: 898px) {
+    display: none;
+  }
+`;
+
+const StyledProductCanvasZoomed = styled.div`
+  display: none;
+
+  @media (max-width: 898px) {
+    display: inline;
+    overflow: hidden;
+  }
+`;
+
+const StyledWritingWallPostitZoomed = styled.div`
+  display: none;
+
+  @media (max-width: 898px) {
+    display: inline;
+    overflow: hidden;
+  }
 `;
 
 const AboutUs = () => {
@@ -57,45 +131,44 @@ const AboutUs = () => {
           problems in fast-paced environments.
         </StyledHeaderText>
       </StyledHeader>
-      <StyledRow>
-        <StyledCol md={4}>
-          <StyledImgWrapper>
-            <img src={BoardPostitPhoto} alt={'board-postit-photo'} />
-          </StyledImgWrapper>
-        </StyledCol>
 
-        <StyledCol md={4}>
-          <StyledMiddleImgWrapper>
-            <img src={ProductCanvasPhoto} alt={'product-canvas-photo'} />
-          </StyledMiddleImgWrapper>
-        </StyledCol>
-        <StyledCol md={4}>
-          <StyledImgWrapper>
-            <img src={MeetingPhoto} alt={'meeting-photo'} />
-          </StyledImgWrapper>
-        </StyledCol>
-      </StyledRow>
-      <StyledRow>
-        <StyledCol md={2}>
-          <StyledImgWrapper>
-            <img src={CodingPhoto} alt={'coding-photo'} />
-          </StyledImgWrapper>
-        </StyledCol>
+      <StyledPhotosRow>
+        <StyledBoardPostitPhoto>
+          <img src={BoardPostitPhoto} alt={'board-postit-photo'} />
+        </StyledBoardPostitPhoto>
+        <StyledProductCanvasPhoto>
+          <img src={ProductCanvasPhoto} alt={'product-canvas-photo'} />
+        </StyledProductCanvasPhoto>
+        <StyledProductCanvasZoomed>
+          <img
+            src={ProductCanvasZoomed}
+            alt={'product-canvas-zoomed'}
+            width={'100%'}
+          />
+        </StyledProductCanvasZoomed>
+        <StyledMeetingPhoto>
+          <img src={MeetingPhoto} alt={'meeting-photo'} />
+        </StyledMeetingPhoto>
+      </StyledPhotosRow>
 
-        <StyledCol md={5}>
-          <StyledMiddleImgWrapper>
-            <img src={CelebratingPhoto} alt={'celebrating-photo'} />
-          </StyledMiddleImgWrapper>
-        </StyledCol>
-        <StyledCol md={5}>
-          <StyledImgWrapper>
-            <img
-              src={WritingWallPostitPhoto}
-              alt={'writing-wall-postit-photo'}
-            />
-          </StyledImgWrapper>
-        </StyledCol>
-      </StyledRow>
+      <StyledPhotosRow>
+        <StyledCodingPhoto>
+          <img src={CodingPhoto} alt={'coding-photo'} />
+        </StyledCodingPhoto>
+        <StyledCelebratingPhoto>
+          <img src={CelebratingPhoto} alt={'celebrating-photo'} />
+        </StyledCelebratingPhoto>
+        <StyledWritingWallPostitPhoto>
+          <img src={WritingWallPostitPhoto} alt={'writing-wall-postit-photo'} />
+        </StyledWritingWallPostitPhoto>
+        <StyledWritingWallPostitZoomed>
+          <img
+            src={WritingWallPostitZoomed}
+            alt={'writing-wall-postit-zoomed'}
+            width={'100%'}
+          />
+        </StyledWritingWallPostitZoomed>
+      </StyledPhotosRow>
     </>
   );
 };
