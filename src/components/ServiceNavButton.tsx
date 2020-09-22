@@ -72,7 +72,7 @@ export const ServiceNavButton = (props: ServiceNavButtonProps) => {
               </StyledNextContent>
             </Col>
             <Col xs={3}>
-              <StyledNextImg src={RightArrow} />
+              <StyledNextImg src={RightArrow} alt={'right-arrow'} />
             </Col>
           </Row>
         </StyledLink>
@@ -81,7 +81,7 @@ export const ServiceNavButton = (props: ServiceNavButtonProps) => {
           <Row>
             <Col xs={3}>
               <StyledPrevImgWrapper>
-                <StyledPreviousImg src={LeftArrow} />
+                <StyledPreviousImg src={LeftArrow} alt={'left-arrow'} />
               </StyledPrevImgWrapper>
             </Col>
             <Col xs={9}>
