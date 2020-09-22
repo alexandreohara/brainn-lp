@@ -48,6 +48,10 @@ const StyledAugmentationShadow = styled.div`
   position: absolute;
   top: 8px;
   left: 8px;
+
+  @media (max-width: 767px) {
+    font-size: 68px;
+  }
 `;
 
 const StyledHeaderText = styled.div`
