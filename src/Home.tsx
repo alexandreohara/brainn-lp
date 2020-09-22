@@ -16,7 +16,7 @@ import { Footer } from './components/Footer';
 import { ServiceCard } from 'components/ServiceCard';
 import { ServiceAspect } from 'components/ServiceAspect';
 import { Colors, Gradients } from 'consts/colors';
-import BenchmarkIcon from 'assets/icons/BenchmarkIcon.svg';
+import Benchmark from 'assets/icons/Benchmark.svg';
 import { ServiceNavButton } from 'components/ServiceNavButton';
 
 export const Home = () => {
@@ -61,7 +61,7 @@ export const Home = () => {
       />
       <ServiceAspect
         color={Colors.purple}
-        icon={BenchmarkIcon}
+        icon={Benchmark}
         title={'Benchmark'}
         description={
           'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'

@@ -8,6 +8,8 @@ import LeftArrow from 'assets/icons/LeftArrow.svg';
 interface ServiceNavButtonProps {
   color: string;
   title: string;
+  nextServiceUrl?: string;
+  previousServiceUrl?: string;
   next?: boolean;
 }
 
@@ -53,12 +55,16 @@ const StyledPrevImgWrapper = styled.div`
   text-align: right;
 `;
 
+const StyledLink = styled.a`
+  text-decoration: none;
+`;
+
 export const ServiceNavButton = (props: ServiceNavButtonProps) => {
   return (
     <StyledServiceNavButton color={props.color}>
-      <Row center={'xs'}>
-        {props.next ? (
-          <>
+      {props.next ? (
+        <StyledLink href={props.nextServiceUrl}>
+          <Row>
             <Col xs={9}>
               <StyledNextContent>
                 <StyledTitle>{props.title}</StyledTitle>
@@ -66,16 +72,16 @@ export const ServiceNavButton = (props: ServiceNavButtonProps) => {
               </StyledNextContent>
             </Col>
             <Col xs={3}>
-              <div>
-                <StyledNextImg src={RightArrow} />
-              </div>
+              <StyledNextImg src={RightArrow} alt={'right-arrow'} />
             </Col>
-          </>
-        ) : (
-          <>
+          </Row>
+        </StyledLink>
+      ) : (
+        <StyledLink href={props.previousServiceUrl}>
+          <Row>
             <Col xs={3}>
               <StyledPrevImgWrapper>
-                <StyledPreviousImg src={LeftArrow} />
+                <StyledPreviousImg src={LeftArrow} alt={'left-arrow'} />
               </StyledPrevImgWrapper>
             </Col>
             <Col xs={9}>
@@ -84,9 +90,9 @@ export const ServiceNavButton = (props: ServiceNavButtonProps) => {
                 <StyledText>Previous</StyledText>
               </StyledPreviousContent>
             </Col>
-          </>
-        )}
-      </Row>
+          </Row>
+        </StyledLink>
+      )}
     </StyledServiceNavButton>
   );
 };

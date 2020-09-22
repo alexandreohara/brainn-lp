@@ -1,8 +1,6 @@
 import { Colors } from 'consts/colors';
 import React from 'react';
 import styled from 'styled-components';
-import BenchmarkIcon from 'assets/icons/BenchmarkIcon.svg';
-
 interface ServiceAspectProps {
   icon: string;
   color: string;
@@ -12,7 +10,6 @@ interface ServiceAspectProps {
 
 const StyledServiceAspect = styled.div`
   padding: 8px;
-  max-width: 21vw;
 `;
 
 const StyledTitleWithLeftBorder = styled.div.attrs((props: any) => ({
@@ -36,7 +33,7 @@ const StyledDescription = styled.div`
 export const ServiceAspect = (props: ServiceAspectProps) => {
   return (
     <StyledServiceAspect>
-      <img src={BenchmarkIcon} alt={'benchmark-icon'} />
+      <img src={props.icon} alt={'benchmark-icon'} />
       <StyledTitleWithLeftBorder borderColor={props.color}>
         {props.title}
       </StyledTitleWithLeftBorder>
