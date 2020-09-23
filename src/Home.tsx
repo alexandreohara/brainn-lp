@@ -1,11 +1,22 @@
 import React from 'react';
 import './components/Navbar.css';
+import './Home.css';
 import { Col, Row } from 'react-flexbox-grid';
-
 import HomeCard from './components/Card';
 import Storming from './assets/images/Storming.svg';
 import Delivery from './assets/images/Delivery.svg';
 import Augmentation from './assets/images/Augmentation.svg';
+import TypeLogo from './assets/images/TypeLogo.png';
+import Suflex from './assets/images/Suflex.png';
+import Kovi from './assets/images/Kovi.png';
+import Cvc from './assets/images/Cvc.png';
+import Bxblue from './assets/images/Bxblue.png';
+import Bv from './assets/images/Bv.png';
+import Gupy from './assets/images/Gupy.png';
+import FindHotel from './assets/images/FindHotel.png';
+import Poliedro from './assets/images/Poliedro.png';
+import Pipefy from './assets/images/Pipefy.png';
+import Neo from './assets/images/Neo.png';
 import {
   HorizontalScroll,
   SliderCard,
@@ -13,73 +24,134 @@ import {
   HorizontalSeparator,
 } from './components';
 import { Footer } from './components/Footer';
-import { ServiceCard } from 'components/ServiceCard';
-import { ServiceAspect } from 'components/ServiceAspect';
-import { Colors, Gradients } from 'consts/colors';
-import Benchmark from 'assets/icons/Benchmark.svg';
-import { ServiceNavButton } from 'components/ServiceNavButton';
+import styled from 'styled-components';
+import { Colors } from 'consts/colors';
+
+const StyledHome = styled.div`
+  background-color: ${Colors.black};
+`;
+
+const StyledHeaderTitle = styled.div`
+  padding-left: 64px;
+  padding-top: 40px;
+  font-size: 88px;
+  font-weight: bold;
+  color: ${Colors.white};
+
+  @media (max-width: 767px) {
+    font-size: 44px;
+  }
+`;
+
+const StyledCaption = styled.div`
+  text-align: center;
+  font-size: 16px;
+  font-weight: bold;
+  color: ${Colors.white};
+  opacity: 0.24;
+
+  @media (max-width: 767px) {
+    font-size: 44px;
+  }
+`;
+
+const StyledImage = styled.div`
+  text-align: right;
+`;
+
+const StyledLogos = styled.div`
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 1200px;
+`;
+
+const StyledColumn = styled(Col)`
+  align-self: center;
+`;
+
+const StyledPadding = styled.div`
+  padding: 64px;
+`;
 
 export const Home = () => {
   return (
-    <div style={{ backgroundColor: '#021727' }}>
-      <Col>
-        {cardSections.map((props: any) => {
-          return <HomeCard key={props.id} {...props} />;
-        })}
-      </Col>
-      <HorizontalScroll>
-        {SLIDER_CARDS.map((card, index) => (
-          <>
-            <SliderCard
-              decorationLine={card.decorationLine}
-              title={card.title}
-            />
-            {index !== SLIDER_CARDS.length && <HorizontalSeparator />}
-          </>
-        ))}
-      </HorizontalScroll>
-      <VerticalSeparator />
-      <HorizontalScroll>
-        {SLIDER_CARDS.map((card, index) => (
-          <>
-            <SliderCard
-              decorationLine={card.decorationLine}
-              title={card.title}
-            />
-            {index !== SLIDER_CARDS.length && <HorizontalSeparator />}
-          </>
-        ))}
-      </HorizontalScroll>
-      <div style={{ height: '100px' }} />
-      <ServiceCard
-        title={'Storming'}
-        description={
-          'We help innovators quickly understand how we will build their digital products and provide a competitive business advantage.'
-        }
-        strongLastPhrase={'The idea that works.'}
-        color={Gradients.blue}
-      />
-      <ServiceAspect
-        color={Colors.purple}
-        icon={Benchmark}
-        title={'Benchmark'}
-        description={
-          'Start learning from the experiences of others. That could lead us to find out about existing solutions to similar problems, and accelerate product ideation pace.'
-        }
-      />
-
-      <div style={{ height: '40px', width: '100%' }} />
-
-      <Row style={{ margin: '0' }}>
-        <Col xs={6} style={{ padding: '0' }}>
-          <ServiceNavButton title={'Augmentation'} color={Gradients.green} />
+    <StyledHome>
+      <Row middle={'xs'}>
+        <Col xs={4} sm={6}>
+          <StyledHeaderTitle>
+            Lean digital innovation that works.
+          </StyledHeaderTitle>
         </Col>
-        <Col xs={6} style={{ padding: '0' }}>
-          <ServiceNavButton title={'Delivery'} color={Gradients.yellow} next />
+        <Col xs={8} sm={6}>
+          <StyledImage>
+            <img src={TypeLogo} alt={''} width={'100%'} />
+          </StyledImage>
         </Col>
       </Row>
+      <HorizontalScroll>
+        <StyledLogos>
+          <StyledColumn>
+            <img src={Kovi} alt={'Kovi'}></img>
+          </StyledColumn>
+          <StyledColumn>
+            <img src={Poliedro} alt={'Poliedro'}></img>
+          </StyledColumn>
+          <StyledColumn>
+            <img src={FindHotel} alt={'Find Hotel'}></img>
+          </StyledColumn>
+          <StyledColumn>
+            <img src={Neo} alt={'Neo'}></img>
+          </StyledColumn>
+          <StyledColumn>
+            <img src={Suflex} alt={'Suflex'}></img>
+          </StyledColumn>
+          <StyledColumn>
+            <img src={Cvc} alt={'CVC'}></img>
+          </StyledColumn>
+          <StyledColumn>
+            <img src={Pipefy} alt={'Pipefy'}></img>
+          </StyledColumn>
+          <StyledColumn>
+            <img src={Bxblue} alt={'BxBlue'}></img>
+          </StyledColumn>
+          <StyledColumn>
+            <img src={Bv} alt={'BV'}></img>
+          </StyledColumn>
+          <StyledColumn>
+            <img src={Gupy} alt={'Gupy'}></img>
+          </StyledColumn>
+        </StyledLogos>
+      </HorizontalScroll>
+      <StyledCaption>Trusted by global innovators</StyledCaption>
+      <StyledHeaderTitle>How we can help</StyledHeaderTitle>
+      <StyledPadding>
+        <HorizontalScroll>
+          {SLIDER_CARDS.map((card, index) => (
+            <>
+              <SliderCard
+                decorationLine={card.decorationLine}
+                title={card.title}
+              />
+              {index !== SLIDER_CARDS.length && <HorizontalSeparator />}
+            </>
+          ))}
+        </HorizontalScroll>
+        <VerticalSeparator size={64} />
+        <Col>
+          {cardSections.map((props: any) => {
+            return (
+              <>
+                <HomeCard key={props.id} {...props} />;
+                <VerticalSeparator size={64} />
+              </>
+            );
+          })}
+        </Col>
+      </StyledPadding>
       <Footer />
-    </div>
+    </StyledHome>
   );
 };
 

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Grid, Row } from 'react-flexbox-grid';
+import { Col, Row } from 'react-flexbox-grid';
 import WorldMap from 'assets/images/WorldMap.svg';
 import styled from 'styled-components';
 import { MapPin } from './MapPin';
@@ -33,20 +33,28 @@ const StyledTextWithLeftBorder = styled.div`
   padding-left: 5px;
   margin: 5px 0;
   font-weight: bold;
-  font-size: 1.3vw;
+  font-size: 24px;
+
+  @media (max-width: 767px) {
+    font-size: 16px;
+  }
 `;
 
 const StyledSubtitle = styled.div`
   margin: 5px 8px;
   color: ${Colors.white};
   opacity: 0.8;
-  font-size: 1vw;
+  font-size: 16px;
+
+  @media (max-width: 767px) {
+    font-size: 12px;
+  }
 `;
 
 const StyledTextWrapper = styled.div`
   margin: 25px 0;
   color: ${Colors.white};
-
+  font-size: 80px;
   ${(props: TextProps) =>
     props &&
     `
@@ -55,21 +63,21 @@ const StyledTextWrapper = styled.div`
       font-weight: ${props.fontWeight};
       margin: ${props.margin};
     `}
+
+  @media (max-width: 767px) {
+    font-size: 44px;
+  }
 `;
 
 export const Footer = () => {
   return (
-    <Grid fluid={true}>
+    <div style={{ paddingLeft: '64px', background: '#072337' }}>
       <Row>
-        <Col xs={12} sm={6}>
-          <StyledTextWrapper
-            color={'#546E82'}
-            fontSize={'6vw'}
-            fontWeight={'bold'}
-          >
+        <Col xs={12} md={6}>
+          <StyledTextWrapper color={'#546E82'} fontWeight={'bold'}>
             We do digital.
           </StyledTextWrapper>
-          <StyledTextWrapper fontSize={'6vw'} fontWeight={'bold'}>
+          <StyledTextWrapper fontWeight={'bold'}>
             You grow faster.
           </StyledTextWrapper>
 
@@ -96,7 +104,7 @@ export const Footer = () => {
             </StyledSubtitle>
           </StyledTextWrapper>
         </Col>
-        <Col xs={false} sm={6}>
+        <Col md={6} className={'hidden-xs hidden-sm'}>
           <StyledMapWrapper>
             <MapPin top={'31%'} left={'13%'}>
               Vancouver
@@ -149,6 +157,6 @@ export const Footer = () => {
           </StyledMapWrapper>
         </Col>
       </Row>
-    </Grid>
+    </div>
   );
 };

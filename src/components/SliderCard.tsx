@@ -39,7 +39,8 @@ const HideLine = styled.div`
 `;
 
 const VerticalSeparatorStyled = styled.div`
-  height: ${(props: any) => (props.half ? 5 : props.double ? 20 : 10)}px;
+  height: ${(props: any) =>
+    props.size ? props.size : props.half ? 5 : props.double ? 20 : 10}px;
 `;
 
 export const VerticalSeparator = (props: any) => (
@@ -47,8 +48,8 @@ export const VerticalSeparator = (props: any) => (
 );
 
 export const HorizontalSeparator = styled.div`
-  width: 10px;
-  min-width: 10px;
+  width: 32px;
+  min-width: 32px;
 `;
 
 const StyledTitle = styled.body`
@@ -83,6 +84,7 @@ export const SliderCard = (props: any) => {
       <StyledLine {...props.decorationLine} />
       <HideLine />
       <StyledContent>
+        <VerticalSeparator double />
         <VerticalSeparator double />
         <VerticalSeparator double />
         <StyledTitle>{props.title}</StyledTitle>
