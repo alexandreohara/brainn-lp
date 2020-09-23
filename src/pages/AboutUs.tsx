@@ -195,7 +195,7 @@ const StyledFooterWrapper = styled.div`
 
 const StyledButton = styled.div`
   background: ${Gradients.blue};
-  margin: 20px 64px;
+  margin: 20px 64px 64px;
   padding: 48px;
   border-radius: 16px;
   text-align: center;
