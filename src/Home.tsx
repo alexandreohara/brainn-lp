@@ -36,7 +36,7 @@ const StyledHeaderTitle = styled.div`
   padding-top: 40px;
   font-size: 88px;
   font-weight: bold;
-  color: white;
+  color: ${Colors.white};
 
   @media (max-width: 767px) {
     font-size: 44px;
@@ -47,7 +47,7 @@ const StyledCaption = styled.div`
   text-align: center;
   font-size: 16px;
   font-weight: bold;
-  color: white;
+  color: ${Colors.white};
   opacity: 0.24;
 
   @media (max-width: 767px) {
@@ -57,6 +57,18 @@ const StyledCaption = styled.div`
 
 const StyledImage = styled.div`
   text-align: right;
+`;
+
+const StyledLogos = styled.div`
+  padding: 40px;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  min-width: 1200px;
+`;
+
+const StyledPadding = styled.div`
+  padding: 64px;
 `;
 
 export const Home = () => {
@@ -75,15 +87,7 @@ export const Home = () => {
         </Col>
       </Row>
       <HorizontalScroll>
-        <div
-          style={{
-            padding: '40px',
-            display: 'flex',
-            justifyContent: 'space-between',
-            width: '100%',
-            minWidth: '1200px',
-          }}
-        >
+        <StyledLogos>
           <div className={'column'}>
             <img src={Kovi} alt={'Kovi'}></img>
           </div>
@@ -114,11 +118,11 @@ export const Home = () => {
           <div className={'column'}>
             <img src={Gupy} alt={'Gupy'}></img>
           </div>
-        </div>
+        </StyledLogos>
       </HorizontalScroll>
       <StyledCaption>Trusted by global innovators</StyledCaption>
       <StyledHeaderTitle>How we can help</StyledHeaderTitle>
-      <div style={{ padding: '64px' }}>
+      <StyledPadding>
         <HorizontalScroll>
           {SLIDER_CARDS.map((card, index) => (
             <>
@@ -141,7 +145,7 @@ export const Home = () => {
             );
           })}
         </Col>
-      </div>
+      </StyledPadding>
       <Footer />
     </StyledHome>
   );
