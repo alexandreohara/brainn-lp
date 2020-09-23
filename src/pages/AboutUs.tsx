@@ -8,6 +8,8 @@ import ProductCanvasPhoto from 'assets/images/ProductCanvasPhoto.png';
 import ProductCanvasZoomed from 'assets/images/ProductCanvasZoomed.png';
 import WritingWallPostitPhoto from 'assets/images/WritingWallPostitPhoto.png';
 import WritingWallPostitZoomed from 'assets/images/WritingWallPostitZoomed.png';
+import ThiagoSantos from 'assets/images/ThiagoSantos.png';
+import Working from 'assets/images/Working.png';
 import { Col, Row } from 'react-flexbox-grid';
 
 const StyledHeader = styled.div`
@@ -126,7 +128,13 @@ const StyledWritingWallPostitZoomed = styled.img`
 `;
 
 const StyledContent = styled.div`
-  margin: 80px 64px;
+  /* margin: 80px 64px; */
+  margin: 80px auto;
+  max-width: 1600px;
+
+  @media (max-width: 1700px) {
+    margin: 80px 16px;
+  }
 
   @media (max-width: 898px) {
     margin: 40px 16px;
@@ -145,7 +153,6 @@ const StyledContentTitle = styled.div`
 const StyledContentText = styled.div`
   font-size: 32px;
   margin-top: 24px;
-  margin-right: 100px;
 
   @media (max-width: 767px) {
     margin-right: 0;
@@ -153,9 +160,11 @@ const StyledContentText = styled.div`
   }
 `;
 
-const StyledCardWrapper = styled.div`
+const StyledCardWrapper = styled.div.attrs((props: any) => ({
+  justifyContent: props.justifyContent,
+}))`
   display: flex;
-  justify-content: center;
+  justify-content: ${(props) => props.justifyContent ?? 'flex-end'};
 `;
 
 const StyledCard = styled.div`
@@ -166,6 +175,26 @@ const StyledCard = styled.div`
   height: 274px;
   width: 560px;
   text-align: center;
+`;
+
+const StyledLargePhotoWrapper = styled.div`
+  text-align: center;
+  overflow: hidden;
+  max-height: 700px;
+
+  /* @media (max-width: 1440px) {
+    position: relative;
+  } */
+`;
+
+const StyledLargePhoto = styled.img`
+  width: 100%;
+
+  @media (max-width: 1440px) {
+    /* position: absolute;
+    top: 0;
+    right: 0; */
+  }
 `;
 
 const AboutUs = () => {
@@ -186,29 +215,29 @@ const AboutUs = () => {
 
       <StyledPhotosRow>
         <StyledBoardPostitPhoto>
-          <img src={BoardPostitPhoto} alt={'board-postit-photo'} />
+          <img src={BoardPostitPhoto} alt={'board-postit'} />
         </StyledBoardPostitPhoto>
         <StyledProductCanvasPhoto>
-          <img src={ProductCanvasPhoto} alt={'product-canvas-photo'} />
+          <img src={ProductCanvasPhoto} alt={'product-canvas'} />
         </StyledProductCanvasPhoto>
         <StyledProductCanvasZoomed
           src={ProductCanvasZoomed}
           alt={'product-canvas-zoomed'}
         />
         <StyledMeetingPhoto>
-          <img src={MeetingPhoto} alt={'meeting-photo'} />
+          <img src={MeetingPhoto} alt={'meeting'} />
         </StyledMeetingPhoto>
       </StyledPhotosRow>
 
       <StyledPhotosRow>
         <StyledCodingPhoto>
-          <img src={CodingPhoto} alt={'coding-photo'} />
+          <img src={CodingPhoto} alt={'coding'} />
         </StyledCodingPhoto>
         <StyledCelebratingPhoto>
-          <img src={CelebratingPhoto} alt={'celebrating-photo'} />
+          <img src={CelebratingPhoto} alt={'celebrating'} />
         </StyledCelebratingPhoto>
         <StyledWritingWallPostitPhoto>
-          <img src={WritingWallPostitPhoto} alt={'writing-wall-postit-photo'} />
+          <img src={WritingWallPostitPhoto} alt={'writing-wall-postit'} />
         </StyledWritingWallPostitPhoto>
         <StyledWritingWallPostitZoomed
           src={WritingWallPostitZoomed}
@@ -229,7 +258,55 @@ const AboutUs = () => {
           </Col>
           <Col md={6} className={'hidden-xs hidden-sm'}>
             <StyledCardWrapper>
-              <StyledCard>Potato</StyledCard>
+              <StyledCard>Card</StyledCard>
+            </StyledCardWrapper>
+          </Col>
+        </Row>
+      </StyledContent>
+
+      <StyledLargePhotoWrapper>
+        <StyledLargePhoto src={ThiagoSantos} />
+      </StyledLargePhotoWrapper>
+
+      <StyledContent>
+        <Row center={'xs'} start={'md'}>
+          <Col md={6} className={'hidden-xs hidden-sm'}>
+            <StyledCardWrapper justifyContent={'flex-start'}>
+              <StyledCard>Card</StyledCard>
+            </StyledCardWrapper>
+          </Col>
+          <Col sm={12} md={6}>
+            <StyledContentTitle>Teamwork</StyledContentTitle>
+            <StyledContentText>
+              When we think of our mission - help innovators bring their ideas
+              to life - we always remember that we need great people working
+              together towards a common goal. We see the journey to accomplish
+              ambitious goals as important as the results itself.
+            </StyledContentText>
+          </Col>
+        </Row>
+      </StyledContent>
+
+      <StyledLargePhotoWrapper>
+        <StyledLargePhoto src={Working} />
+      </StyledLargePhotoWrapper>
+
+      <StyledContent>
+        <Row center={'xs'} start={'md'}>
+          <Col sm={12} md={6}>
+            <StyledContentTitle>Learning</StyledContentTitle>
+            <StyledContentText>
+              Our job has a high level of uncertainty and complexity, usually
+              combining expertise from people from different backgrounds,
+              requiring a lot of experience to get the right job done most
+              effectively. Our knowledge is always expired by default because of
+              the fast-paced innovation happening around the globe. That&apos;s
+              why we need to learn. Fast.
+            </StyledContentText>
+          </Col>
+          <Col md={6} className={'hidden-xs hidden-sm'}>
+            <StyledCardWrapper>
+              <StyledCard>Card</StyledCard>
             </StyledCardWrapper>
           </Col>
         </Row>
