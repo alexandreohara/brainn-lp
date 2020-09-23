@@ -53,7 +53,7 @@ export const HorizontalSeparator = styled.div`
   min-width: 32px;
 `;
 
-const StyledTitle = styled.body`
+const StyledTitle = styled.div`
   color: white;
   font-weight: bold;
   font-size: 32px;
