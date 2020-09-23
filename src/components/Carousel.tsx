@@ -1,11 +1,12 @@
-import { Colors } from 'consts/colors';
 import React, { useState } from 'react';
+
+import { Colors } from 'consts/colors';
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import Forbes from '../assets/images/Forbes.svg';
 import PlugAndPlay from '../assets/images/PlugAndPlay.svg';
 import ReportCard from '../assets/images/ReportCard.png';
-import { CarouselArrow } from './CarouselArrow';
+import { CarouselArrow } from 'components';
 
 interface DivProps {
   opacity?: string;

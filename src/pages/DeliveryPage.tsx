@@ -1,17 +1,16 @@
-import { Colors, Gradients } from 'consts/colors';
 import React from 'react';
+
+import { Colors, Gradients } from 'consts/colors';
 import { Col, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Delivery from 'assets/images/Delivery.svg';
-import { ServiceAspect } from 'components/ServiceAspect';
-import { Footer } from 'components/Footer';
-import { ServiceNavButton } from 'components/ServiceNavButton';
 import Team from 'assets/icons/Team.svg';
 import Star from 'assets/icons/Star.svg';
 import Programming from 'assets/icons/Programming.svg';
 import Data from 'assets/icons/Data.svg';
 import ReactIcon from 'assets/icons/ReactIcon.svg';
 import PhaseOut from 'assets/icons/PhaseOut.svg';
+import { Footer, ServiceAspect, ServiceNavButton } from 'components';
 
 const StyledHeader = styled.div`
   background: ${Gradients.yellow};

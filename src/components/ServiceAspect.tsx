@@ -1,5 +1,6 @@
-import { Colors } from 'consts/colors';
 import React from 'react';
+
+import { Colors } from 'consts/colors';
 import styled from 'styled-components';
 interface ServiceAspectProps {
   icon: string;

@@ -1,6 +1,7 @@
 import React from 'react';
-import RightArrowCircled from '../assets/icons/RightArrowCircled.svg';
-import LeftArrowCircled from '../assets/icons/LeftArrowCircled.svg';
+
+import RightArrowCircled from 'assets/icons/RightArrowCircled.svg';
+import LeftArrowCircled from 'assets/icons/LeftArrowCircled.svg';
 import styled from 'styled-components';
 
 const StyledNextArrowDiv = styled.div`

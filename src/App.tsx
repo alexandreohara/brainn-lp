@@ -1,8 +1,9 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+
 import './App.css';
-import { Home } from './pages/Home';
-import { Navbar } from './components/Navbar';
+import { Navbar } from 'components';
+import Home from 'pages/Home';
 import Services from 'pages/Services';
 import StormingPage from 'pages/StormingPage';
 import DeliveryPage from 'pages/DeliveryPage';

@@ -1,5 +1,6 @@
-import { Colors, Gradients } from 'consts/colors';
 import React from 'react';
+
+import { Colors, Gradients } from 'consts/colors';
 import { Col, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import RightArrow from 'assets/icons/RightArrow.svg';

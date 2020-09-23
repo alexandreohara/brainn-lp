@@ -1,8 +1,9 @@
 import React from 'react';
+
 import { Col, Row } from 'react-flexbox-grid';
 import WorldMap from 'assets/images/WorldMap.svg';
 import styled from 'styled-components';
-import { MapPin } from './MapPin';
+import { MapPin } from 'components';
 import { Colors } from 'consts/colors';
 interface TextProps {
   fontSize?: string;

@@ -1,8 +1,8 @@
 import React from 'react';
+
 import 'components/Navbar.css';
 import './Home.css';
 import { Col, Row } from 'react-flexbox-grid';
-import HomeCard from 'components/Card';
 import Storming from 'assets/images/Storming.svg';
 import Delivery from 'assets/images/Delivery.svg';
 import Augmentation from 'assets/images/Augmentation.svg';
@@ -18,12 +18,13 @@ import Poliedro from 'assets/images/Poliedro.png';
 import Pipefy from 'assets/images/Pipefy.png';
 import Neo from 'assets/images/Neo.png';
 import {
+  HomeCard,
+  Footer,
   HorizontalScroll,
   SliderCard,
   VerticalSeparator,
   HorizontalSeparator,
 } from 'components';
-import { Footer } from 'components/Footer';
 import styled from 'styled-components';
 import { Colors } from 'consts/colors';
 
@@ -75,7 +76,7 @@ const StyledPadding = styled.div`
   padding: 64px;
 `;
 
-export const Home = () => {
+const Home = () => {
   return (
     <StyledHome>
       <Row middle={'xs'}>
@@ -154,6 +155,8 @@ export const Home = () => {
     </StyledHome>
   );
 };
+
+export default Home;
 
 const cardSections = [
   {

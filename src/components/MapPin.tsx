@@ -1,4 +1,5 @@
 import React from 'react';
+
 import Pin from 'assets/icons/Pin.svg';
 import PinSelected from 'assets/icons/PinSelected.svg';
 import styled from 'styled-components';

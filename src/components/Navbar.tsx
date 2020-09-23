@@ -1,8 +1,9 @@
-import { Colors } from 'consts/colors';
 import React, { useState } from 'react';
+
+import { Colors } from 'consts/colors';
 import { Link } from 'react-router-dom';
-import barsIcon from '../assets/icons/menu.svg';
-import { NavButton } from './NavButton';
+import BarsIcon from 'assets/icons/Menu.svg';
+import { NavButton } from 'components';
 
 export const Navbar = () => {
   const [menuClick, setMenuClick] = useState(false);
@@ -15,7 +16,7 @@ export const Navbar = () => {
       <nav className={'navbar'}>
         <div className={'navbar-container'}>
           <img
-            src={barsIcon}
+            src={BarsIcon}
             alt={'bars-icon'}
             className={'bars-icon'}
             onClick={handleMenuClick}

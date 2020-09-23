@@ -1,4 +1,5 @@
 import React from 'react';
+
 import styled from 'styled-components';
 import { Col, Row } from 'react-flexbox-grid';
 
@@ -72,7 +73,7 @@ const StyledLine = styled.div`
   background-color: white;
 `;
 
-const HomeCard = (props: any) => {
+export const HomeCard = (props: any) => {
   if (props.textFirst) {
     return (
       <StyledCard {...props}>
@@ -119,5 +120,3 @@ const HomeCard = (props: any) => {
     </StyledCard>
   );
 };
-
-export default HomeCard;

@@ -1,9 +1,10 @@
-import { Footer } from 'components/Footer';
-import { ServiceCard } from 'components/ServiceCard';
-import { Colors, Gradients } from 'consts/colors';
 import React from 'react';
+
+import { Colors, Gradients } from 'consts/colors';
 import { Col, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
+
+import { Footer, ServiceCard } from 'components';
 
 const StyledPageWrapper = styled.div`
   background-color: ${Colors.black};
