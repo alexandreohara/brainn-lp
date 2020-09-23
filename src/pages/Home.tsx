@@ -50,10 +50,6 @@ const StyledCaption = styled.div`
   font-weight: bold;
   color: ${Colors.white};
   opacity: 0.24;
-
-  @media (max-width: 767px) {
-    font-size: 44px;
-  }
 `;
 
 const StyledImage = styled.div`
