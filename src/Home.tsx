@@ -67,6 +67,10 @@ const StyledLogos = styled.div`
   min-width: 1200px;
 `;
 
+const StyledColumn = styled(Col)`
+  align-self: center;
+`;
+
 const StyledPadding = styled.div`
   padding: 64px;
 `;
@@ -88,36 +92,36 @@ export const Home = () => {
       </Row>
       <HorizontalScroll>
         <StyledLogos>
-          <div className={'column'}>
+          <StyledColumn>
             <img src={Kovi} alt={'Kovi'}></img>
-          </div>
-          <div className={'column'}>
+          </StyledColumn>
+          <StyledColumn>
             <img src={Poliedro} alt={'Poliedro'}></img>
-          </div>
-          <div className={'column'}>
+          </StyledColumn>
+          <StyledColumn>
             <img src={FindHotel} alt={'Find Hotel'}></img>
-          </div>
-          <div className={'column'}>
+          </StyledColumn>
+          <StyledColumn>
             <img src={Neo} alt={'Neo'}></img>
-          </div>
-          <div className={'column'}>
+          </StyledColumn>
+          <StyledColumn>
             <img src={Suflex} alt={'Suflex'}></img>
-          </div>
-          <div className={'column'}>
+          </StyledColumn>
+          <StyledColumn>
             <img src={Cvc} alt={'CVC'}></img>
-          </div>
-          <div className={'column'}>
+          </StyledColumn>
+          <StyledColumn>
             <img src={Pipefy} alt={'Pipefy'}></img>
-          </div>
-          <div className={'column'}>
+          </StyledColumn>
+          <StyledColumn>
             <img src={Bxblue} alt={'BxBlue'}></img>
-          </div>
-          <div className={'column'}>
+          </StyledColumn>
+          <StyledColumn>
             <img src={Bv} alt={'BV'}></img>
-          </div>
-          <div className={'column'}>
+          </StyledColumn>
+          <StyledColumn>
             <img src={Gupy} alt={'Gupy'}></img>
-          </div>
+          </StyledColumn>
         </StyledLogos>
       </HorizontalScroll>
       <StyledCaption>Trusted by global innovators</StyledCaption>
