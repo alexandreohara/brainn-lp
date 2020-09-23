@@ -1,7 +1,7 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import './App.css';
-import { Home } from './Home';
+import { Home } from './pages/Home';
 import { Navbar } from './components/Navbar';
 import Services from 'pages/Services';
 import StormingPage from 'pages/StormingPage';
