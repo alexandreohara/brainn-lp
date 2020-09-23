@@ -4,16 +4,18 @@ import styled from 'styled-components';
 import { Col, Row } from 'react-flexbox-grid';
 
 interface CardProps {
-  deg: number;
-  startColor: string;
-  endColor: string;
+  color?: string;
+  title: string;
+  textFirst: string;
+  image: string;
+  description: string;
 }
 
 const StyledCard = styled.div`
   ${(props: CardProps) =>
     `
       border-radius: 16px;
-      background: linear-gradient(${props.deg}deg, ${props.startColor} 0%, ${props.endColor} 100%);
+      background: ${props.color}
     `}
 `;
 
@@ -73,7 +75,7 @@ const StyledLine = styled.div`
   background-color: white;
 `;
 
-export const HomeCard = (props: any) => {
+export const HomeCard = (props: CardProps) => {
   if (props.textFirst) {
     return (
       <StyledCard {...props}>
@@ -89,7 +91,7 @@ export const HomeCard = (props: any) => {
           <Col md={5} className={'hidden-sm hidden-xs'}>
             <StyledImage
               src={props.image}
-              alt="logo"
+              alt={'logo'}
               width={'100%'}
             ></StyledImage>
           </Col>
@@ -104,7 +106,7 @@ export const HomeCard = (props: any) => {
         <Col md={5} className={'hidden-xs hidden-sm'}>
           <StyledImage
             src={props.image}
-            alt="logo"
+            alt={'logo'}
             width={'100%'}
           ></StyledImage>
         </Col>

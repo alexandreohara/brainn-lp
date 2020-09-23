@@ -26,7 +26,7 @@ import {
   HorizontalSeparator,
 } from 'components';
 import styled from 'styled-components';
-import { Colors } from 'consts/colors';
+import { Colors, Gradients } from 'consts/colors';
 
 const StyledHome = styled.div`
   background-color: ${Colors.black};
@@ -157,9 +157,7 @@ export default Home;
 const cardSections = [
   {
     key: 0,
-    deg: 260.39,
-    startColor: '#00BEFB',
-    endColor: '#007CF9',
+    color: Gradients.blue,
     title: 'Storming',
     textFirst: true,
     image: Storming,
@@ -172,9 +170,7 @@ const cardSections = [
 
   {
     key: 1,
-    deg: 260.39,
-    startColor: '#FFD15C',
-    endColor: '#FF912C',
+    color: Gradients.yellow,
     title: 'Delivery',
     textFirst: false,
     image: Delivery,
@@ -187,9 +183,7 @@ const cardSections = [
 
   {
     key: 2,
-    deg: 260.39,
-    startColor: '#19EE94',
-    endColor: '#04B375',
+    color: Gradients.green,
     title: 'Augmentation',
     textFirst: false,
     image: Augmentation,
