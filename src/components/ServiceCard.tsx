@@ -4,12 +4,14 @@ import { Colors, Gradients } from 'consts/colors';
 import { Col, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import RightArrow from 'assets/icons/RightArrow.svg';
+import { useHistory } from 'react-router-dom';
 
 interface ServiceCardProps {
   title: string;
   description: string;
   strongLastPhrase?: string;
   color: string;
+  url: string;
 }
 
 const StyledServiceCard = styled.div`
@@ -18,6 +20,7 @@ const StyledServiceCard = styled.div`
   max-width: 646px;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
 `;
 
 const StyledContentWrapper = styled.div`
@@ -49,8 +52,10 @@ const StyledImgWrapper = styled.div`
 `;
 
 export const ServiceCard = (props: ServiceCardProps) => {
+  const history = useHistory();
+
   return (
-    <StyledServiceCard>
+    <StyledServiceCard onClick={() => history.push(props.url)}>
       <Row>
         <Col xs={10}>
           <StyledContentWrapper>

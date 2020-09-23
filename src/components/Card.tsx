@@ -2,6 +2,7 @@ import React from 'react';
 
 import styled from 'styled-components';
 import { Col, Row } from 'react-flexbox-grid';
+import { useHistory } from 'react-router-dom';
 
 interface CardProps {
   color?: string;
@@ -9,6 +10,7 @@ interface CardProps {
   textFirst: string;
   image: string;
   description: string;
+  url: string;
 }
 
 const StyledCard = styled.div`
@@ -76,6 +78,8 @@ const StyledLine = styled.div`
 `;
 
 export const HomeCard = (props: CardProps) => {
+  const history = useHistory();
+
   if (props.textFirst) {
     return (
       <StyledCard {...props}>
@@ -86,7 +90,9 @@ export const HomeCard = (props: CardProps) => {
               {props.description[0]} <b>{props.description[1]}</b>
             </StyledDescription>
             <StyledLine />
-            <StyledButton>Meet our process</StyledButton>
+            <StyledButton onClick={() => history.push(props.url)}>
+              Meet our process
+            </StyledButton>
           </StyledTextColumn>
           <Col md={5} className={'hidden-sm hidden-xs'}>
             <StyledImage
@@ -116,7 +122,9 @@ export const HomeCard = (props: CardProps) => {
             {props.description[0]} <b>{props.description[1]}</b>
           </StyledDescription>
           <StyledLine />
-          <StyledButton>Meet our process</StyledButton>
+          <StyledButton onClick={() => history.push(props.url)}>
+            Meet our process
+          </StyledButton>
         </StyledTextColumn>
       </Row>
     </StyledCard>

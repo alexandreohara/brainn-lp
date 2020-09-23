@@ -53,6 +53,7 @@ const Services = () => {
                   }
                   strongLastPhrase={'The idea that works.'}
                   color={Gradients.blue}
+                  url={'/services/storming'}
                 />
               </StyledCardWrapper>
               <StyledCardWrapper>
@@ -63,6 +64,7 @@ const Services = () => {
                   }
                   strongLastPhrase={'The product that works.'}
                   color={Gradients.yellow}
+                  url={'/services/delivery'}
                 />
               </StyledCardWrapper>
               <StyledCardWrapper>
@@ -73,6 +75,7 @@ const Services = () => {
                   }
                   strongLastPhrase={'The team that works.'}
                   color={Gradients.green}
+                  url={'/services/augmentation'}
                 />
               </StyledCardWrapper>
             </StyledServiceCards>

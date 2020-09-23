@@ -166,6 +166,7 @@ const cardSections = [
     products and provide a competitive business advantage.`,
       `The idea that works.`,
     ],
+    url: '/services/storming',
   },
 
   {
@@ -179,6 +180,7 @@ const cardSections = [
        great talents, and true agile methods.`,
       `The product that works.`,
     ],
+    url: '/services/delivery',
   },
 
   {
@@ -191,6 +193,7 @@ const cardSections = [
       `We provide staff augmentation to high-growth tech companies using new programming languages to move faster.`,
       `The team that works.`,
     ],
+    url: '/services/augmentation',
   },
 ];
 
