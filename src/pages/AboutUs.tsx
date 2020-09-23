@@ -10,7 +10,10 @@ import WritingWallPostitPhoto from 'assets/images/WritingWallPostitPhoto.png';
 import WritingWallPostitZoomed from 'assets/images/WritingWallPostitZoomed.png';
 import ThiagoSantos from 'assets/images/ThiagoSantos.png';
 import Working from 'assets/images/Working.png';
+import VectorRight from 'assets/icons/VectorRight.svg';
 import { Col, Row } from 'react-flexbox-grid';
+import { Colors, Gradients } from 'consts/colors';
+import { Footer } from 'components/Footer';
 
 const StyledHeader = styled.div`
   margin: 80px 288px 37px;
@@ -128,12 +131,11 @@ const StyledWritingWallPostitZoomed = styled.img`
 `;
 
 const StyledContent = styled.div`
-  /* margin: 80px 64px; */
   margin: 80px auto;
   max-width: 1600px;
 
   @media (max-width: 1700px) {
-    margin: 80px 16px;
+    margin: 80px 64px;
   }
 
   @media (max-width: 898px) {
@@ -181,19 +183,58 @@ const StyledLargePhotoWrapper = styled.div`
   text-align: center;
   overflow: hidden;
   max-height: 700px;
-
-  /* @media (max-width: 1440px) {
-    position: relative;
-  } */
 `;
 
 const StyledLargePhoto = styled.img`
   width: 100%;
+`;
 
-  @media (max-width: 1440px) {
-    /* position: absolute;
-    top: 0;
-    right: 0; */
+const StyledFooterWrapper = styled.div`
+  background-color: #072337;
+`;
+
+const StyledButton = styled.div`
+  background: ${Gradients.blue};
+  margin: 20px 64px;
+  padding: 48px;
+  border-radius: 16px;
+  text-align: center;
+  color: ${Colors.white};
+  @media (max-width: 767px) {
+    padding: 22px;
+    margin: 20px 16px;
+  }
+`;
+
+const StyledButtonTitle = styled.div`
+  font-size: 80px;
+  font-weight: bold;
+  @media (max-width: 767px) {
+    font-size: 30px;
+  }
+`;
+
+const StyledButtonSubTitle = styled.div`
+  font-size: 36px;
+  @media (max-width: 767px) {
+    font-size: 24px;
+  }
+`;
+
+const StyledSeeMore = styled.div`
+  font-size: 28px;
+  font-weight: 600;
+  margin-top: 32px;
+  @media (max-width: 767px) {
+    font-size: 18px;
+  }
+`;
+
+const StyledVectorRight = styled.img`
+  width: 12px;
+  margin-left: 12px;
+  @media (max-width: 767px) {
+    width: 8px;
   }
 `;
 
@@ -311,6 +352,21 @@ const AboutUs = () => {
           </Col>
         </Row>
       </StyledContent>
+
+      <StyledButton>
+        <StyledButtonTitle>Join the team</StyledButtonTitle>
+        <StyledButtonSubTitle>
+          We&apos;re a growing team with big ambitions.
+        </StyledButtonSubTitle>
+        <StyledSeeMore>
+          See job openings
+          <StyledVectorRight src={VectorRight} alt={'vector-right'} />
+        </StyledSeeMore>
+      </StyledButton>
+
+      <StyledFooterWrapper>
+        <Footer />
+      </StyledFooterWrapper>
     </>
   );
 };
