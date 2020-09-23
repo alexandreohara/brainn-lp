@@ -10,11 +10,13 @@ import DeliveryPage from 'pages/DeliveryPage';
 import AugmentationPage from 'pages/AugmentationPage';
 import HowWeCanHelp from 'pages/HowWeCanHelp';
 import AboutUs from 'pages/AboutUs';
+import ScrollToTop from 'components/ScrollToTop';
 
 const App = () => {
   return (
     <React.Fragment>
       <Router>
+        <ScrollToTop />
         <Navbar />
         <Switch>
           <Route exact path={'/'} component={Home} />

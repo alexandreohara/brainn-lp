@@ -54,8 +54,10 @@ const StyledImgWrapper = styled.div`
 export const ServiceCard = (props: ServiceCardProps) => {
   const history = useHistory();
 
+  const handleClick = () => history.push(props.url);
+
   return (
-    <StyledServiceCard onClick={() => history.push(props.url)}>
+    <StyledServiceCard onClick={handleClick}>
       <Row>
         <Col xs={10}>
           <StyledContentWrapper>
