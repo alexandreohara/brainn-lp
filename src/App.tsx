@@ -14,7 +14,7 @@ import ScrollToTop from 'components/ScrollToTop';
 
 const App = () => {
   return (
-    <React.Fragment>
+    <div data-testid={'app-root'}>
       <Router>
         <ScrollToTop />
         <Navbar />
@@ -32,7 +32,7 @@ const App = () => {
           <Route exact path={'/about-us'} component={AboutUs} />
         </Switch>
       </Router>
-    </React.Fragment>
+    </div>
   );
 };
 

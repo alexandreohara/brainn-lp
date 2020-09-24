@@ -4,8 +4,9 @@ import App from './App';
 
 window.scrollTo = jest.fn();
 
-test('renders learn react link', () => {
-  const { getByText } = render(<App />);
-  const linkElement = getByText(/learn react/i);
-  expect(linkElement).toBeInTheDocument();
+test('renders app correctly', () => {
+  const { getByTestId } = render(<App />);
+  const app = getByTestId('app-root');
+
+  expect(app).toBeTruthy();
 });
