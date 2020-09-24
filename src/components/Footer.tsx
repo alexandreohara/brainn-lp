@@ -12,6 +12,10 @@ interface TextProps {
   margin?: string;
 }
 
+const StyledFooter = styled.div`
+  padding-left: 64px;
+`;
+
 const StyledMap = styled.img`
   opacity: 0.5;
   width: 100%;
@@ -84,7 +88,7 @@ const githubUrl = 'https://github.com/brainn-co';
 
 export const Footer = () => {
   return (
-    <div style={{ paddingLeft: '64px', background: '#072337' }}>
+    <StyledFooter>
       <Row>
         <Col xs={12} md={6}>
           <StyledTextWrapper color={'#546E82'} fontWeight={'bold'}>
@@ -176,6 +180,6 @@ export const Footer = () => {
           </StyledMapWrapper>
         </Col>
       </Row>
-    </div>
+    </StyledFooter>
   );
 };
