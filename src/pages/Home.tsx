@@ -1,6 +1,5 @@
 import React from 'react';
 
-import 'components/Navbar.css';
 import './Home.css';
 import { Col, Row } from 'react-flexbox-grid';
 import Storming from 'assets/images/Storming.svg';
