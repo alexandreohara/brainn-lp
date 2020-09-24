@@ -140,7 +140,15 @@ const Home = () => {
           {cardSections.map((props: any) => {
             return (
               <>
-                <HomeCard key={props.id} {...props} />;
+                <HomeCard
+                  color={props.color}
+                  title={props.title}
+                  textFirst={props.textFirst}
+                  image={props.image}
+                  description={props.description}
+                  url={props.url}
+                />
+                ;
                 <VerticalSeparator size={64} />
               </>
             );

@@ -6,19 +6,18 @@ import { useHistory } from 'react-router-dom';
 
 interface CardProps {
   title: string;
-  textFirst: string;
+  textFirst: boolean;
   image: string;
-  description: string;
+  description: string[];
   color?: string;
   url?: string;
 }
 
-const StyledCard = styled.div`
-  ${(props: CardProps) =>
-    `
-      border-radius: 16px;
-      background: ${props.color}
-    `}
+const StyledCard = styled.div.attrs((props: any) => ({
+  color: props.color,
+}))`
+  border-radius: 16px;
+  background: ${(props) => props.color};
 `;
 
 const StyledTextColumn = styled(Col)`
@@ -84,7 +83,7 @@ export const HomeCard = (props: CardProps) => {
 
   if (props.textFirst) {
     return (
-      <StyledCard {...props}>
+      <StyledCard color={props.color}>
         <Row>
           <StyledTextColumn sm={12} md={7}>
             <StyledTitle>{props.title}</StyledTitle>
@@ -107,7 +106,7 @@ export const HomeCard = (props: CardProps) => {
   }
 
   return (
-    <StyledCard {...props}>
+    <StyledCard color={props.color}>
       <Row>
         <Col md={5} className={'hidden-xs hidden-sm'}>
           <StyledImage
@@ -116,7 +115,7 @@ export const HomeCard = (props: CardProps) => {
             width={'100%'}
           ></StyledImage>
         </Col>
-        <StyledTextColumn sm={12} md={7} {...props}>
+        <StyledTextColumn sm={12} md={7}>
           <StyledTitle>{props.title}</StyledTitle>
           <StyledDescription>
             {props.description[0]} <b>{props.description[1]}</b>
