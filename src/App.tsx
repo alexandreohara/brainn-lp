@@ -8,6 +8,7 @@ import StormingPage from 'pages/StormingPage';
 import DeliveryPage from 'pages/DeliveryPage';
 import AugmentationPage from 'pages/AugmentationPage';
 import HowWeCanHelp from 'pages/HowWeCanHelp';
+import AboutUs from 'pages/AboutUs';
 
 const App = () => {
   return (
@@ -25,6 +26,7 @@ const App = () => {
             path={'/services/augmentation'}
             component={AugmentationPage}
           />
+          <Route exact path={'/about-us'} component={AboutUs} />
         </Switch>
       </Router>
     </React.Fragment>
