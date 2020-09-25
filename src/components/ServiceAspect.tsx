@@ -16,7 +16,7 @@ const StyledTitleWithLeftBorder = styled.div.attrs((props: any) => ({
   borderColor: props.borderColor,
 }))`
   padding-left: 5px;
-  margin: 6px 6px;
+  margin: 16px 6px;
   font-weight: bold;
   font-size: 24px;
   color: ${Colors.white};

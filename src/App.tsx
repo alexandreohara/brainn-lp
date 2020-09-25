@@ -7,6 +7,7 @@ import Services from 'pages/Services';
 import StormingPage from 'pages/StormingPage';
 import DeliveryPage from 'pages/DeliveryPage';
 import AugmentationPage from 'pages/AugmentationPage';
+import HowWeCanHelp from 'pages/HowWeCanHelp';
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route exact path={'/services'} component={Services} />
           <Route exact path={'/services/storming'} component={StormingPage} />
           <Route exact path={'/services/delivery'} component={DeliveryPage} />
+          <Route exact path={'/how-we-can-help'} component={HowWeCanHelp} />
           <Route
             exact
             path={'/services/augmentation'}
