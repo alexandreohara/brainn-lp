@@ -5,11 +5,11 @@ import { Col, Row } from 'react-flexbox-grid';
 import { useHistory } from 'react-router-dom';
 
 interface CardProps {
-  color?: string;
   title: string;
   textFirst: string;
   image: string;
   description: string;
+  color?: string;
   url?: string;
 }
 
@@ -122,9 +122,7 @@ export const HomeCard = (props: CardProps) => {
             {props.description[0]} <b>{props.description[1]}</b>
           </StyledDescription>
           <StyledLine />
-          <StyledButton onClick={() => handleClick}>
-            Meet our process
-          </StyledButton>
+          <StyledButton onClick={handleClick}>Meet our process</StyledButton>
         </StyledTextColumn>
       </Row>
     </StyledCard>
