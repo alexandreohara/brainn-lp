@@ -1,8 +1,9 @@
 import React from 'react';
+
 import { Col, Row } from 'react-flexbox-grid';
 import WorldMap from 'assets/images/WorldMap.svg';
 import styled from 'styled-components';
-import { MapPin } from './MapPin';
+import { MapPin } from 'components';
 import { Colors } from 'consts/colors';
 interface TextProps {
   fontSize?: string;
@@ -10,6 +11,10 @@ interface TextProps {
   fontWeight?: string;
   margin?: string;
 }
+
+const StyledFooter = styled.div`
+  padding-left: 64px;
+`;
 
 const StyledMap = styled.img`
   opacity: 0.5;
@@ -69,9 +74,21 @@ const StyledTextWrapper = styled.div`
   }
 `;
 
+const StyledLink = styled.a`
+  text-decoration: none;
+
+  :visited {
+    color: ${Colors.white};
+  }
+`;
+
+const brainnGoogleMapsUrl =
+  'https://www.google.com/maps/dir//R.+Fradique+Coutinho,+30+-+Pinheiros,+S%C3%A3o+Paulo+-+SP,+05416-000/@-23.5658389,-46.6864248,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94ce57760ffdd97d:0x9dd4a94d4147cb6!2m2!1d-46.6842361!2d-23.5658389!3e0';
+const githubUrl = 'https://github.com/brainn-co';
+
 export const Footer = () => {
   return (
-    <div style={{ paddingLeft: '64px', background: '#072337' }}>
+    <StyledFooter>
       <Row>
         <Col xs={12} md={6}>
           <StyledTextWrapper color={'#546E82'} fontWeight={'bold'}>
@@ -92,7 +109,11 @@ export const Footer = () => {
 
           <StyledTextWrapper>
             <StyledTextWithLeftBorder>Open Source</StyledTextWithLeftBorder>
-            <StyledSubtitle>Github</StyledSubtitle>
+            <StyledSubtitle>
+              <StyledLink href={githubUrl} target="_blank">
+                Github
+              </StyledLink>
+            </StyledSubtitle>
           </StyledTextWrapper>
 
           <StyledDivider />
@@ -100,7 +121,9 @@ export const Footer = () => {
           <StyledTextWrapper>
             <StyledTextWithLeftBorder>Headquarter</StyledTextWithLeftBorder>
             <StyledSubtitle>
-              30 Fradique Coutinho St. São Paulo - Brazil
+              <StyledLink href={brainnGoogleMapsUrl} target="_blank">
+                30 Fradique Coutinho St. São Paulo - Brazil
+              </StyledLink>
             </StyledSubtitle>
           </StyledTextWrapper>
         </Col>
@@ -157,6 +180,6 @@ export const Footer = () => {
           </StyledMapWrapper>
         </Col>
       </Row>
-    </div>
+    </StyledFooter>
   );
 };

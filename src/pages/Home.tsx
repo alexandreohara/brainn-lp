@@ -1,31 +1,32 @@
 import React from 'react';
-import './components/Navbar.css';
+
+import 'components/Navbar.css';
 import './Home.css';
 import { Col, Row } from 'react-flexbox-grid';
-import HomeCard from './components/Card';
-import Storming from './assets/images/Storming.svg';
-import Delivery from './assets/images/Delivery.svg';
-import Augmentation from './assets/images/Augmentation.svg';
-import TypeLogo from './assets/images/TypeLogo.png';
-import Suflex from './assets/images/Suflex.png';
-import Kovi from './assets/images/Kovi.png';
-import Cvc from './assets/images/Cvc.png';
-import Bxblue from './assets/images/Bxblue.png';
-import Bv from './assets/images/Bv.png';
-import Gupy from './assets/images/Gupy.png';
-import FindHotel from './assets/images/FindHotel.png';
-import Poliedro from './assets/images/Poliedro.png';
-import Pipefy from './assets/images/Pipefy.png';
-import Neo from './assets/images/Neo.png';
+import Storming from 'assets/images/Storming.svg';
+import Delivery from 'assets/images/Delivery.svg';
+import Augmentation from 'assets/images/Augmentation.svg';
+import TypeLogo from 'assets/images/TypeLogo.png';
+import Suflex from 'assets/images/Suflex.png';
+import Kovi from 'assets/images/Kovi.png';
+import Cvc from 'assets/images/Cvc.png';
+import Bxblue from 'assets/images/Bxblue.png';
+import Bv from 'assets/images/Bv.png';
+import Gupy from 'assets/images/Gupy.png';
+import FindHotel from 'assets/images/FindHotel.png';
+import Poliedro from 'assets/images/Poliedro.png';
+import Pipefy from 'assets/images/Pipefy.png';
+import Neo from 'assets/images/Neo.png';
 import {
+  HomeCard,
+  Footer,
   HorizontalScroll,
   SliderCard,
   VerticalSeparator,
   HorizontalSeparator,
-} from './components';
-import { Footer } from './components/Footer';
+} from 'components';
 import styled from 'styled-components';
-import { Colors } from 'consts/colors';
+import { Colors, Gradients } from 'consts/colors';
 
 const StyledHome = styled.div`
   background-color: ${Colors.black};
@@ -49,10 +50,6 @@ const StyledCaption = styled.div`
   font-weight: bold;
   color: ${Colors.white};
   opacity: 0.24;
-
-  @media (max-width: 767px) {
-    font-size: 44px;
-  }
 `;
 
 const StyledImage = styled.div`
@@ -75,7 +72,7 @@ const StyledPadding = styled.div`
   padding: 64px;
 `;
 
-export const Home = () => {
+const Home = () => {
   return (
     <StyledHome>
       <Row middle={'xs'}>
@@ -155,12 +152,12 @@ export const Home = () => {
   );
 };
 
+export default Home;
+
 const cardSections = [
   {
     key: 0,
-    deg: 260.39,
-    startColor: '#00BEFB',
-    endColor: '#007CF9',
+    color: Gradients.blue,
     title: 'Storming',
     textFirst: true,
     image: Storming,
@@ -169,13 +166,12 @@ const cardSections = [
     products and provide a competitive business advantage.`,
       `The idea that works.`,
     ],
+    url: '/services/storming',
   },
 
   {
     key: 1,
-    deg: 260.39,
-    startColor: '#FFD15C',
-    endColor: '#FF912C',
+    color: Gradients.yellow,
     title: 'Delivery',
     textFirst: false,
     image: Delivery,
@@ -184,13 +180,12 @@ const cardSections = [
        great talents, and true agile methods.`,
       `The product that works.`,
     ],
+    url: '/services/delivery',
   },
 
   {
     key: 2,
-    deg: 260.39,
-    startColor: '#19EE94',
-    endColor: '#04B375',
+    color: Gradients.green,
     title: 'Augmentation',
     textFirst: false,
     image: Augmentation,
@@ -198,6 +193,7 @@ const cardSections = [
       `We provide staff augmentation to high-growth tech companies using new programming languages to move faster.`,
       `The team that works.`,
     ],
+    url: '/services/augmentation',
   },
 ];
 

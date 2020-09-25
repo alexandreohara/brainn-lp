@@ -1,14 +1,13 @@
-import { Colors, Gradients } from 'consts/colors';
 import React from 'react';
+
+import { Colors, Gradients } from 'consts/colors';
 import { Col, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Augmentation from 'assets/images/Augmentation.svg';
-import { ServiceAspect } from 'components/ServiceAspect';
-import { Footer } from 'components/Footer';
-import { ServiceNavButton } from 'components/ServiceNavButton';
 import Elixir from 'assets/icons/Elixir.svg';
 import Ruby from 'assets/icons/Ruby.svg';
 import ReactIcon from 'assets/icons/ReactIcon.svg';
+import { Footer, ServiceAspect, ServiceNavButton } from 'components';
 
 const StyledHeader = styled.div`
   background: ${Gradients.green};

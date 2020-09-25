@@ -1,18 +1,23 @@
 import React from 'react';
+
 import styled from 'styled-components';
 import { Col, Row } from 'react-flexbox-grid';
+import { useHistory } from 'react-router-dom';
 
 interface CardProps {
-  deg: number;
-  startColor: string;
-  endColor: string;
+  title: string;
+  textFirst: string;
+  image: string;
+  description: string;
+  color?: string;
+  url?: string;
 }
 
 const StyledCard = styled.div`
   ${(props: CardProps) =>
     `
       border-radius: 16px;
-      background: linear-gradient(${props.deg}deg, ${props.startColor} 0%, ${props.endColor} 100%);
+      background: ${props.color}
     `}
 `;
 
@@ -72,7 +77,11 @@ const StyledLine = styled.div`
   background-color: white;
 `;
 
-const HomeCard = (props: any) => {
+export const HomeCard = (props: CardProps) => {
+  const history = useHistory();
+
+  const handleClick = () => history.push(props.url ?? '');
+
   if (props.textFirst) {
     return (
       <StyledCard {...props}>
@@ -83,12 +92,12 @@ const HomeCard = (props: any) => {
               {props.description[0]} <b>{props.description[1]}</b>
             </StyledDescription>
             <StyledLine />
-            <StyledButton>Meet our process</StyledButton>
+            <StyledButton onClick={handleClick}>Meet our process</StyledButton>
           </StyledTextColumn>
           <Col md={5} className={'hidden-sm hidden-xs'}>
             <StyledImage
               src={props.image}
-              alt="logo"
+              alt={'logo'}
               width={'100%'}
             ></StyledImage>
           </Col>
@@ -103,7 +112,7 @@ const HomeCard = (props: any) => {
         <Col md={5} className={'hidden-xs hidden-sm'}>
           <StyledImage
             src={props.image}
-            alt="logo"
+            alt={'logo'}
             width={'100%'}
           ></StyledImage>
         </Col>
@@ -113,11 +122,9 @@ const HomeCard = (props: any) => {
             {props.description[0]} <b>{props.description[1]}</b>
           </StyledDescription>
           <StyledLine />
-          <StyledButton>Meet our process</StyledButton>
+          <StyledButton onClick={handleClick}>Meet our process</StyledButton>
         </StyledTextColumn>
       </Row>
     </StyledCard>
   );
 };
-
-export default HomeCard;

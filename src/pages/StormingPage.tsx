@@ -1,17 +1,17 @@
-import { Colors, Gradients } from 'consts/colors';
 import React from 'react';
+
+import { Colors, Gradients } from 'consts/colors';
 import { Col, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
 import Storming from 'assets/images/Storming.svg';
-import { ServiceAspect } from 'components/ServiceAspect';
-import { Footer } from 'components/Footer';
-import { ServiceNavButton } from 'components/ServiceNavButton';
 import Benchmark from 'assets/icons/Benchmark.svg';
 import Inception from 'assets/icons/Inception.svg';
 import Roadmap from 'assets/icons/Roadmap.svg';
 import Architecture from 'assets/icons/Architecture.svg';
 import Prototype from 'assets/icons/Prototype.svg';
 import Validation from 'assets/icons/Validation.svg';
+
+import { Footer, ServiceAspect, ServiceNavButton } from 'components';
 
 const StyledHeader = styled.div`
   background: ${Gradients.lightBlue};

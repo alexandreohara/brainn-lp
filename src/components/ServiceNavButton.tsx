@@ -1,9 +1,11 @@
 import React from 'react';
+
 import styled from 'styled-components';
 import { Colors } from 'consts/colors';
 import { Col, Row } from 'react-flexbox-grid';
 import RightArrow from 'assets/icons/RightArrow.svg';
 import LeftArrow from 'assets/icons/LeftArrow.svg';
+import { useHistory } from 'react-router-dom';
 
 interface ServiceNavButtonProps {
   color: string;
@@ -18,6 +20,7 @@ const StyledServiceNavButton = styled.div.attrs((props: any) => ({
 }))`
   width: 100%;
   background: ${(props) => props.color};
+  cursor: pointer;
 `;
 
 const StyledNextContent = styled.div`
@@ -55,43 +58,45 @@ const StyledPrevImgWrapper = styled.div`
   text-align: right;
 `;
 
-const StyledLink = styled.a`
-  text-decoration: none;
-`;
-
 export const ServiceNavButton = (props: ServiceNavButtonProps) => {
+  const history = useHistory();
+
+  const handleNextClick = () => {
+    history.push(props.nextServiceUrl ?? '');
+  };
+
+  const handlePreviousClick = () => {
+    history.push(props.previousServiceUrl ?? '');
+  };
+
   return (
     <StyledServiceNavButton color={props.color}>
       {props.next ? (
-        <StyledLink href={props.nextServiceUrl}>
-          <Row>
-            <Col xs={9}>
-              <StyledNextContent>
-                <StyledTitle>{props.title}</StyledTitle>
-                <StyledText>Next</StyledText>
-              </StyledNextContent>
-            </Col>
-            <Col xs={3}>
-              <StyledNextImg src={RightArrow} alt={'right-arrow'} />
-            </Col>
-          </Row>
-        </StyledLink>
+        <Row onClick={handleNextClick}>
+          <Col xs={9}>
+            <StyledNextContent>
+              <StyledTitle>{props.title}</StyledTitle>
+              <StyledText>Next</StyledText>
+            </StyledNextContent>
+          </Col>
+          <Col xs={3}>
+            <StyledNextImg src={RightArrow} alt={'right-arrow'} />
+          </Col>
+        </Row>
       ) : (
-        <StyledLink href={props.previousServiceUrl}>
-          <Row>
-            <Col xs={3}>
-              <StyledPrevImgWrapper>
-                <StyledPreviousImg src={LeftArrow} alt={'left-arrow'} />
-              </StyledPrevImgWrapper>
-            </Col>
-            <Col xs={9}>
-              <StyledPreviousContent>
-                <StyledTitle>{props.title}</StyledTitle>
-                <StyledText>Previous</StyledText>
-              </StyledPreviousContent>
-            </Col>
-          </Row>
-        </StyledLink>
+        <Row onClick={handlePreviousClick}>
+          <Col xs={3}>
+            <StyledPrevImgWrapper>
+              <StyledPreviousImg src={LeftArrow} alt={'left-arrow'} />
+            </StyledPrevImgWrapper>
+          </Col>
+          <Col xs={9}>
+            <StyledPreviousContent>
+              <StyledTitle>{props.title}</StyledTitle>
+              <StyledText>Previous</StyledText>
+            </StyledPreviousContent>
+          </Col>
+        </Row>
       )}
     </StyledServiceNavButton>
   );
