@@ -76,7 +76,7 @@ const DecorationLine = styled.div`
 `;
 
 const StyledContent = styled.div`
-  padding: 0 8px;
+  padding: 0 16px;
 `;
 
 export const SliderCard = (props: any) => {

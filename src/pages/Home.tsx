@@ -37,9 +37,12 @@ const StyledHeaderTitle = styled.div`
   font-size: 88px;
   font-weight: bold;
   color: ${Colors.white};
+  width: 768px;
 
   @media (max-width: 767px) {
     font-size: 44px;
+    width: 320px;
+    padding-left: 20px;
   }
 `;
 
