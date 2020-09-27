@@ -63,3 +63,30 @@ jobs:
         run: yarn lint
         env:
           SKIP_PREFLIGHT_CHECK: true
+
+  test:
+    needs: build
+    name: Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12.18.0
+
+      - uses: actions/cache@v2
+        with:
+          path: 'node_modules'
+          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-yarn-
+
+      - name: test
+        run: yarn test ./
+        env:
+          SKIP_PREFLIGHT_CHECK: true
+          REACT_APP_COMPANY_HERO_API_URL: http://localhost
