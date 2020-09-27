@@ -14,6 +14,10 @@ interface TextProps {
 
 const StyledFooter = styled.div`
   padding-left: 64px;
+
+  @media (max-width: 767px) {
+    padding-left: 20px;
+  }
 `;
 
 const StyledMap = styled.img`

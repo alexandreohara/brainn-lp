@@ -46,6 +46,19 @@ const StyledHeaderTitle = styled.div`
   }
 `;
 
+const StyledHowWeCanHelp = styled.div`
+  padding-left: 64px;
+  padding-top: 40px;
+  font-size: 80px;
+  font-weight: bold;
+  color: ${Colors.white};
+
+  @media (max-width: 767px) {
+    font-size: 44px;
+    padding-left: 20px;
+  }
+`;
+
 const StyledCaption = styled.div`
   text-align: center;
   font-size: 16px;
@@ -72,6 +85,10 @@ const StyledColumn = styled(Col)`
 
 const StyledPadding = styled.div`
   padding: 64px;
+
+  @media (max-width: 767px) {
+    padding-left: 20px;
+  }
 `;
 
 const Home = () => {
@@ -124,7 +141,7 @@ const Home = () => {
         </StyledLogos>
       </HorizontalScroll>
       <StyledCaption>Trusted by global innovators</StyledCaption>
-      <StyledHeaderTitle>How we can help</StyledHeaderTitle>
+      <StyledHowWeCanHelp>How we can help</StyledHowWeCanHelp>
       <StyledPadding>
         <HorizontalScroll>
           {SLIDER_CARDS.map((card, index) => (
