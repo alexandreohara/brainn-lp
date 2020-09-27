@@ -73,6 +73,10 @@ const StyledTextWrapper = styled.div`
       margin: ${props.margin};
     `}
 
+  @media (max-width: 1330px) {
+    font-size: 58px;
+  }
+
   @media (max-width: 767px) {
     font-size: 44px;
   }
@@ -94,7 +98,7 @@ export const Footer = () => {
   return (
     <StyledFooter>
       <Row>
-        <Col xs={12} md={6}>
+        <Col md={12} lg={6}>
           <StyledTextWrapper color={'#546E82'} fontWeight={'bold'}>
             We do digital.
           </StyledTextWrapper>
@@ -131,7 +135,7 @@ export const Footer = () => {
             </StyledSubtitle>
           </StyledTextWrapper>
         </Col>
-        <Col md={6} className={'hidden-xs hidden-sm'}>
+        <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
           <StyledMapWrapper>
             <MapPin top={'31%'} left={'13%'}>
               Vancouver
