@@ -1,6 +1,14 @@
 import React from 'react';
 
 import styled from 'styled-components';
+import { useHistory } from 'react-router-dom';
+import { Gradients } from 'consts/colors';
+
+interface SliderCardProps {
+  title: string;
+  lineColor: string;
+  url?: string;
+}
 
 export const HorizontalScroll = styled.div`
   display: flex;
@@ -17,16 +25,18 @@ const MiniCard = styled.div`
   flex-direction: column;
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.25);
   border-radius: 4px;
-  background: linear-gradient(225deg, #153a55 0%, #0f2a3d 100%);
+  background: ${Gradients.gray};
+  cursor: pointer;
 `;
 
-const StyledLine = styled.div`
+const StyledLine = styled.div.attrs((props: any) => ({
+  color: props.color,
+}))`
   position: absolute;
   z-index: 1;
   width: 304px;
   height: 5px;
-  background: ${(props: any) =>
-    `linear-gradient(${props.deg}deg, ${props.startColor} 0%, ${props.endColor} 100%)`};
+  background: ${(props) => props.color};
 `;
 
 const HideLine = styled.div`
@@ -79,10 +89,13 @@ const StyledContent = styled.div`
   padding: 0 16px;
 `;
 
-export const SliderCard = (props: any) => {
+export const SliderCard = (props: SliderCardProps) => {
+  const history = useHistory();
+  const handleClick = () => history.push(props.url ?? '');
+
   return (
-    <MiniCard>
-      <StyledLine {...props.decorationLine} />
+    <MiniCard onClick={handleClick}>
+      <StyledLine color={props.lineColor} />
       <HideLine />
       <StyledContent>
         <VerticalSeparator double />

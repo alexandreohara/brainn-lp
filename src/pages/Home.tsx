@@ -151,8 +151,9 @@ const Home = () => {
           {SLIDER_CARDS.map((card, index) => (
             <React.Fragment key={index}>
               <SliderCard
-                decorationLine={card.decorationLine}
+                lineColor={card.lineColor}
                 title={card.title}
+                url={card.url}
               />
               {index !== SLIDER_CARDS.length && <HorizontalSeparator />}
             </React.Fragment>
@@ -230,34 +231,22 @@ const cardSections = [
 const SLIDER_CARDS = [
   {
     title: 'Launch innovative digital products',
-    decorationLine: {
-      deg: 260.39,
-      startColor: '#FFD15C',
-      endColor: '#FF912C',
-    },
+    lineColor: Gradients.yellow,
+    url: '/how-we-can-help',
   },
   {
     title: 'Meet deadlines within your digital products',
-    decorationLine: {
-      deg: 261.18,
-      startColor: '#00BEFB',
-      endColor: '#007CF9',
-    },
+    lineColor: Gradients.blue,
+    url: '/how-we-can-help',
   },
   {
     title: 'Increase quality to regain trust from your users',
-    decorationLine: {
-      deg: 263.71,
-      startColor: '#FF6B8B',
-      endColor: '#FC2D5A',
-    },
+    lineColor: Gradients.pink,
+    url: '/how-we-can-help',
   },
   {
     title: 'Improve your architecture and scale faster',
-    decorationLine: {
-      deg: 260.39,
-      startColor: '#8C79FF',
-      endColor: '#6850F9',
-    },
+    lineColor: Gradients.purple,
+    url: '/how-we-can-help',
   },
 ];
