@@ -200,6 +200,8 @@ const StyledButton = styled.div`
   border-radius: 16px;
   text-align: center;
   color: ${Colors.white};
+  cursor: pointer;
+
   @media (max-width: 767px) {
     padding: 22px;
     margin: 20px 16px;
@@ -209,6 +211,7 @@ const StyledButton = styled.div`
 const StyledButtonTitle = styled.div`
   font-size: 80px;
   font-weight: bold;
+
   @media (max-width: 767px) {
     font-size: 30px;
   }
@@ -225,6 +228,7 @@ const StyledSeeMore = styled.div`
   font-size: 28px;
   font-weight: 600;
   margin-top: 32px;
+
   @media (max-width: 767px) {
     font-size: 18px;
   }
@@ -233,12 +237,17 @@ const StyledSeeMore = styled.div`
 const StyledVectorRight = styled.img`
   width: 12px;
   margin-left: 12px;
+
   @media (max-width: 767px) {
     width: 8px;
   }
 `;
 
+const jobOpeningUrl = ' https://apply.workable.com/brainn/';
+
 const AboutUs = () => {
+  const handleClick = () => window.open(jobOpeningUrl, '_blank');
+
   return (
     <>
       <StyledHeader>
@@ -357,7 +366,7 @@ const AboutUs = () => {
         </Row>
       </StyledContent>
 
-      <StyledButton>
+      <StyledButton onClick={handleClick}>
         <StyledButtonTitle>Join the team</StyledButtonTitle>
         <StyledButtonSubTitle>
           We&apos;re a growing team with big ambitions.
