@@ -30,16 +30,24 @@ interface PinProps {
 const StyledPinText = styled.span`
   visibility: hidden;
   font-size: 1vw;
+  font-weight: 500;
+  line-height: 20px;
   position: absolute;
-  width: 10vw;
+  white-space: nowrap;
+  background: ${Colors.lightNavy};
+  padding: 0 10px;
+  border: 1px solid #fc2d5a;
+  border-radius: 100px;
+  color: ${Colors.pink};
 
   ${(props: PinProps) =>
     props &&
     `
       color: ${props.color};
+      border: 1px solid ${props.color};
       top: ${
         props.top === undefined && props.bottom === undefined
-          ? '30%'
+          ? '20%'
           : props.top
       };
       bottom: ${props.bottom};
@@ -75,13 +83,11 @@ const StyledPin = styled.div`
 
 const StyledPinWrapper = styled.div`
   position: absolute;
-  color: ${Colors.pink};
   z-index: 1;
 
   ${(props: PinProps) =>
     props &&
     `
-      color: ${props.color};
       top: ${props.top};
       bottom: ${props.bottom};
       left: ${props.left};
@@ -98,6 +104,7 @@ export const MapPin = (props: MapPinProps) => {
     <StyledPinWrapper {...props}>
       <StyledPin backgroundColor={props.color} />
       <StyledPinText
+        color={props.color}
         top={props.textTop}
         bottom={props.textBottom}
         left={props.textLeft}

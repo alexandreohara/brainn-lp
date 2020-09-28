@@ -13,10 +13,10 @@ interface TextProps {
 }
 
 const StyledFooter = styled.div`
-  padding-left: 64px;
+  padding: 55px 0 0 64px;
 
-  @media (max-width: 767px) {
-    padding-left: 20px;
+  @media (max-width: 991px) {
+    padding: 15px 0 40px 20px;
   }
 `;
 
@@ -44,7 +44,7 @@ const StyledTextWithLeftBorder = styled.div`
   font-weight: bold;
   font-size: 24px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 16px;
   }
 `;
@@ -55,7 +55,7 @@ const StyledSubtitle = styled.div`
   opacity: 0.8;
   font-size: 16px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 12px;
   }
 `;
@@ -77,7 +77,7 @@ const StyledTextWrapper = styled.div`
     font-size: 58px;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 44px;
   }
 `;

@@ -91,6 +91,10 @@ const StyledPadding = styled.div`
   }
 `;
 
+const StyledFooter = styled.div`
+  background: ${Colors.lightNavy};
+`;
+
 const Home = () => {
   return (
     <StyledHome>
@@ -174,7 +178,9 @@ const Home = () => {
           })}
         </Col>
       </StyledPadding>
-      <Footer />
+      <StyledFooter>
+        <Footer />
+      </StyledFooter>
     </StyledHome>
   );
 };
