@@ -47,7 +47,7 @@ const StyledPinText = styled.span`
       border: 1px solid ${props.color};
       top: ${
         props.top === undefined && props.bottom === undefined
-          ? '20%'
+          ? '23%'
           : props.top
       };
       bottom: ${props.bottom};

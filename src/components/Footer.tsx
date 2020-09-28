@@ -138,50 +138,52 @@ export const Footer = () => {
         <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
           <StyledMapWrapper>
             <MapPin top={'31%'} left={'13%'}>
-              Vancouver
+              Vancouver, Canada
             </MapPin>
             <MapPin color={Colors.lightBlue} top={'38%'} left={'14%'}>
-              San Francisco
+              San Francisco, USA
             </MapPin>
             <MapPin color={Colors.lightBlue} top={'31%'} left={'60.5%'}>
-              Amsterdam
+              Amsterdam, Netherlands
             </MapPin>
             <MapPin color={Colors.yellow} top={'26%'} left={'56%'}>
-              Dublin
+              Dublin, Ireland
             </MapPin>
             <MapPin color={Colors.purple} top={'36.5%'} left={'57%'}>
-              Lisboa
+              Lisboa, Portugal
             </MapPin>
             <MapPin color={Colors.green} top={'28%'} left={'63.5%'}>
-              Berlin
+              Berlin, Germany
             </MapPin>
             <MapPin top={'32%'} left={'64.5%'}>
-              Trento
+              Trento, Italy
             </MapPin>
-
-            <MapPin color={Colors.blue} top={'52%'} left={'45%'}>
-              bla
+            <MapPin color={Colors.blue} top={'53%'} left={'44.7%'}>
+              Bahia
             </MapPin>
-            <MapPin color={Colors.yellow} top={'54.2%'} left={'43.8%'}>
-              ble
+            <MapPin color={Colors.yellow} top={'55.7%'} left={'43%'}>
+              Rio de Janeiro
             </MapPin>
-            <MapPin color={Colors.purple} top={'55.8%'} left={'43%'}>
-              bli
+            <MapPin color={Colors.purple} top={'59%'} left={'43%'}>
+              Espírito Santo
             </MapPin>
-            <MapPin top={'58.3%'} left={'40%'}>
-              blo
+            <MapPin top={'53.2%'} left={'39.5%'}>
+              Minas Gerais
             </MapPin>
-            <MapPin color={Colors.lightBlue} top={'56.5%'} left={'40%'}>
-              blu
+            <MapPin color={Colors.lightBlue} top={'57%'} left={'39%'}>
+              São Paulo
             </MapPin>
-            <MapPin color={Colors.purple} top={'58.7%'} left={'37.7%'}>
-              bah
+            <MapPin color={Colors.purple} top={'59%'} left={'35%'}>
+              Santa Catarina
             </MapPin>
-            <MapPin color={Colors.green} top={'53.9%'} left={'38.4%'}>
-              beh
+            <MapPin color={Colors.green} top={'55%'} left={'35.5%'}>
+              Goiás
             </MapPin>
-            <MapPin top={'52.2%'} left={'40.7%'}>
-              bih
+            <MapPin color={Colors.blue} top={'60.2%'} left={'39%'}>
+              Paraná
+            </MapPin>
+            <MapPin top={'62.5%'} left={'36.2%'}>
+              Rio Grande do Sul
             </MapPin>
 
             <StyledMap src={WorldMap} alt={'world-map'} />
