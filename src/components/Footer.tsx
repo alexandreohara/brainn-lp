@@ -93,6 +93,8 @@ const StyledLink = styled.a`
 const brainnGoogleMapsUrl =
   'https://www.google.com/maps/dir//R.+Fradique+Coutinho,+30+-+Pinheiros,+S%C3%A3o+Paulo+-+SP,+05416-000/@-23.5658389,-46.6864248,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94ce57760ffdd97d:0x9dd4a94d4147cb6!2m2!1d-46.6842361!2d-23.5658389!3e0';
 const githubUrl = 'https://github.com/brainn-co';
+const brainnEmail = 'hello@brainn.co';
+const emailLink = `mailto: ${brainnEmail}`;
 
 export const Footer = () => {
   return (
@@ -108,32 +110,34 @@ export const Footer = () => {
 
           <StyledDivider />
 
-          <StyledTextWrapper>
-            <StyledTextWithLeftBorder>Become a Client</StyledTextWithLeftBorder>
-            <StyledSubtitle>hello@brainn.co</StyledSubtitle>
-          </StyledTextWrapper>
+          <StyledLink href={emailLink} target="_blank">
+            <StyledTextWrapper>
+              <StyledTextWithLeftBorder>
+                Become a Client
+              </StyledTextWithLeftBorder>
+              <StyledSubtitle>{brainnEmail}</StyledSubtitle>
+            </StyledTextWrapper>
+          </StyledLink>
 
           <StyledDivider />
 
-          <StyledTextWrapper>
-            <StyledTextWithLeftBorder>Open Source</StyledTextWithLeftBorder>
-            <StyledSubtitle>
-              <StyledLink href={githubUrl} target="_blank">
-                Github
-              </StyledLink>
-            </StyledSubtitle>
-          </StyledTextWrapper>
+          <StyledLink href={githubUrl} target="_blank">
+            <StyledTextWrapper>
+              <StyledTextWithLeftBorder>Open Source</StyledTextWithLeftBorder>
+              <StyledSubtitle>Github</StyledSubtitle>
+            </StyledTextWrapper>
+          </StyledLink>
 
           <StyledDivider />
 
-          <StyledTextWrapper>
-            <StyledTextWithLeftBorder>Headquarter</StyledTextWithLeftBorder>
-            <StyledSubtitle>
-              <StyledLink href={brainnGoogleMapsUrl} target="_blank">
+          <StyledLink href={brainnGoogleMapsUrl} target="_blank">
+            <StyledTextWrapper>
+              <StyledTextWithLeftBorder>Headquarter</StyledTextWithLeftBorder>
+              <StyledSubtitle>
                 30 Fradique Coutinho St. São Paulo - Brazil
-              </StyledLink>
-            </StyledSubtitle>
-          </StyledTextWrapper>
+              </StyledSubtitle>
+            </StyledTextWrapper>
+          </StyledLink>
         </Col>
         <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
           <StyledMapWrapper>
