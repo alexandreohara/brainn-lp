@@ -39,7 +39,7 @@ const StyledHeaderTitle = styled.div`
   color: ${Colors.white};
   width: 768px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 44px;
     width: 320px;
     padding-left: 20px;
@@ -53,7 +53,7 @@ const StyledHowWeCanHelp = styled.div`
   font-weight: bold;
   color: ${Colors.white};
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 44px;
     padding-left: 20px;
   }
@@ -86,7 +86,7 @@ const StyledColumn = styled(Col)`
 const StyledPadding = styled.div`
   padding: 64px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     padding-left: 20px;
   }
 `;

@@ -35,7 +35,7 @@ const StyledTitle = styled.div`
     font-size: 65px;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 44px;
   }
 `;
@@ -47,7 +47,7 @@ const StyledDescription = styled.div`
   line-height: 39px;
   padding-bottom: 6%;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 20px;
   }
 `;
@@ -68,7 +68,7 @@ const StyledButton = styled.button`
     outline: 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 20px;
   }
 `;
