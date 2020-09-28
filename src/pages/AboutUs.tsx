@@ -52,11 +52,12 @@ const StyledHeaderText = styled.div`
 
 const StyledPhotosRow = styled.div`
   text-align: center;
+  display: flex;
 `;
 
 const StyledBoardPostitPhoto = styled.div`
   text-align: center;
-  display: inline-block;
+  flex: 1.5941;
   margin-right: 8px;
 
   @media (max-width: 898px) {
@@ -65,7 +66,7 @@ const StyledBoardPostitPhoto = styled.div`
 `;
 
 const StyledProductCanvasPhoto = styled.div`
-  display: inline-block;
+  flex: 1;
 
   @media (max-width: 898px) {
     display: none;
@@ -73,7 +74,7 @@ const StyledProductCanvasPhoto = styled.div`
 `;
 
 const StyledMeetingPhoto = styled.div`
-  display: inline-block;
+  flex: 1.5941;
   margin-left: 8px;
 
   @media (max-width: 1439px) {
@@ -83,7 +84,7 @@ const StyledMeetingPhoto = styled.div`
 
 const StyledCodingPhoto = styled.div`
   text-align: center;
-  display: inline-block;
+  flex: 1.0119;
   margin-right: 8px;
 
   @media (max-width: 898px) {
@@ -92,7 +93,7 @@ const StyledCodingPhoto = styled.div`
 `;
 
 const StyledCelebratingPhoto = styled.div`
-  display: inline-block;
+  flex: 1.5941;
   margin-right: 8px;
 
   @media (max-width: 1439px) {
@@ -101,7 +102,7 @@ const StyledCelebratingPhoto = styled.div`
 `;
 
 const StyledWritingWallPostitPhoto = styled.div`
-  display: inline-block;
+  flex: 1.5941;
 
   @media (max-width: 898px) {
     display: none;
@@ -110,8 +111,8 @@ const StyledWritingWallPostitPhoto = styled.div`
 
 const StyledProductCanvasZoomed = styled.img`
   display: none;
-  max-width: 419px;
   width: 100%;
+  margin-bottom: 8px;
 
   @media (max-width: 898px) {
     display: inline;
@@ -121,7 +122,6 @@ const StyledProductCanvasZoomed = styled.img`
 
 const StyledWritingWallPostitZoomed = styled.img`
   display: none;
-  max-width: 419px;
   width: 100%;
 
   @media (max-width: 898px) {
@@ -256,29 +256,33 @@ const AboutUs = () => {
 
       <StyledPhotosRow>
         <StyledBoardPostitPhoto>
-          <img src={BoardPostitPhoto} alt={'board-postit'} />
+          <img src={BoardPostitPhoto} alt={'board-postit'} width={'100%'} />
         </StyledBoardPostitPhoto>
         <StyledProductCanvasPhoto>
-          <img src={ProductCanvasPhoto} alt={'product-canvas'} />
+          <img src={ProductCanvasPhoto} alt={'product-canvas'} width={'100%'} />
         </StyledProductCanvasPhoto>
         <StyledProductCanvasZoomed
           src={ProductCanvasZoomed}
           alt={'product-canvas-zoomed'}
         />
         <StyledMeetingPhoto>
-          <img src={MeetingPhoto} alt={'meeting'} />
+          <img src={MeetingPhoto} alt={'meeting'} width={'100%'} />
         </StyledMeetingPhoto>
       </StyledPhotosRow>
 
       <StyledPhotosRow>
         <StyledCodingPhoto>
-          <img src={CodingPhoto} alt={'coding'} />
+          <img src={CodingPhoto} alt={'coding'} width={'100%'} />
         </StyledCodingPhoto>
         <StyledCelebratingPhoto>
-          <img src={CelebratingPhoto} alt={'celebrating'} />
+          <img src={CelebratingPhoto} alt={'celebrating'} width={'100%'} />
         </StyledCelebratingPhoto>
         <StyledWritingWallPostitPhoto>
-          <img src={WritingWallPostitPhoto} alt={'writing-wall-postit'} />
+          <img
+            src={WritingWallPostitPhoto}
+            alt={'writing-wall-postit'}
+            width={'100%'}
+          />
         </StyledWritingWallPostitPhoto>
         <StyledWritingWallPostitZoomed
           src={WritingWallPostitZoomed}
