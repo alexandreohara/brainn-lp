@@ -31,7 +31,11 @@ const StyledTitle = styled.div`
   font-size: 80px;
   line-height: 101px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 1205px) {
+    font-size: 65px;
+  }
+
+  @media (max-width: 991px) {
     font-size: 44px;
   }
 `;
@@ -43,7 +47,7 @@ const StyledDescription = styled.div`
   line-height: 39px;
   padding-bottom: 6%;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 20px;
   }
 `;
@@ -64,7 +68,7 @@ const StyledButton = styled.button`
     outline: 0;
   }
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 20px;
   }
 `;
@@ -85,7 +89,7 @@ export const HomeCard = (props: CardProps) => {
     return (
       <StyledCard color={props.color}>
         <Row>
-          <StyledTextColumn sm={12} md={7}>
+          <StyledTextColumn md={12} lg={7}>
             <StyledTitle>{props.title}</StyledTitle>
             <StyledDescription>
               {props.description[0]} <b>{props.description[1]}</b>
@@ -93,7 +97,7 @@ export const HomeCard = (props: CardProps) => {
             <StyledLine />
             <StyledButton onClick={handleClick}>Meet our process</StyledButton>
           </StyledTextColumn>
-          <Col md={5} className={'hidden-sm hidden-xs'}>
+          <Col lg={5} className={'hidden-sm hidden-xs hidden-md'}>
             <StyledImage
               src={props.image}
               alt={'logo'}
@@ -108,14 +112,14 @@ export const HomeCard = (props: CardProps) => {
   return (
     <StyledCard color={props.color}>
       <Row>
-        <Col md={5} className={'hidden-xs hidden-sm'}>
+        <Col lg={5} className={'hidden-xs hidden-sm hidden-md'}>
           <StyledImage
             src={props.image}
             alt={'logo'}
             width={'100%'}
           ></StyledImage>
         </Col>
-        <StyledTextColumn sm={12} md={7}>
+        <StyledTextColumn md={12} lg={7}>
           <StyledTitle>{props.title}</StyledTitle>
           <StyledDescription>
             {props.description[0]} <b>{props.description[1]}</b>

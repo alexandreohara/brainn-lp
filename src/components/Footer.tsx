@@ -13,7 +13,11 @@ interface TextProps {
 }
 
 const StyledFooter = styled.div`
-  padding-left: 64px;
+  padding: 55px 0 0 64px;
+
+  @media (max-width: 991px) {
+    padding: 15px 0 40px 20px;
+  }
 `;
 
 const StyledMap = styled.img`
@@ -40,7 +44,7 @@ const StyledTextWithLeftBorder = styled.div`
   font-weight: bold;
   font-size: 24px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 16px;
   }
 `;
@@ -51,7 +55,7 @@ const StyledSubtitle = styled.div`
   opacity: 0.8;
   font-size: 16px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 12px;
   }
 `;
@@ -69,7 +73,11 @@ const StyledTextWrapper = styled.div`
       margin: ${props.margin};
     `}
 
-  @media (max-width: 767px) {
+  @media (max-width: 1330px) {
+    font-size: 58px;
+  }
+
+  @media (max-width: 991px) {
     font-size: 44px;
   }
 `;
@@ -85,12 +93,14 @@ const StyledLink = styled.a`
 const brainnGoogleMapsUrl =
   'https://www.google.com/maps/dir//R.+Fradique+Coutinho,+30+-+Pinheiros,+S%C3%A3o+Paulo+-+SP,+05416-000/@-23.5658389,-46.6864248,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94ce57760ffdd97d:0x9dd4a94d4147cb6!2m2!1d-46.6842361!2d-23.5658389!3e0';
 const githubUrl = 'https://github.com/brainn-co';
+const brainnEmail = 'hello@brainn.co';
+const emailLink = `mailto: ${brainnEmail}`;
 
 export const Footer = () => {
   return (
     <StyledFooter>
       <Row>
-        <Col xs={12} md={6}>
+        <Col md={12} lg={6}>
           <StyledTextWrapper color={'#546E82'} fontWeight={'bold'}>
             We do digital.
           </StyledTextWrapper>
@@ -100,80 +110,84 @@ export const Footer = () => {
 
           <StyledDivider />
 
-          <StyledTextWrapper>
-            <StyledTextWithLeftBorder>Become a Client</StyledTextWithLeftBorder>
-            <StyledSubtitle>hello@brainn.co</StyledSubtitle>
-          </StyledTextWrapper>
+          <StyledLink href={emailLink} target="_blank">
+            <StyledTextWrapper>
+              <StyledTextWithLeftBorder>
+                Become a Client
+              </StyledTextWithLeftBorder>
+              <StyledSubtitle>{brainnEmail}</StyledSubtitle>
+            </StyledTextWrapper>
+          </StyledLink>
 
           <StyledDivider />
 
-          <StyledTextWrapper>
-            <StyledTextWithLeftBorder>Open Source</StyledTextWithLeftBorder>
-            <StyledSubtitle>
-              <StyledLink href={githubUrl} target="_blank">
-                Github
-              </StyledLink>
-            </StyledSubtitle>
-          </StyledTextWrapper>
+          <StyledLink href={githubUrl} target="_blank">
+            <StyledTextWrapper>
+              <StyledTextWithLeftBorder>Open Source</StyledTextWithLeftBorder>
+              <StyledSubtitle>Github</StyledSubtitle>
+            </StyledTextWrapper>
+          </StyledLink>
 
           <StyledDivider />
 
-          <StyledTextWrapper>
-            <StyledTextWithLeftBorder>Headquarter</StyledTextWithLeftBorder>
-            <StyledSubtitle>
-              <StyledLink href={brainnGoogleMapsUrl} target="_blank">
+          <StyledLink href={brainnGoogleMapsUrl} target="_blank">
+            <StyledTextWrapper>
+              <StyledTextWithLeftBorder>Headquarter</StyledTextWithLeftBorder>
+              <StyledSubtitle>
                 30 Fradique Coutinho St. São Paulo - Brazil
-              </StyledLink>
-            </StyledSubtitle>
-          </StyledTextWrapper>
+              </StyledSubtitle>
+            </StyledTextWrapper>
+          </StyledLink>
         </Col>
-        <Col md={6} className={'hidden-xs hidden-sm'}>
+        <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
           <StyledMapWrapper>
             <MapPin top={'31%'} left={'13%'}>
-              Vancouver
+              Vancouver, Canada
             </MapPin>
             <MapPin color={Colors.lightBlue} top={'38%'} left={'14%'}>
-              San Francisco
+              San Francisco, USA
             </MapPin>
             <MapPin color={Colors.lightBlue} top={'31%'} left={'60.5%'}>
-              Amsterdam
+              Amsterdam, Netherlands
             </MapPin>
             <MapPin color={Colors.yellow} top={'26%'} left={'56%'}>
-              Dublin
+              Dublin, Ireland
             </MapPin>
             <MapPin color={Colors.purple} top={'36.5%'} left={'57%'}>
-              Lisboa
+              Lisboa, Portugal
             </MapPin>
             <MapPin color={Colors.green} top={'28%'} left={'63.5%'}>
-              Berlin
+              Berlin, Germany
             </MapPin>
             <MapPin top={'32%'} left={'64.5%'}>
-              Trento
+              Trento, Italy
             </MapPin>
-
-            <MapPin color={Colors.blue} top={'52%'} left={'45%'}>
-              bla
+            <MapPin color={Colors.blue} top={'53%'} left={'44.7%'}>
+              Bahia
             </MapPin>
-            <MapPin color={Colors.yellow} top={'54.2%'} left={'43.8%'}>
-              ble
+            <MapPin color={Colors.yellow} top={'55.7%'} left={'43%'}>
+              Rio de Janeiro
             </MapPin>
-            <MapPin color={Colors.purple} top={'55.8%'} left={'43%'}>
-              bli
+            <MapPin color={Colors.purple} top={'59%'} left={'43%'}>
+              Espírito Santo
             </MapPin>
-            <MapPin top={'58.3%'} left={'40%'}>
-              blo
+            <MapPin top={'53.2%'} left={'39.5%'}>
+              Minas Gerais
             </MapPin>
-            <MapPin color={Colors.lightBlue} top={'56.5%'} left={'40%'}>
-              blu
+            <MapPin color={Colors.lightBlue} top={'57%'} left={'39%'}>
+              São Paulo
             </MapPin>
-            <MapPin color={Colors.purple} top={'58.7%'} left={'37.7%'}>
-              bah
+            <MapPin color={Colors.purple} top={'59%'} left={'35%'}>
+              Santa Catarina
             </MapPin>
-            <MapPin color={Colors.green} top={'53.9%'} left={'38.4%'}>
-              beh
+            <MapPin color={Colors.green} top={'55%'} left={'35.5%'}>
+              Goiás
             </MapPin>
-            <MapPin top={'52.2%'} left={'40.7%'}>
-              bih
+            <MapPin color={Colors.blue} top={'60.2%'} left={'39%'}>
+              Paraná
+            </MapPin>
+            <MapPin top={'62.5%'} left={'36.2%'}>
+              Rio Grande do Sul
             </MapPin>
 
             <StyledMap src={WorldMap} alt={'world-map'} />

@@ -37,9 +37,25 @@ const StyledHeaderTitle = styled.div`
   font-size: 88px;
   font-weight: bold;
   color: ${Colors.white};
+  width: 768px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 44px;
+    width: 320px;
+    padding-left: 20px;
+  }
+`;
+
+const StyledHowWeCanHelp = styled.div`
+  padding-left: 64px;
+  padding-top: 40px;
+  font-size: 80px;
+  font-weight: bold;
+  color: ${Colors.white};
+
+  @media (max-width: 991px) {
+    font-size: 44px;
+    padding-left: 20px;
   }
 `;
 
@@ -69,6 +85,14 @@ const StyledColumn = styled(Col)`
 
 const StyledPadding = styled.div`
   padding: 64px;
+
+  @media (max-width: 991px) {
+    padding-left: 20px;
+  }
+`;
+
+const StyledFooter = styled.div`
+  background: ${Colors.lightNavy};
 `;
 
 const Home = () => {
@@ -121,14 +145,15 @@ const Home = () => {
         </StyledLogos>
       </HorizontalScroll>
       <StyledCaption>Trusted by global innovators</StyledCaption>
-      <StyledHeaderTitle>How we can help</StyledHeaderTitle>
+      <StyledHowWeCanHelp>How we can help</StyledHowWeCanHelp>
       <StyledPadding>
         <HorizontalScroll>
           {SLIDER_CARDS.map((card, index) => (
             <React.Fragment key={index}>
               <SliderCard
-                decorationLine={card.decorationLine}
+                lineColor={card.lineColor}
                 title={card.title}
+                url={card.url}
               />
               {index !== SLIDER_CARDS.length && <HorizontalSeparator />}
             </React.Fragment>
@@ -154,7 +179,9 @@ const Home = () => {
           })}
         </Col>
       </StyledPadding>
-      <Footer />
+      <StyledFooter>
+        <Footer />
+      </StyledFooter>
     </StyledHome>
   );
 };
@@ -204,34 +231,22 @@ const cardSections = [
 const SLIDER_CARDS = [
   {
     title: 'Launch innovative digital products',
-    decorationLine: {
-      deg: 260.39,
-      startColor: '#FFD15C',
-      endColor: '#FF912C',
-    },
+    lineColor: Gradients.yellow,
+    url: '/how-we-can-help',
   },
   {
     title: 'Meet deadlines within your digital products',
-    decorationLine: {
-      deg: 261.18,
-      startColor: '#00BEFB',
-      endColor: '#007CF9',
-    },
+    lineColor: Gradients.blue,
+    url: '/how-we-can-help',
   },
   {
     title: 'Increase quality to regain trust from your users',
-    decorationLine: {
-      deg: 263.71,
-      startColor: '#FF6B8B',
-      endColor: '#FC2D5A',
-    },
+    lineColor: Gradients.pink,
+    url: '/how-we-can-help',
   },
   {
     title: 'Improve your architecture and scale faster',
-    decorationLine: {
-      deg: 260.39,
-      startColor: '#8C79FF',
-      endColor: '#6850F9',
-    },
+    lineColor: Gradients.purple,
+    url: '/how-we-can-help',
   },
 ];
