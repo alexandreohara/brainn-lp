@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 import 'components/Navbar.css';
 
 import { Colors } from 'consts/colors';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import BarsIcon from 'assets/icons/Menu.svg';
 import { NavButton } from 'components';
 import styled from 'styled-components';
@@ -12,9 +12,11 @@ interface MenuProps {
   menuClick: boolean;
 }
 
-const StyledNavbar = styled.nav.attrs((props: { scrollY: number }) => ({
-  scrollY: props.scrollY,
-}))`
+const StyledNavbar = styled.nav.attrs(
+  (props: { scrollY: number; pathname: string }) => ({
+    scrollY: props.scrollY,
+  })
+)`
   background: ${(props) => (props.scrollY < 200 ? 'transparent' : Colors.navy)};
   position: fixed;
   width: 100%;
@@ -46,8 +48,18 @@ const StyledBarsIcon = styled.img`
   }
 `;
 
-const StyledLogo = styled(Link)`
-  color: ${Colors.white};
+const StyledLogo = styled(Link).attrs(
+  (props: { scrollY: number; pathname: string }) => ({
+    scrollY: props.scrollY,
+    pathname: props.pathname,
+  })
+)`
+  color: ${(props) => {
+    if (props.pathname === '/about-us') {
+      return props.scrollY < 200 ? Colors.black : Colors.white;
+    }
+    return Colors.white;
+  }};
   justify-self: start;
   margin-left: 4vw;
   cursor: pointer;
@@ -97,12 +109,18 @@ const StyledNavMenu = styled.ul.attrs((props: MenuProps) => ({
   }
 `;
 
-const StyledNavItem = styled.li`
-  color: ${Colors.white};
-`;
-
-const StyledNavLinks = styled(Link)`
-  color: ${Colors.white};
+const StyledNavLinks = styled(Link).attrs(
+  (props: { scrollY: number; pathname: string }) => ({
+    scrollY: props.scrollY,
+    pathname: props.pathname,
+  })
+)`
+  color: ${(props) => {
+    if (props.pathname === '/about-us') {
+      return props.scrollY < 200 ? Colors.black : Colors.white;
+    }
+    return Colors.white;
+  }};
   display: flex;
   align-items: center;
   text-decoration: none;
@@ -115,6 +133,11 @@ const StyledNavLinks = styled(Link)`
   }
 
   :focus {
+    color: ${Colors.lightBlue};
+    border-bottom: 1px solid ${Colors.lightBlue};
+  }
+
+  :active {
     color: ${Colors.lightBlue};
     border-bottom: 1px solid ${Colors.lightBlue};
   }
@@ -144,9 +167,10 @@ export const Navbar = () => {
   const handleMenuClick = () => setMenuClick(!menuClick);
   const closeMobileMenu = () => setMenuClick(false);
 
+  const location = useLocation();
+
   window.onscroll = function () {
     setScrollY(window.scrollY);
-    console.log(window.scrollY);
   };
 
   return (
@@ -157,18 +181,30 @@ export const Navbar = () => {
           alt={'bars-icon'}
           onClick={handleMenuClick}
         />
-        <StyledLogo to={'/'}>brainn.co</StyledLogo>
+        <StyledLogo to={'/'} scrollY={scrollY} pathname={location.pathname}>
+          brainn.co
+        </StyledLogo>
         <StyledNavMenu menuClick={menuClick}>
-          <StyledNavItem>
-            <StyledNavLinks to={'/services'} onClick={closeMobileMenu}>
+          <li>
+            <StyledNavLinks
+              to={'/services'}
+              onClick={closeMobileMenu}
+              scrollY={scrollY}
+              pathname={location.pathname}
+            >
               Services
             </StyledNavLinks>
-          </StyledNavItem>
-          <StyledNavItem>
-            <StyledNavLinks to={'/about-us'} onClick={closeMobileMenu}>
+          </li>
+          <li>
+            <StyledNavLinks
+              to={'/about-us'}
+              onClick={closeMobileMenu}
+              scrollY={scrollY}
+              pathname={location.pathname}
+            >
               About us
             </StyledNavLinks>
-          </StyledNavItem>
+          </li>
         </StyledNavMenu>
         <NavButtonWrapper>
           <NavButton
