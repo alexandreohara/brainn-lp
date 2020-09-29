@@ -11,6 +11,7 @@ interface NavButtonProps {
   border?: string;
   cursor?: string;
   lineHeight?: string;
+  onClick?: () => void;
   children: any;
 }
 

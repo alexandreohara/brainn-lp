@@ -15,10 +15,10 @@ import { Footer, ServiceAspect, ServiceNavButton } from 'components';
 
 const StyledHeader = styled.div`
   background: ${Gradients.lightBlue};
-  padding: 0 164px;
+  padding: 80px 164px 0;
 
   @media (max-width: 767px) {
-    padding: 0 20px;
+    padding: 80px 20px 0;
   }
 `;
 

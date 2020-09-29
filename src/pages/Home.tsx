@@ -29,6 +29,7 @@ import { Colors, Gradients } from 'consts/colors';
 
 const StyledHome = styled.div`
   background-color: ${Colors.black};
+  padding-top: 80px;
 `;
 
 const StyledHeaderTitle = styled.div`
