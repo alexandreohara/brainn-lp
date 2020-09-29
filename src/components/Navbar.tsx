@@ -10,13 +10,14 @@ import styled from 'styled-components';
 
 const SCROLLYLIMIT = 200;
 
-const StyledNavbar = styled.nav.attrs(
-  (props: { scrollY: number; pathname: string }) => ({
-    scrollY: props.scrollY,
-  })
-)`
+interface ScrollProps {
+  scrolly: number;
+  pathname?: string;
+}
+
+const StyledNavbar = styled.nav<ScrollProps>`
   background: ${(props) =>
-    props.scrollY < SCROLLYLIMIT ? 'transparent' : Colors.navy};
+    props.scrolly < SCROLLYLIMIT ? 'transparent' : Colors.navy};
   position: fixed;
   width: 100%;
   display: flex;
@@ -34,7 +35,16 @@ const StyledContainer = styled.div`
   height: 80px;
 `;
 
-const StyledBarsIcon = styled.img`
+const StyledBarsIcon = styled.div<ScrollProps>`
+  mask-image: url(${BarsIcon});
+  mask-size: cover;
+  background-size: cover;
+  background-color: ${(props) => {
+    if (props.pathname === '/about-us') {
+      return props.scrolly < SCROLLYLIMIT ? Colors.black : Colors.white;
+    }
+    return Colors.white;
+  }};
   display: none;
 
   @media (max-width: 991px) {
@@ -43,19 +53,15 @@ const StyledBarsIcon = styled.img`
     cursor: pointer;
     margin-left: 4vw;
     margin-right: 4vw;
-    width: 26px;
+    width: 24px;
+    height: 16px;
   }
 `;
 
-const StyledLogo = styled(Link).attrs(
-  (props: { scrollY: number; pathname: string }) => ({
-    scrollY: props.scrollY,
-    pathname: props.pathname,
-  })
-)`
+const StyledLogo = styled(Link)<ScrollProps>`
   color: ${(props) => {
     if (props.pathname === '/about-us') {
-      return props.scrollY < SCROLLYLIMIT ? Colors.black : Colors.white;
+      return props.scrolly < SCROLLYLIMIT ? Colors.black : Colors.white;
     }
     return Colors.white;
   }};
@@ -75,9 +81,7 @@ const StyledLogo = styled(Link).attrs(
   }
 `;
 
-const StyledNavMenu = styled.ul.attrs((props: { menuClick: boolean }) => ({
-  menuClick: props.menuClick,
-}))`
+const StyledNavMenu = styled.ul<{ menuClick: boolean }>`
   display: grid;
   grid-template-columns: repeat(2, auto);
   grid-gap: 40px;
@@ -108,15 +112,10 @@ const StyledNavMenu = styled.ul.attrs((props: { menuClick: boolean }) => ({
   }
 `;
 
-const StyledNavLinks = styled(Link).attrs(
-  (props: { scrollY: number; pathname: string }) => ({
-    scrollY: props.scrollY,
-    pathname: props.pathname,
-  })
-)`
+const StyledNavLinks = styled(Link)<ScrollProps>`
   color: ${(props) => {
     if (props.pathname === '/about-us') {
-      return props.scrollY < SCROLLYLIMIT ? Colors.black : Colors.white;
+      return props.scrolly < SCROLLYLIMIT ? Colors.black : Colors.white;
     }
     return Colors.white;
   }};
@@ -136,16 +135,12 @@ const StyledNavLinks = styled(Link).attrs(
     border-bottom: 1px solid ${Colors.lightBlue};
   }
 
-  :active {
-    color: ${Colors.lightBlue};
-    border-bottom: 1px solid ${Colors.lightBlue};
-  }
-
   @media (max-width: 991px) {
     text-align: center;
     padding: 20px 0;
     width: 100%;
     display: table;
+    color: ${Colors.white};
 
     :hover {
       background-color: ${Colors.white};
@@ -173,14 +168,15 @@ export const Navbar = () => {
   };
 
   return (
-    <StyledNavbar scrollY={scrollY}>
+    <StyledNavbar scrolly={scrollY}>
       <StyledContainer>
         <StyledBarsIcon
-          src={BarsIcon}
-          alt={'bars-icon'}
           onClick={handleMenuClick}
+          scrolly={scrollY}
+          pathname={location.pathname}
         />
-        <StyledLogo to={'/'} scrollY={scrollY} pathname={location.pathname}>
+
+        <StyledLogo to={'/'} scrolly={scrollY} pathname={location.pathname}>
           brainn.co
         </StyledLogo>
         <StyledNavMenu menuClick={menuClick}>
@@ -188,7 +184,7 @@ export const Navbar = () => {
             <StyledNavLinks
               to={'/services'}
               onClick={closeMobileMenu}
-              scrollY={scrollY}
+              scrolly={scrollY}
               pathname={location.pathname}
             >
               Services
@@ -198,7 +194,7 @@ export const Navbar = () => {
             <StyledNavLinks
               to={'/about-us'}
               onClick={closeMobileMenu}
-              scrollY={scrollY}
+              scrolly={scrollY}
               pathname={location.pathname}
             >
               About us
