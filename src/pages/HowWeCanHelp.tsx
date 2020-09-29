@@ -15,13 +15,20 @@ const StyledPageWrapper = styled.div`
   padding-top: 80px;
 `;
 
+const StyledHeaderCol = styled(Col)`
+  padding-top: 200px;
+  padding-bottom: 100px;
+`;
+
 const StyledHeader = styled.div`
   font-size: 88px;
   font-weight: bold;
   color: ${Colors.white};
   overflow-x: hidden;
   margin-left: 64px;
-  margin-top: 300px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 100px;
 
   @media (max-width: 767px) {
     font-size: 44px;
@@ -96,13 +103,13 @@ const HowWeCanHelp = () => {
     <>
       <StyledPageWrapper>
         <Row>
-          <Col sm={12} md={5} style={{ display: 'flex' }}>
+          <StyledHeaderCol sm={12} md={5}>
             <StyledHeader>
               <StyledInlineHeader>How </StyledInlineHeader>
               <StyledInlineHeader>we can </StyledInlineHeader>
               <StyledInlineHeader>help </StyledInlineHeader>
             </StyledHeader>
-          </Col>
+          </StyledHeaderCol>
           <Col sm={12} md={7}>
             <StyledServiceAspects>
               <StyledAspectWrapper>
