@@ -154,12 +154,16 @@ const NavButtonWrapper = styled.div`
   right: 4vw;
 `;
 
+const brainnEmail = 'hello@brainn.co';
+
 export const Navbar = () => {
   const [menuClick, setMenuClick] = useState(false);
   const [scrollY, setScrollY] = useState(0);
 
   const handleMenuClick = () => setMenuClick(!menuClick);
   const closeMobileMenu = () => setMenuClick(false);
+
+  const handleButtonClick = () => window.open(`mailto:${brainnEmail}`);
 
   const location = useLocation();
 
@@ -207,6 +211,7 @@ export const Navbar = () => {
             textColor={Colors.white}
             lineHeight={'25px'}
             border={'2px solid rgba(0, 0, 0, 0.25)'}
+            onClick={handleButtonClick}
           >
             Say hello
           </NavButton>
