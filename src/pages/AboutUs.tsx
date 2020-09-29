@@ -23,11 +23,7 @@ const StyledHeader = styled.div`
     padding: 80px 200px 37px;
   }
 
-  @media (max-width: 950px) {
-    padding: 80px 100px 37px;
-  }
-
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     padding: 80px 16px 37px;
   }
 `;
@@ -36,7 +32,7 @@ const StyledHeaderTitle = styled.div`
   font-size: 88px;
   font-weight: bold;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 40px;
   }
 `;
@@ -45,18 +41,19 @@ const StyledHeaderText = styled.div`
   font-size: 36px;
   padding-top: 32px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 24px;
   }
 `;
 
 const StyledPhotosRow = styled.div`
   text-align: center;
+  display: flex;
 `;
 
 const StyledBoardPostitPhoto = styled.div`
   text-align: center;
-  display: inline-block;
+  flex: 1.5941;
   margin-right: 8px;
 
   @media (max-width: 898px) {
@@ -65,7 +62,7 @@ const StyledBoardPostitPhoto = styled.div`
 `;
 
 const StyledProductCanvasPhoto = styled.div`
-  display: inline-block;
+  flex: 1;
 
   @media (max-width: 898px) {
     display: none;
@@ -73,7 +70,7 @@ const StyledProductCanvasPhoto = styled.div`
 `;
 
 const StyledMeetingPhoto = styled.div`
-  display: inline-block;
+  flex: 1.5941;
   margin-left: 8px;
 
   @media (max-width: 1439px) {
@@ -83,7 +80,7 @@ const StyledMeetingPhoto = styled.div`
 
 const StyledCodingPhoto = styled.div`
   text-align: center;
-  display: inline-block;
+  flex: 1.0119;
   margin-right: 8px;
 
   @media (max-width: 898px) {
@@ -92,7 +89,7 @@ const StyledCodingPhoto = styled.div`
 `;
 
 const StyledCelebratingPhoto = styled.div`
-  display: inline-block;
+  flex: 1.5941;
   margin-right: 8px;
 
   @media (max-width: 1439px) {
@@ -101,7 +98,7 @@ const StyledCelebratingPhoto = styled.div`
 `;
 
 const StyledWritingWallPostitPhoto = styled.div`
-  display: inline-block;
+  flex: 1.5941;
 
   @media (max-width: 898px) {
     display: none;
@@ -110,8 +107,8 @@ const StyledWritingWallPostitPhoto = styled.div`
 
 const StyledProductCanvasZoomed = styled.img`
   display: none;
-  max-width: 419px;
   width: 100%;
+  margin-bottom: 8px;
 
   @media (max-width: 898px) {
     display: inline;
@@ -121,7 +118,6 @@ const StyledProductCanvasZoomed = styled.img`
 
 const StyledWritingWallPostitZoomed = styled.img`
   display: none;
-  max-width: 419px;
   width: 100%;
 
   @media (max-width: 898px) {
@@ -138,7 +134,7 @@ const StyledContent = styled.div`
     margin: 80px 64px;
   }
 
-  @media (max-width: 898px) {
+  @media (max-width: 991px) {
     margin: 40px 16px;
   }
 `;
@@ -147,7 +143,7 @@ const StyledContentTitle = styled.div`
   font-size: 88px;
   font-weight: bold;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 40px;
   }
 `;
@@ -156,7 +152,7 @@ const StyledContentText = styled.div`
   font-size: 32px;
   margin-top: 24px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     margin-right: 0;
     font-size: 24px;
   }
@@ -200,7 +196,9 @@ const StyledButton = styled.div`
   border-radius: 16px;
   text-align: center;
   color: ${Colors.white};
-  @media (max-width: 767px) {
+  cursor: pointer;
+
+  @media (max-width: 991px) {
     padding: 22px;
     margin: 20px 16px;
   }
@@ -209,14 +207,17 @@ const StyledButton = styled.div`
 const StyledButtonTitle = styled.div`
   font-size: 80px;
   font-weight: bold;
-  @media (max-width: 767px) {
+  margin-bottom: 16px;
+
+  @media (max-width: 991px) {
     font-size: 30px;
   }
 `;
 
 const StyledButtonSubTitle = styled.div`
   font-size: 36px;
-  @media (max-width: 767px) {
+
+  @media (max-width: 991px) {
     font-size: 24px;
   }
 `;
@@ -225,7 +226,8 @@ const StyledSeeMore = styled.div`
   font-size: 28px;
   font-weight: 600;
   margin-top: 32px;
-  @media (max-width: 767px) {
+
+  @media (max-width: 991px) {
     font-size: 18px;
   }
 `;
@@ -233,12 +235,17 @@ const StyledSeeMore = styled.div`
 const StyledVectorRight = styled.img`
   width: 12px;
   margin-left: 12px;
-  @media (max-width: 767px) {
+
+  @media (max-width: 991px) {
     width: 8px;
   }
 `;
 
+const jobOpeningUrl = ' https://apply.workable.com/brainn/';
+
 const AboutUs = () => {
+  const handleClick = () => window.open(jobOpeningUrl, '_blank');
+
   return (
     <>
       <StyledHeader>
@@ -256,29 +263,33 @@ const AboutUs = () => {
 
       <StyledPhotosRow>
         <StyledBoardPostitPhoto>
-          <img src={BoardPostitPhoto} alt={'board-postit'} />
+          <img src={BoardPostitPhoto} alt={'board-postit'} width={'100%'} />
         </StyledBoardPostitPhoto>
         <StyledProductCanvasPhoto>
-          <img src={ProductCanvasPhoto} alt={'product-canvas'} />
+          <img src={ProductCanvasPhoto} alt={'product-canvas'} width={'100%'} />
         </StyledProductCanvasPhoto>
         <StyledProductCanvasZoomed
           src={ProductCanvasZoomed}
           alt={'product-canvas-zoomed'}
         />
         <StyledMeetingPhoto>
-          <img src={MeetingPhoto} alt={'meeting'} />
+          <img src={MeetingPhoto} alt={'meeting'} width={'100%'} />
         </StyledMeetingPhoto>
       </StyledPhotosRow>
 
       <StyledPhotosRow>
         <StyledCodingPhoto>
-          <img src={CodingPhoto} alt={'coding'} />
+          <img src={CodingPhoto} alt={'coding'} width={'100%'} />
         </StyledCodingPhoto>
         <StyledCelebratingPhoto>
-          <img src={CelebratingPhoto} alt={'celebrating'} />
+          <img src={CelebratingPhoto} alt={'celebrating'} width={'100%'} />
         </StyledCelebratingPhoto>
         <StyledWritingWallPostitPhoto>
-          <img src={WritingWallPostitPhoto} alt={'writing-wall-postit'} />
+          <img
+            src={WritingWallPostitPhoto}
+            alt={'writing-wall-postit'}
+            width={'100%'}
+          />
         </StyledWritingWallPostitPhoto>
         <StyledWritingWallPostitZoomed
           src={WritingWallPostitZoomed}
@@ -287,8 +298,8 @@ const AboutUs = () => {
       </StyledPhotosRow>
 
       <StyledContent>
-        <Row center={'xs'} start={'md'}>
-          <Col sm={12} md={6}>
+        <Row center={'xs'} start={'lg'}>
+          <Col md={12} lg={6}>
             <StyledContentTitle>Excellence</StyledContentTitle>
             <StyledContentText>
               We aim high, and we want to evolve every day, so it is mandatory
@@ -297,7 +308,7 @@ const AboutUs = () => {
               genuinely love what they do. When you love what you do, you excel.
             </StyledContentText>
           </Col>
-          <Col md={6} className={'hidden-xs hidden-sm'}>
+          <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
             <StyledCardWrapper>
               <StyledCard>Card</StyledCard>
             </StyledCardWrapper>
@@ -310,13 +321,13 @@ const AboutUs = () => {
       </StyledLargePhotoWrapper>
 
       <StyledContent>
-        <Row center={'xs'} start={'md'}>
-          <Col md={6} className={'hidden-xs hidden-sm'}>
+        <Row center={'xs'} start={'lg'}>
+          <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
             <StyledCardWrapper justifyContent={'flex-start'}>
               <StyledCard>Card</StyledCard>
             </StyledCardWrapper>
           </Col>
-          <Col sm={12} md={6}>
+          <Col md={12} lg={6}>
             <StyledContentTitle>Teamwork</StyledContentTitle>
             <StyledContentText>
               When we think of our mission - help innovators bring their ideas
@@ -333,8 +344,8 @@ const AboutUs = () => {
       </StyledLargePhotoWrapper>
 
       <StyledContent>
-        <Row center={'xs'} start={'md'}>
-          <Col sm={12} md={6}>
+        <Row center={'xs'} start={'lg'}>
+          <Col md={12} lg={6}>
             <StyledContentTitle>Learning</StyledContentTitle>
             <StyledContentText>
               Our job has a high level of uncertainty and complexity, usually
@@ -345,7 +356,7 @@ const AboutUs = () => {
               why we need to learn. Fast.
             </StyledContentText>
           </Col>
-          <Col md={6} className={'hidden-xs hidden-sm'}>
+          <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
             <StyledCardWrapper>
               <StyledCard>Card</StyledCard>
             </StyledCardWrapper>
@@ -353,7 +364,7 @@ const AboutUs = () => {
         </Row>
       </StyledContent>
 
-      <StyledButton>
+      <StyledButton onClick={handleClick}>
         <StyledButtonTitle>Join the team</StyledButtonTitle>
         <StyledButtonSubTitle>
           We&apos;re a growing team with big ambitions.
