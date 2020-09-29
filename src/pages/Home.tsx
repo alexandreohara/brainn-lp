@@ -1,6 +1,5 @@
 import React from 'react';
 
-import 'components/Navbar.css';
 import './Home.css';
 import { Col, Row } from 'react-flexbox-grid';
 import Storming from 'assets/images/Storming.svg';
@@ -126,23 +125,31 @@ const Home = () => {
       <StyledPadding>
         <HorizontalScroll>
           {SLIDER_CARDS.map((card, index) => (
-            <>
+            <React.Fragment key={index}>
               <SliderCard
                 decorationLine={card.decorationLine}
                 title={card.title}
               />
               {index !== SLIDER_CARDS.length && <HorizontalSeparator />}
-            </>
+            </React.Fragment>
           ))}
         </HorizontalScroll>
         <VerticalSeparator size={64} />
         <Col>
-          {cardSections.map((props: any) => {
+          {cardSections.map((props: any, index) => {
             return (
-              <>
-                <HomeCard key={props.id} {...props} />;
+              <React.Fragment key={index}>
+                <HomeCard
+                  color={props.color}
+                  title={props.title}
+                  textFirst={props.textFirst}
+                  image={props.image}
+                  description={props.description}
+                  url={props.url}
+                />
+                ;
                 <VerticalSeparator size={64} />
-              </>
+              </React.Fragment>
             );
           })}
         </Col>
@@ -156,7 +163,6 @@ export default Home;
 
 const cardSections = [
   {
-    key: 0,
     color: Gradients.blue,
     title: 'Storming',
     textFirst: true,
@@ -170,7 +176,6 @@ const cardSections = [
   },
 
   {
-    key: 1,
     color: Gradients.yellow,
     title: 'Delivery',
     textFirst: false,
@@ -184,7 +189,6 @@ const cardSections = [
   },
 
   {
-    key: 2,
     color: Gradients.green,
     title: 'Augmentation',
     textFirst: false,

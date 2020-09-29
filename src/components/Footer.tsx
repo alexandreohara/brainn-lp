@@ -176,7 +176,7 @@ export const Footer = () => {
               bih
             </MapPin>
 
-            <StyledMap src={WorldMap} />
+            <StyledMap src={WorldMap} alt={'world-map'} />
           </StyledMapWrapper>
         </Col>
       </Row>
