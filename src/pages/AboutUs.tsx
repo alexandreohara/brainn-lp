@@ -24,7 +24,7 @@ const StyledHeader = styled.div`
   }
 
   @media (max-width: 991px) {
-    margin: 80px 16px 37px;
+    padding: 80px 16px 37px;
   }
 `;
 
