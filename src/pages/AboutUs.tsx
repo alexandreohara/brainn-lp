@@ -23,12 +23,8 @@ const StyledHeader = styled.div`
     padding: 80px 200px 37px;
   }
 
-  @media (max-width: 950px) {
-    padding: 80px 100px 37px;
-  }
-
-  @media (max-width: 767px) {
-    padding: 80px 16px 37px;
+  @media (max-width: 991px) {
+    margin: 80px 16px 37px;
   }
 `;
 
@@ -36,7 +32,7 @@ const StyledHeaderTitle = styled.div`
   font-size: 88px;
   font-weight: bold;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 40px;
   }
 `;
@@ -45,7 +41,7 @@ const StyledHeaderText = styled.div`
   font-size: 36px;
   padding-top: 32px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 24px;
   }
 `;
@@ -138,7 +134,7 @@ const StyledContent = styled.div`
     margin: 80px 64px;
   }
 
-  @media (max-width: 898px) {
+  @media (max-width: 991px) {
     margin: 40px 16px;
   }
 `;
@@ -147,7 +143,7 @@ const StyledContentTitle = styled.div`
   font-size: 88px;
   font-weight: bold;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 40px;
   }
 `;
@@ -156,7 +152,7 @@ const StyledContentText = styled.div`
   font-size: 32px;
   margin-top: 24px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     margin-right: 0;
     font-size: 24px;
   }
@@ -202,7 +198,7 @@ const StyledButton = styled.div`
   color: ${Colors.white};
   cursor: pointer;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     padding: 22px;
     margin: 20px 16px;
   }
@@ -211,15 +207,17 @@ const StyledButton = styled.div`
 const StyledButtonTitle = styled.div`
   font-size: 80px;
   font-weight: bold;
+  margin-bottom: 16px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 30px;
   }
 `;
 
 const StyledButtonSubTitle = styled.div`
   font-size: 36px;
-  @media (max-width: 767px) {
+
+  @media (max-width: 991px) {
     font-size: 24px;
   }
 `;
@@ -229,7 +227,7 @@ const StyledSeeMore = styled.div`
   font-weight: 600;
   margin-top: 32px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 18px;
   }
 `;
@@ -238,7 +236,7 @@ const StyledVectorRight = styled.img`
   width: 12px;
   margin-left: 12px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     width: 8px;
   }
 `;
@@ -300,8 +298,8 @@ const AboutUs = () => {
       </StyledPhotosRow>
 
       <StyledContent>
-        <Row center={'xs'} start={'md'}>
-          <Col sm={12} md={6}>
+        <Row center={'xs'} start={'lg'}>
+          <Col md={12} lg={6}>
             <StyledContentTitle>Excellence</StyledContentTitle>
             <StyledContentText>
               We aim high, and we want to evolve every day, so it is mandatory
@@ -310,7 +308,7 @@ const AboutUs = () => {
               genuinely love what they do. When you love what you do, you excel.
             </StyledContentText>
           </Col>
-          <Col md={6} className={'hidden-xs hidden-sm'}>
+          <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
             <StyledCardWrapper>
               <StyledCard>Card</StyledCard>
             </StyledCardWrapper>
@@ -323,13 +321,13 @@ const AboutUs = () => {
       </StyledLargePhotoWrapper>
 
       <StyledContent>
-        <Row center={'xs'} start={'md'}>
-          <Col md={6} className={'hidden-xs hidden-sm'}>
+        <Row center={'xs'} start={'lg'}>
+          <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
             <StyledCardWrapper justifyContent={'flex-start'}>
               <StyledCard>Card</StyledCard>
             </StyledCardWrapper>
           </Col>
-          <Col sm={12} md={6}>
+          <Col md={12} lg={6}>
             <StyledContentTitle>Teamwork</StyledContentTitle>
             <StyledContentText>
               When we think of our mission - help innovators bring their ideas
@@ -346,8 +344,8 @@ const AboutUs = () => {
       </StyledLargePhotoWrapper>
 
       <StyledContent>
-        <Row center={'xs'} start={'md'}>
-          <Col sm={12} md={6}>
+        <Row center={'xs'} start={'lg'}>
+          <Col md={12} lg={6}>
             <StyledContentTitle>Learning</StyledContentTitle>
             <StyledContentText>
               Our job has a high level of uncertainty and complexity, usually
@@ -358,7 +356,7 @@ const AboutUs = () => {
               why we need to learn. Fast.
             </StyledContentText>
           </Col>
-          <Col md={6} className={'hidden-xs hidden-sm'}>
+          <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
             <StyledCardWrapper>
               <StyledCard>Card</StyledCard>
             </StyledCardWrapper>
