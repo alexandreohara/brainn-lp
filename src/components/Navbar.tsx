@@ -1,7 +1,5 @@
 import React, { useState } from 'react';
 
-import 'components/Navbar.css';
-
 import { Colors } from 'consts/colors';
 import { Link, useLocation } from 'react-router-dom';
 import BarsIcon from 'assets/icons/Menu.svg';
