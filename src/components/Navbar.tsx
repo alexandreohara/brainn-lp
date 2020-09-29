@@ -8,16 +8,15 @@ import BarsIcon from 'assets/icons/Menu.svg';
 import { NavButton } from 'components';
 import styled from 'styled-components';
 
-interface MenuProps {
-  menuClick: boolean;
-}
+const SCROLLYLIMIT = 200;
 
 const StyledNavbar = styled.nav.attrs(
   (props: { scrollY: number; pathname: string }) => ({
     scrollY: props.scrollY,
   })
 )`
-  background: ${(props) => (props.scrollY < 200 ? 'transparent' : Colors.navy)};
+  background: ${(props) =>
+    props.scrollY < SCROLLYLIMIT ? 'transparent' : Colors.navy};
   position: fixed;
   width: 100%;
   display: flex;
@@ -56,7 +55,7 @@ const StyledLogo = styled(Link).attrs(
 )`
   color: ${(props) => {
     if (props.pathname === '/about-us') {
-      return props.scrollY < 200 ? Colors.black : Colors.white;
+      return props.scrollY < SCROLLYLIMIT ? Colors.black : Colors.white;
     }
     return Colors.white;
   }};
@@ -76,7 +75,7 @@ const StyledLogo = styled(Link).attrs(
   }
 `;
 
-const StyledNavMenu = styled.ul.attrs((props: MenuProps) => ({
+const StyledNavMenu = styled.ul.attrs((props: { menuClick: boolean }) => ({
   menuClick: props.menuClick,
 }))`
   display: grid;
@@ -117,7 +116,7 @@ const StyledNavLinks = styled(Link).attrs(
 )`
   color: ${(props) => {
     if (props.pathname === '/about-us') {
-      return props.scrollY < 200 ? Colors.black : Colors.white;
+      return props.scrollY < SCROLLYLIMIT ? Colors.black : Colors.white;
     }
     return Colors.white;
   }};
