@@ -6,6 +6,7 @@ import BarsIcon from 'assets/icons/Menu.svg';
 import { NavButton } from 'components';
 import styled from 'styled-components';
 import { Routes } from 'consts/routes';
+import { EMAIL } from 'consts/links';
 
 const SCROLLYLIMIT = 200;
 
@@ -153,8 +154,6 @@ const NavButtonWrapper = styled.div`
   right: 4vw;
 `;
 
-const brainnEmail = 'hello@brainn.co';
-
 export const Navbar = () => {
   const [menuClick, setMenuClick] = useState(false);
   const [scrollY, setScrollY] = useState(0);
@@ -162,7 +161,7 @@ export const Navbar = () => {
   const handleMenuClick = () => setMenuClick(!menuClick);
   const closeMobileMenu = () => setMenuClick(false);
 
-  const handleButtonClick = () => window.open(`mailto:${brainnEmail}`);
+  const handleButtonClick = () => window.open(`mailto:${EMAIL}`);
 
   const location = useLocation();
 

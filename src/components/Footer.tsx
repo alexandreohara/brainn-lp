@@ -5,6 +5,7 @@ import WorldMap from 'assets/images/WorldMap.svg';
 import styled from 'styled-components';
 import { MapPin } from 'components';
 import { Colors } from 'consts/colors';
+import { EMAIL, GITHUB_URL, GOOGLE_MAPS_URL } from 'consts/links';
 interface TextProps {
   fontSize?: string;
   color?: string;
@@ -90,12 +91,6 @@ const StyledLink = styled.a`
   }
 `;
 
-const brainnGoogleMapsUrl =
-  'https://www.google.com/maps/dir//R.+Fradique+Coutinho,+30+-+Pinheiros,+S%C3%A3o+Paulo+-+SP,+05416-000/@-23.5658389,-46.6864248,17z/data=!4m9!4m8!1m0!1m5!1m1!1s0x94ce57760ffdd97d:0x9dd4a94d4147cb6!2m2!1d-46.6842361!2d-23.5658389!3e0';
-const githubUrl = 'https://github.com/brainn-co';
-const brainnEmail = 'hello@brainn.co';
-const emailLink = `mailto: ${brainnEmail}`;
-
 export const Footer = () => {
   return (
     <StyledFooter>
@@ -110,18 +105,18 @@ export const Footer = () => {
 
           <StyledDivider />
 
-          <StyledLink href={emailLink} target="_blank">
+          <StyledLink href={`mailto: ${EMAIL}`} target="_blank">
             <StyledTextWrapper>
               <StyledTextWithLeftBorder>
                 Become a Client
               </StyledTextWithLeftBorder>
-              <StyledSubtitle>{brainnEmail}</StyledSubtitle>
+              <StyledSubtitle>{EMAIL}</StyledSubtitle>
             </StyledTextWrapper>
           </StyledLink>
 
           <StyledDivider />
 
-          <StyledLink href={githubUrl} target="_blank">
+          <StyledLink href={GITHUB_URL} target="_blank">
             <StyledTextWrapper>
               <StyledTextWithLeftBorder>Open Source</StyledTextWithLeftBorder>
               <StyledSubtitle>Github</StyledSubtitle>
@@ -130,7 +125,7 @@ export const Footer = () => {
 
           <StyledDivider />
 
-          <StyledLink href={brainnGoogleMapsUrl} target="_blank">
+          <StyledLink href={GOOGLE_MAPS_URL} target="_blank">
             <StyledTextWrapper>
               <StyledTextWithLeftBorder>Headquarter</StyledTextWithLeftBorder>
               <StyledSubtitle>
