@@ -5,6 +5,7 @@ import { createMemoryHistory } from 'history';
 import { fireEvent, render } from '@testing-library/react';
 import { Navbar } from 'components';
 import { Router } from 'react-router-dom';
+import { Routes } from 'consts/routes';
 
 describe('Navbar', () => {
   it('renders successfully', () => {
@@ -31,7 +32,7 @@ describe('Navbar', () => {
 
     fireEvent.click(getByText('brainn.co'));
 
-    expect(history.location.pathname).toEqual('/');
+    expect(history.location.pathname).toEqual(Routes.home);
   });
 
   it('Navigates to services page', () => {
@@ -44,7 +45,7 @@ describe('Navbar', () => {
 
     fireEvent.click(getByText('Services'));
 
-    expect(history.location.pathname).toEqual('/services');
+    expect(history.location.pathname).toEqual(Routes.services);
   });
 
   it('Navigates to about us page', () => {
@@ -57,6 +58,6 @@ describe('Navbar', () => {
 
     fireEvent.click(getByText('About us'));
 
-    expect(history.location.pathname).toEqual('/about-us');
+    expect(history.location.pathname).toEqual(Routes.aboutUs);
   });
 });

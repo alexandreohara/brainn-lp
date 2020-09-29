@@ -3,6 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { ServiceCard } from 'components';
 import { Gradients } from 'consts/colors';
+import { Routes } from 'consts/routes';
 
 describe('ServiceCard', () => {
   it('renders successfully', () => {
@@ -14,7 +15,7 @@ describe('ServiceCard', () => {
         }
         strongLastPhrase={'The idea that works.'}
         color={Gradients.blue}
-        url={'/services/storming'}
+        url={Routes.storming}
       />
     );
 

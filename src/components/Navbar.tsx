@@ -5,6 +5,7 @@ import { Link, useLocation } from 'react-router-dom';
 import BarsIcon from 'assets/icons/Menu.svg';
 import { NavButton } from 'components';
 import styled from 'styled-components';
+import { Routes } from 'consts/routes';
 
 const SCROLLYLIMIT = 200;
 
@@ -38,7 +39,7 @@ const StyledBarsIcon = styled.div<ScrollProps>`
   mask-size: cover;
   background-size: cover;
   background-color: ${(props) => {
-    if (props.pathname === '/about-us') {
+    if (props.pathname === Routes.aboutUs) {
       return props.scrolly < SCROLLYLIMIT ? Colors.black : Colors.white;
     }
     return Colors.white;
@@ -58,7 +59,7 @@ const StyledBarsIcon = styled.div<ScrollProps>`
 
 const StyledLogo = styled(Link)<ScrollProps>`
   color: ${(props) => {
-    if (props.pathname === '/about-us') {
+    if (props.pathname === Routes.aboutUs) {
       return props.scrolly < SCROLLYLIMIT ? Colors.black : Colors.white;
     }
     return Colors.white;
@@ -112,7 +113,7 @@ const StyledNavMenu = styled.ul<{ menuClick: boolean }>`
 
 const StyledNavLinks = styled(Link)<ScrollProps>`
   color: ${(props) => {
-    if (props.pathname === '/about-us') {
+    if (props.pathname === Routes.aboutUs) {
       return props.scrolly < SCROLLYLIMIT ? Colors.black : Colors.white;
     }
     return Colors.white;
@@ -178,13 +179,17 @@ export const Navbar = () => {
           pathname={location.pathname}
         />
 
-        <StyledLogo to={'/'} scrolly={scrollY} pathname={location.pathname}>
+        <StyledLogo
+          to={Routes.home}
+          scrolly={scrollY}
+          pathname={location.pathname}
+        >
           brainn.co
         </StyledLogo>
         <StyledNavMenu menuClick={menuClick}>
           <li>
             <StyledNavLinks
-              to={'/services'}
+              to={Routes.services}
               onClick={closeMobileMenu}
               scrolly={scrollY}
               pathname={location.pathname}
@@ -194,7 +199,7 @@ export const Navbar = () => {
           </li>
           <li>
             <StyledNavLinks
-              to={'/about-us'}
+              to={Routes.aboutUs}
               onClick={closeMobileMenu}
               scrolly={scrollY}
               pathname={location.pathname}

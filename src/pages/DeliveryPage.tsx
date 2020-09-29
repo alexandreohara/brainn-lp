@@ -11,6 +11,7 @@ import Data from 'assets/icons/Data.svg';
 import ReactIcon from 'assets/icons/ReactIcon.svg';
 import PhaseOut from 'assets/icons/PhaseOut.svg';
 import { Footer, ServiceAspect, ServiceNavButton } from 'components';
+import { Routes } from 'consts/routes';
 
 const StyledHeader = styled.div`
   background: ${Gradients.yellow};
@@ -224,7 +225,7 @@ const DeliveryPage = () => {
           <ServiceNavButton
             title={'Storming'}
             color={Gradients.blue}
-            previousServiceUrl={'/services/storming'}
+            previousServiceUrl={Routes.storming}
           />
         </StyledNavButtonCol>
         <StyledNavButtonCol xs={6}>
@@ -232,7 +233,7 @@ const DeliveryPage = () => {
             title={'Augmentation'}
             color={Gradients.green}
             next
-            nextServiceUrl={'/services/augmentation'}
+            nextServiceUrl={Routes.augmentation}
           />
         </StyledNavButtonCol>
       </StyledNavButtonRow>
