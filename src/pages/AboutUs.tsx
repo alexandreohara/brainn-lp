@@ -16,19 +16,19 @@ import { Colors, Gradients } from 'consts/colors';
 import { Footer } from 'components/Footer';
 
 const StyledHeader = styled.div`
-  margin: 80px 288px 37px;
+  padding: 80px 288px 37px;
   text-align: center;
 
   @media (max-width: 1209px) {
-    margin: 80px 200px 37px;
+    padding: 80px 200px 37px;
   }
 
   @media (max-width: 950px) {
-    margin: 80px 100px 37px;
+    padding: 80px 100px 37px;
   }
 
   @media (max-width: 767px) {
-    margin: 80px 16px 37px;
+    padding: 80px 16px 37px;
   }
 `;
 

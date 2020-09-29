@@ -12,6 +12,7 @@ import VectorRight from 'assets/icons/VectorRight.svg';
 
 const StyledPageWrapper = styled.div`
   background-color: ${Colors.black};
+  padding-top: 80px;
 `;
 
 const StyledHeader = styled.div`

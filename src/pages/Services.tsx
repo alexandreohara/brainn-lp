@@ -6,7 +6,8 @@ import styled from 'styled-components';
 
 import { Footer, ServiceCard } from 'components';
 
-const StyledPageWrapper = styled.div`
+const StyledContentWrapper = styled.div`
+  padding-top: 80px;
   background-color: ${Colors.black};
 `;
 
@@ -38,7 +39,7 @@ const StyledFooterWrapper = styled.div`
 const Services = () => {
   return (
     <>
-      <StyledPageWrapper>
+      <StyledContentWrapper>
         <Row>
           <Col xs={12} sm={5} style={{ display: 'flex', alignItems: 'center' }}>
             <StyledHeader>Trusted by global innovators.</StyledHeader>
@@ -81,7 +82,7 @@ const Services = () => {
             </StyledServiceCards>
           </Col>
         </Row>
-      </StyledPageWrapper>
+      </StyledContentWrapper>
       <StyledFooterWrapper>
         <Footer />
       </StyledFooterWrapper>

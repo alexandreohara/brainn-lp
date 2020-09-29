@@ -12,11 +12,18 @@ interface MenuProps {
   menuClick: boolean;
 }
 
-const StyledNavbar = styled.nav`
-  background: ${Colors.lightNavy};
+const StyledNavbar = styled.nav.attrs((props: { scrollY: number }) => ({
+  scrollY: props.scrollY,
+}))`
+  background: ${(props) => (props.scrollY < 200 ? 'transparent' : Colors.navy)};
+  position: fixed;
+  width: 100%;
   display: flex;
   align-items: center;
   font-size: 20px;
+  z-index: 99;
+  transform: translateZ(0);
+  -webkit-transform: translateZ(0);
 `;
 
 const StyledContainer = styled.div`
@@ -132,12 +139,18 @@ const NavButtonWrapper = styled.div`
 
 export const Navbar = () => {
   const [menuClick, setMenuClick] = useState(false);
+  const [scrollY, setScrollY] = useState(0);
 
   const handleMenuClick = () => setMenuClick(!menuClick);
   const closeMobileMenu = () => setMenuClick(false);
 
+  window.onscroll = function () {
+    setScrollY(window.scrollY);
+    console.log(window.scrollY);
+  };
+
   return (
-    <StyledNavbar>
+    <StyledNavbar scrollY={scrollY}>
       <StyledContainer>
         <StyledBarsIcon
           src={BarsIcon}
