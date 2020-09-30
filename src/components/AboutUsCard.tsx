@@ -10,7 +10,7 @@ const StyledAboutUsCard = styled.div`
 
 const StyledCardWrapper = styled.div`
   position: relative;
-  padding: 80px 10px 10px;
+  padding: 80px 10px 30px;
   margin: 0 15px;
 `;
 
@@ -19,6 +19,7 @@ const StyledCard = styled.div`
   padding: 24px;
   box-shadow: 0px 8px 24px rgba(2, 23, 39, 0.2);
   position: relative;
+  background-color: ${Colors.white};
 `;
 
 const StyledColouredTitle = styled.div`
@@ -44,6 +45,17 @@ const StyledIcon = styled.img`
   z-index: 99;
 `;
 
+const StyledBehindCard = styled.div`
+  border-radius: 8px;
+  height: 100px;
+  width: 90%;
+  position: absolute;
+  bottom: 16px;
+  left: 5%;
+  z-index: -1;
+  box-shadow: 0px 8px 24px rgba(2, 23, 39, 0.2);
+`;
+
 export const AboutUsCard = () => {
   const settings = {
     slidesToShow: 1,
@@ -67,6 +79,7 @@ export const AboutUsCard = () => {
                 even if it means working harder than expected.
               </StyledParagraph>
             </StyledCard>
+            <StyledBehindCard />
           </StyledCardWrapper>
         </div>
         <div>
