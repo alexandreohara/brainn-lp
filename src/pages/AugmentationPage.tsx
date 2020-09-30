@@ -12,9 +12,9 @@ import { Routes } from 'consts/routes';
 
 const StyledHeader = styled.div`
   background: ${Gradients.green};
-  padding: 0 164px;
+  padding: 80px 164px 0;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     padding: 80px 20px 0;
   }
 `;
@@ -23,7 +23,7 @@ const StyledServices = styled.div`
   color: ${Colors.white};
   font-size: 28px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 24px;
   }
 `;
@@ -34,8 +34,8 @@ const StyledAugmentation = styled.div`
   font-weight: bold;
   position: relative;
 
-  @media (max-width: 767px) {
-    font-size: 68px;
+  @media (max-width: 991px) {
+    font-size: 55px;
   }
 `;
 
@@ -49,8 +49,8 @@ const StyledAugmentationShadow = styled.div`
   top: 8px;
   left: 8px;
 
-  @media (max-width: 767px) {
-    font-size: 68px;
+  @media (max-width: 991px) {
+    font-size: 55px;
   }
 `;
 
@@ -62,7 +62,7 @@ const StyledContentWrapper = styled.div`
   background-color: ${Colors.black};
   padding: 0 164px 120px 164px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     padding: 0 20px;
   }
 `;
@@ -82,9 +82,13 @@ const StyledHowWeDoWrapper = styled.div`
   padding: 64px 0;
   font-size: 24px;
   letter-spacing: 1.2em;
+
+  @media (max-width: 991px) {
+    letter-spacing: 1em;
+  }
 `;
 
-const StyledHowWeDoPhrase = styled.div`
+const StyledHowWeDo = styled.div`
   color: #5a646b;
   position: relative;
 `;
@@ -96,6 +100,10 @@ const StyledHowWeDoShadow = styled.div`
   position: absolute;
   top: 0px;
   left: 6px;
+
+  @media (max-width: 991px) {
+    letter-spacing: 1em;
+  }
 `;
 
 const StyledServiceAspect = styled(Col)`
@@ -103,8 +111,7 @@ const StyledServiceAspect = styled(Col)`
 `;
 
 const StyledFooterWrapper = styled.div`
-  background-color: #072337;
-  padding-top: 80px;
+  background-color: ${Colors.lightNavy};
 `;
 
 const StyledNavButtonCol = styled(Col)`
@@ -147,14 +154,14 @@ const AugmentationPage = () => {
         </StyledPhrase>
 
         <StyledHowWeDoWrapper>
-          <StyledHowWeDoPhrase>
+          <StyledHowWeDo>
             HOW WE DO
             <StyledHowWeDoShadow>HOW WE DO</StyledHowWeDoShadow>
-          </StyledHowWeDoPhrase>
+          </StyledHowWeDo>
         </StyledHowWeDoWrapper>
 
         <Row>
-          <StyledServiceAspect xs={12} sm={6} md={4}>
+          <StyledServiceAspect sm={12} md={6} lg={4}>
             <ServiceAspect
               color={Colors.purple}
               icon={Elixir}
@@ -164,7 +171,7 @@ const AugmentationPage = () => {
               }
             />
           </StyledServiceAspect>
-          <StyledServiceAspect xs={12} sm={6} md={4}>
+          <StyledServiceAspect sm={12} md={6} lg={4}>
             <ServiceAspect
               color={Colors.pink}
               icon={Ruby}
@@ -174,7 +181,7 @@ const AugmentationPage = () => {
               }
             />
           </StyledServiceAspect>
-          <StyledServiceAspect xs={12} sm={6} md={4}>
+          <StyledServiceAspect sm={12} md={6} lg={4}>
             <ServiceAspect
               color={Colors.lightBlue}
               icon={ReactIcon}
