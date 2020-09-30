@@ -192,9 +192,7 @@ const StormingPage = () => {
               }
             />
           </StyledServiceAspect>
-        </Row>
 
-        <Row>
           <StyledServiceAspect sm={12} md={6} lg={4}>
             <ServiceAspect
               color={Colors.pink}
