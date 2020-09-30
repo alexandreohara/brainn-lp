@@ -15,6 +15,7 @@ import { Col, Row } from 'react-flexbox-grid';
 import { Colors, Gradients } from 'consts/colors';
 import { Footer } from 'components/Footer';
 import { JOB_OPENING_URL } from 'consts/links';
+import { AboutUsCard } from 'components/AboutUsCard';
 
 const StyledHeader = styled.div`
   padding: 80px 288px 37px;
@@ -259,7 +260,6 @@ const AboutUs = () => {
           problems in fast-paced environments.
         </StyledHeaderText>
       </StyledHeader>
-
       <StyledPhotosRow>
         <StyledBoardPostitPhoto>
           <img src={BoardPostitPhoto} alt={'board-postit'} width={'100%'} />
@@ -308,9 +308,10 @@ const AboutUs = () => {
             </StyledContentText>
           </Col>
           <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
-            <StyledCardWrapper>
+            {/* <StyledCardWrapper>
               <StyledCard>Card</StyledCard>
-            </StyledCardWrapper>
+            </StyledCardWrapper> */}
+            <AboutUsCard></AboutUsCard>
           </Col>
         </Row>
       </StyledContent>
