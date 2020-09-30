@@ -3,7 +3,7 @@ import React from 'react';
 import { Colors } from 'consts/colors';
 import styled from 'styled-components';
 
-interface AboutUsCardProps {
+export interface AboutUsCardType {
   colouredTitle: string;
   title: string;
   color: string;
@@ -30,13 +30,15 @@ const StyledColouredTitle = styled.div.attrs((props: any) => ({
 }))`
   font-weight: 500;
   font-size: 28px;
+  line-height: 34.8px;
   color: ${(props) => props.color};
 `;
 
 const StyledTitle = styled.div`
-  font-size: 24px;
+  font-size: 34px;
   font-weight: bold;
   margin-bottom: 16px;
+  line-height: 47.6px;
 `;
 
 const StyledParagraph = styled.div`
@@ -61,7 +63,7 @@ const StyledBehindCard = styled.div`
   box-shadow: 0px 8px 24px rgba(2, 23, 39, 0.2);
 `;
 
-export const AboutUsCard = (props: AboutUsCardProps) => {
+export const AboutUsCard = (props: AboutUsCardType) => {
   return (
     <div>
       <StyledCardWrapper>

@@ -1,16 +1,18 @@
-import { Colors } from 'consts/colors';
 import React from 'react';
+
 import Slider from 'react-slick';
-
 import styled from 'styled-components';
-import { AboutUsCard } from './AboutUsCard';
-import DetailOriented from 'assets/icons/DetailOriented.svg';
+import { AboutUsCard, AboutUsCardType } from './AboutUsCard';
 
-const StyledAboutUsCard = styled.div`
+interface AboutUsSliderProps {
+  cardList: AboutUsCardType[];
+}
+
+const StyledSliderWrapper = styled.div`
   margin-top: 55px;
 `;
 
-export const AboutUsSlider = () => {
+export const AboutUsSlider = (props: AboutUsSliderProps) => {
   const settings = {
     slidesToShow: 1,
     slidesToScroll: 1,
@@ -19,18 +21,20 @@ export const AboutUsSlider = () => {
   };
 
   return (
-    <StyledAboutUsCard>
+    <StyledSliderWrapper>
       <Slider {...settings}>
-        <AboutUsCard
-          colouredTitle={'We are'}
-          title={'Detail oriented.'}
-          paragraph={
-            'When there are two options for accomplishing something, one satisfying and another exceptional, we will choose the latter, even if it means working harder than expected.'
-          }
-          color={Colors.lightBlue}
-          icon={DetailOriented}
-        ></AboutUsCard>
+        {props.cardList.map((card, index) => (
+          <React.Fragment key={index}>
+            <AboutUsCard
+              colouredTitle={card.colouredTitle}
+              title={card.title}
+              paragraph={card.paragraph}
+              color={card.color}
+              icon={card.icon}
+            />
+          </React.Fragment>
+        ))}
       </Slider>
-    </StyledAboutUsCard>
+    </StyledSliderWrapper>
   );
 };
