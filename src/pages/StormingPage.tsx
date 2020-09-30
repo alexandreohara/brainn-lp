@@ -12,6 +12,7 @@ import Prototype from 'assets/icons/Prototype.svg';
 import Validation from 'assets/icons/Validation.svg';
 
 import { Footer, ServiceAspect, ServiceNavButton } from 'components';
+import { Routes } from 'consts/routes';
 
 const StyledHeader = styled.div`
   background: ${Gradients.lightBlue};
@@ -225,7 +226,7 @@ const StormingPage = () => {
           <ServiceNavButton
             title={'Augmentation'}
             color={Gradients.green}
-            previousServiceUrl={'/services/augmentation'}
+            previousServiceUrl={Routes.augmentation}
           />
         </StyledNavButtonCol>
         <StyledNavButtonCol xs={6}>
@@ -233,7 +234,7 @@ const StormingPage = () => {
             title={'Delivery'}
             color={Gradients.yellow}
             next
-            nextServiceUrl={'/services/delivery'}
+            nextServiceUrl={Routes.delivery}
           />
         </StyledNavButtonCol>
       </StyledNavButtonRow>

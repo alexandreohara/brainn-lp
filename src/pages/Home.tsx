@@ -26,6 +26,7 @@ import {
 } from 'components';
 import styled from 'styled-components';
 import { Colors, Gradients } from 'consts/colors';
+import { Routes } from 'consts/routes';
 
 const StyledHome = styled.div`
   background-color: ${Colors.black};
@@ -200,7 +201,7 @@ const cardSections = [
     products and provide a competitive business advantage.`,
       `The idea that works.`,
     ],
-    url: '/services/storming',
+    url: Routes.storming,
   },
 
   {
@@ -213,7 +214,7 @@ const cardSections = [
        great talents, and true agile methods.`,
       `The product that works.`,
     ],
-    url: '/services/delivery',
+    url: Routes.delivery,
   },
 
   {
@@ -225,7 +226,7 @@ const cardSections = [
       `We provide staff augmentation to high-growth tech companies using new programming languages to move faster.`,
       `The team that works.`,
     ],
-    url: '/services/augmentation',
+    url: Routes.augmentation,
   },
 ];
 
@@ -233,21 +234,21 @@ const SLIDER_CARDS = [
   {
     title: 'Launch innovative digital products',
     lineColor: Gradients.yellow,
-    url: '/how-we-can-help',
+    url: Routes.howWeCanHelp,
   },
   {
     title: 'Meet deadlines within your digital products',
     lineColor: Gradients.blue,
-    url: '/how-we-can-help',
+    url: Routes.howWeCanHelp,
   },
   {
     title: 'Increase quality to regain trust from your users',
     lineColor: Gradients.pink,
-    url: '/how-we-can-help',
+    url: Routes.howWeCanHelp,
   },
   {
     title: 'Improve your architecture and scale faster',
     lineColor: Gradients.purple,
-    url: '/how-we-can-help',
+    url: Routes.howWeCanHelp,
   },
 ];

@@ -5,6 +5,7 @@ import { HomeCard } from 'components/Card';
 import { Gradients } from 'consts/colors';
 import Storming from 'assets/images/Storming.svg';
 import Delivery from 'assets/images/Delivery.svg';
+import { Routes } from 'consts/routes';
 
 describe('Card', () => {
   it('renders text first true card successfully', () => {
@@ -21,7 +22,7 @@ describe('Card', () => {
         textFirst={true}
         image={Storming}
         description={description}
-        url={'/services/storming'}
+        url={Routes.storming}
       />
     );
 
@@ -50,7 +51,7 @@ describe('Card', () => {
         textFirst={false}
         image={Delivery}
         description={description}
-        url={'/services/delivery'}
+        url={Routes.delivery}
       />
     );
 

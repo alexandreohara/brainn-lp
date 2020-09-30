@@ -14,6 +14,7 @@ import VectorRight from 'assets/icons/VectorRight.svg';
 import { Col, Row } from 'react-flexbox-grid';
 import { Colors, Gradients } from 'consts/colors';
 import { Footer } from 'components/Footer';
+import { JOB_OPENING_URL } from 'consts/links';
 
 const StyledHeader = styled.div`
   padding: 80px 288px 37px;
@@ -241,10 +242,8 @@ const StyledVectorRight = styled.img`
   }
 `;
 
-const jobOpeningUrl = ' https://apply.workable.com/brainn/';
-
 const AboutUs = () => {
-  const handleClick = () => window.open(jobOpeningUrl, '_blank');
+  const handleClick = () => window.open(JOB_OPENING_URL, '_blank');
 
   return (
     <>

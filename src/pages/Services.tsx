@@ -5,6 +5,7 @@ import { Col, Row } from 'react-flexbox-grid';
 import styled from 'styled-components';
 
 import { Footer, ServiceCard } from 'components';
+import { Routes } from 'consts/routes';
 
 const StyledContentWrapper = styled.div`
   padding-top: 80px;
@@ -54,7 +55,7 @@ const Services = () => {
                   }
                   strongLastPhrase={'The idea that works.'}
                   color={Gradients.blue}
-                  url={'/services/storming'}
+                  url={Routes.storming}
                 />
               </StyledCardWrapper>
               <StyledCardWrapper>
@@ -65,7 +66,7 @@ const Services = () => {
                   }
                   strongLastPhrase={'The product that works.'}
                   color={Gradients.yellow}
-                  url={'/services/delivery'}
+                  url={Routes.delivery}
                 />
               </StyledCardWrapper>
               <StyledCardWrapper>
@@ -76,7 +77,7 @@ const Services = () => {
                   }
                   strongLastPhrase={'The team that works.'}
                   color={Gradients.green}
-                  url={'/services/augmentation'}
+                  url={Routes.augmentation}
                 />
               </StyledCardWrapper>
             </StyledServiceCards>

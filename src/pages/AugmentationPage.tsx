@@ -8,6 +8,7 @@ import Elixir from 'assets/icons/Elixir.svg';
 import Ruby from 'assets/icons/Ruby.svg';
 import ReactIcon from 'assets/icons/ReactIcon.svg';
 import { Footer, ServiceAspect, ServiceNavButton } from 'components';
+import { Routes } from 'consts/routes';
 
 const StyledHeader = styled.div`
   background: ${Gradients.green};
@@ -191,7 +192,7 @@ const AugmentationPage = () => {
           <ServiceNavButton
             title={'Delivery'}
             color={Gradients.yellow}
-            previousServiceUrl={'/services/delivery'}
+            previousServiceUrl={Routes.delivery}
           />
         </StyledNavButtonCol>
         <StyledNavButtonCol xs={6}>
@@ -199,7 +200,7 @@ const AugmentationPage = () => {
             title={'Storming'}
             color={Gradients.blue}
             next
-            nextServiceUrl={'/services/storming'}
+            nextServiceUrl={Routes.storming}
           />
         </StyledNavButtonCol>
       </StyledNavButtonRow>

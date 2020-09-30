@@ -3,6 +3,7 @@ import React from 'react';
 import { render } from '@testing-library/react';
 import { ServiceNavButton } from 'components';
 import { Gradients } from 'consts/colors';
+import { Routes } from 'consts/routes';
 
 describe('ServiceNavButton', () => {
   it('renders previous button successfully', () => {
@@ -10,7 +11,7 @@ describe('ServiceNavButton', () => {
       <ServiceNavButton
         title={'Augmentation'}
         color={Gradients.green}
-        previousServiceUrl={'/services/augmentation'}
+        previousServiceUrl={Routes.augmentation}
       />
     );
 
@@ -25,7 +26,7 @@ describe('ServiceNavButton', () => {
         title={'Delivery'}
         color={Gradients.yellow}
         next
-        nextServiceUrl={'/services/delivery'}
+        nextServiceUrl={Routes.delivery}
       />
     );
 
