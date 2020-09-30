@@ -1,12 +1,15 @@
-import { Colors } from 'consts/colors';
 import React from 'react';
-import Slider from 'react-slick';
-import styled from 'styled-components';
-import DetailOriented from 'assets/icons/DetailOriented.svg';
 
-const StyledAboutUsCard = styled.div`
-  margin-top: 55px;
-`;
+import { Colors } from 'consts/colors';
+import styled from 'styled-components';
+
+interface AboutUsCardProps {
+  colouredTitle: string;
+  title: string;
+  color: string;
+  icon: string;
+  paragraph: string;
+}
 
 const StyledCardWrapper = styled.div`
   position: relative;
@@ -22,10 +25,12 @@ const StyledCard = styled.div`
   background-color: ${Colors.white};
 `;
 
-const StyledColouredTitle = styled.div`
+const StyledColouredTitle = styled.div.attrs((props: any) => ({
+  color: props.color,
+}))`
   font-weight: 500;
   font-size: 28px;
-  color: ${Colors.lightBlue};
+  color: ${(props) => props.color};
 `;
 
 const StyledTitle = styled.div`
@@ -56,48 +61,21 @@ const StyledBehindCard = styled.div`
   box-shadow: 0px 8px 24px rgba(2, 23, 39, 0.2);
 `;
 
-export const AboutUsCard = () => {
-  const settings = {
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    infinite: true,
-    dots: true,
-  };
+export const AboutUsCard = (props: AboutUsCardProps) => {
   return (
-    <StyledAboutUsCard>
-      <Slider {...settings}>
-        <div>
-          <StyledCardWrapper>
-            <StyledIcon src={DetailOriented}></StyledIcon>
+    <div>
+      <StyledCardWrapper>
+        <StyledIcon src={props.icon}></StyledIcon>
 
-            <StyledCard>
-              <StyledColouredTitle>We are</StyledColouredTitle>
-              <StyledTitle>Detail oriented.</StyledTitle>
-              <StyledParagraph>
-                When there are two options for accomplishing something, one
-                satisfying and another exceptional, we will choose the latter,
-                even if it means working harder than expected.
-              </StyledParagraph>
-            </StyledCard>
-            <StyledBehindCard />
-          </StyledCardWrapper>
-        </div>
-        <div>
-          <StyledCardWrapper>
-            <StyledIcon src={DetailOriented}></StyledIcon>
-
-            <StyledCard>
-              <StyledColouredTitle>We are</StyledColouredTitle>
-              <StyledTitle>Detail oriented.</StyledTitle>
-              <StyledParagraph>
-                When there are two options for accomplishing something, one
-                satisfying and another exceptional, we will choose the latter,
-                even if it means working harder than expected.
-              </StyledParagraph>
-            </StyledCard>
-          </StyledCardWrapper>
-        </div>
-      </Slider>
-    </StyledAboutUsCard>
+        <StyledCard>
+          <StyledColouredTitle color={props.color}>
+            {props.colouredTitle}
+          </StyledColouredTitle>
+          <StyledTitle>{props.title}</StyledTitle>
+          <StyledParagraph>{props.paragraph}</StyledParagraph>
+        </StyledCard>
+        <StyledBehindCard />
+      </StyledCardWrapper>
+    </div>
   );
 };
