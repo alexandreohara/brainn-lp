@@ -1,0 +1,20 @@
+.slick-next:before, .slick-prev:before {
+    content: unset;
+}
+
+.slick-next {
+    top: 0;
+    right: 25px;
+    width: 25%;
+    height: 100%;
+    transform: unset;
+}
+
+.slick-prev {
+    top: 0;
+    left: 25px;
+    width: 25%;
+    height: 100%;
+    transform: unset;
+    z-index: 99;
+}

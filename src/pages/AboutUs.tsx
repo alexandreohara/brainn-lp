@@ -138,8 +138,7 @@ const StyledWritingWallPostitZoomed = styled.img`
 `;
 
 const StyledContent = styled.div`
-  margin: 80px auto;
-  max-width: 1600px;
+  margin: 80px 70px;
 
   @media (max-width: 1700px) {
     margin: 80px 64px;

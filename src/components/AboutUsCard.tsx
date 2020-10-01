@@ -13,8 +13,7 @@ export interface AboutUsCardType {
 
 const StyledCardWrapper = styled.div`
   position: relative;
-  padding: 80px 10px 30px;
-  margin: 0 15px;
+  padding: 80px 25px 30px;
 `;
 
 const StyledCard = styled.div`
@@ -55,10 +54,10 @@ const StyledIcon = styled.img`
 const StyledBehindCard = styled.div`
   border-radius: 8px;
   height: 100px;
-  width: 90%;
+  width: 80%;
   position: absolute;
   bottom: 16px;
-  left: 5%;
+  left: 10%;
   z-index: -1;
   box-shadow: 0px 8px 24px rgba(2, 23, 39, 0.2);
 `;

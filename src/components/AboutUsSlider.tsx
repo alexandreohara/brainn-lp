@@ -1,5 +1,7 @@
 import React from 'react';
 
+import 'components/AboutUsSlider.css';
+
 import Slider from 'react-slick';
 import styled from 'styled-components';
 import { AboutUsCard, AboutUsCardType } from './AboutUsCard';
