@@ -15,6 +15,16 @@ import { Col, Row } from 'react-flexbox-grid';
 import { Colors, Gradients } from 'consts/colors';
 import { Footer } from 'components/Footer';
 import { JOB_OPENING_URL } from 'consts/links';
+import { AboutUsSlider } from 'components/AboutUsSlider';
+import DetailOriented from 'assets/icons/DetailOriented.svg';
+import ChallengeLovers from 'assets/icons/ChallengeLovers.svg';
+import NotHierarchical from 'assets/icons/NotHierarchical.svg';
+import TeamThing from 'assets/icons/TeamThing.svg';
+import PeopleOriented from 'assets/icons/PeopleOriented.svg';
+import Transparent from 'assets/icons/Transparent.svg';
+import Methodical from 'assets/icons/Methodical.svg';
+import ToShare from 'assets/icons/ToShare.svg';
+import EarlyAdopters from 'assets/icons/EarlyAdopters.svg';
 
 const StyledHeader = styled.div`
   padding: 80px 288px 37px;
@@ -128,8 +138,7 @@ const StyledWritingWallPostitZoomed = styled.img`
 `;
 
 const StyledContent = styled.div`
-  margin: 80px auto;
-  max-width: 1600px;
+  margin: 80px 70px;
 
   @media (max-width: 1700px) {
     margin: 80px 64px;
@@ -157,23 +166,6 @@ const StyledContentText = styled.div`
     margin-right: 0;
     font-size: 24px;
   }
-`;
-
-const StyledCardWrapper = styled.div.attrs((props: any) => ({
-  justifyContent: props.justifyContent,
-}))`
-  display: flex;
-  justify-content: ${(props) => props.justifyContent ?? 'flex-end'};
-`;
-
-const StyledCard = styled.div`
-  border-radius: 8px;
-  margin-top: 136px;
-  background-color: blue;
-  font-size: 88px;
-  height: 274px;
-  width: 560px;
-  text-align: center;
 `;
 
 const StyledLargePhotoWrapper = styled.div`
@@ -259,7 +251,6 @@ const AboutUs = () => {
           problems in fast-paced environments.
         </StyledHeaderText>
       </StyledHeader>
-
       <StyledPhotosRow>
         <StyledBoardPostitPhoto>
           <img src={BoardPostitPhoto} alt={'board-postit'} width={'100%'} />
@@ -308,9 +299,7 @@ const AboutUs = () => {
             </StyledContentText>
           </Col>
           <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
-            <StyledCardWrapper>
-              <StyledCard>Card</StyledCard>
-            </StyledCardWrapper>
+            <AboutUsSlider cardList={ABOUT_US_CARDS_1}></AboutUsSlider>
           </Col>
         </Row>
       </StyledContent>
@@ -322,9 +311,7 @@ const AboutUs = () => {
       <StyledContent>
         <Row center={'xs'} start={'lg'}>
           <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
-            <StyledCardWrapper justifyContent={'flex-start'}>
-              <StyledCard>Card</StyledCard>
-            </StyledCardWrapper>
+            <AboutUsSlider cardList={ABOUT_US_CARDS_2}></AboutUsSlider>
           </Col>
           <Col md={12} lg={6}>
             <StyledContentTitle>Teamwork</StyledContentTitle>
@@ -356,9 +343,7 @@ const AboutUs = () => {
             </StyledContentText>
           </Col>
           <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
-            <StyledCardWrapper>
-              <StyledCard>Card</StyledCard>
-            </StyledCardWrapper>
+            <AboutUsSlider cardList={ABOUT_US_CARDS_3}></AboutUsSlider>
           </Col>
         </Row>
       </StyledContent>
@@ -382,3 +367,84 @@ const AboutUs = () => {
 };
 
 export default AboutUs;
+
+const ABOUT_US_CARDS_1 = [
+  {
+    colouredTitle: 'We are',
+    title: 'detail oriented.',
+    paragraph:
+      'When there are two options for accomplishing something, one satisfying and another exceptional, we will choose the latter, even if it means working harder than expected.',
+    color: Colors.lightBlue,
+    icon: DetailOriented,
+  },
+  {
+    colouredTitle: 'We are',
+    title: 'challenge lovers.',
+    paragraph:
+      'If our team believes and holds a goal that we need to reach a particular stage of a project, we will do our best to achieve it, rather than making excuses.',
+    color: Colors.yellow,
+    icon: ChallengeLovers,
+  },
+  {
+    colouredTitle: 'We are',
+    title: 'not hierarchical.',
+    paragraph:
+      "We will be proactive, and you will not wait for someone else to solve a problem, as we are all responsible for the pursuit of excellence. That's why everyone in our team should have an opinion.",
+    color: Colors.purple,
+    icon: NotHierarchical,
+  },
+];
+
+const ABOUT_US_CARDS_2 = [
+  {
+    colouredTitle: 'We love',
+    title: 'the team thing.',
+    paragraph:
+      'We value gathering as a team, including our clients and users. We are constantly seeking feedback and evolving. So, we come to team gatherings eager to share and contribute to others.',
+    color: Colors.pink,
+    icon: TeamThing,
+  },
+  {
+    colouredTitle: 'We are',
+    title: 'people-oriented.',
+    paragraph:
+      'We are respectful and empathetic to each other. We love that “team thing” and diversity. Maybe we are not always extroverted, but we just like people by heart. Doing great work together is better than a one-person show.',
+    color: Colors.green,
+    icon: PeopleOriented,
+  },
+  {
+    colouredTitle: 'We are',
+    title: 'transparent.',
+    paragraph:
+      "We don't like any sort of hidden agenda. We prefer to be authentic, pragmatic, honest, and share our thoughts upfront, avoiding creating any misalignment among our peers.",
+    color: Colors.lightBlue,
+    icon: Transparent,
+  },
+];
+
+const ABOUT_US_CARDS_3 = [
+  {
+    colouredTitle: 'We love',
+    title: 'methodical.',
+    paragraph:
+      'We always search for the best method to do things. Questioning if we are doing our jobs in the most effective process is natural, and feedback is interpreted as natural shortcuts for improvement.',
+    color: Colors.green,
+    icon: Methodical,
+  },
+  {
+    colouredTitle: 'We love',
+    title: 'to share.',
+    paragraph:
+      'We contribute proactively to the company and our peers. Whether sharing knowledge internally or externally, we see the value of teaching others as the best learning tool we could have.',
+    color: Colors.lightBlue,
+    icon: ToShare,
+  },
+  {
+    colouredTitle: 'We are',
+    title: 'the early adopters.',
+    paragraph:
+      'When we are not learning something new, we get bored. We ask for new challenges and try to explore new stuff all the time. We are committed to bringing new ideas to our work every day.',
+    color: Colors.yellow,
+    icon: EarlyAdopters,
+  },
+];
