@@ -39,10 +39,6 @@ const StyledTitle = styled.div`
   font-weight: bold;
 
   @media (max-width: 991px) {
-    font-size: 24px;
-  }
-
-  @media (max-width: 991px) {
     font-size: 20px;
   }
 `;
