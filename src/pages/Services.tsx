@@ -48,10 +48,14 @@ const StyledFooterWrapper = styled.div`
   background-color: ${Colors.lightNavy};
 `;
 
+const StyledRow = styled(Row)`
+  margin: 0;
+`;
+
 const Services = () => {
   return (
     <StyledPageWrapper>
-      <Row>
+      <StyledRow>
         <StyledHeaderCol md={12} lg={5}>
           <StyledHeader>Trusted by global innovators.</StyledHeader>
         </StyledHeaderCol>
@@ -90,7 +94,7 @@ const Services = () => {
             />
           </StyledCardPadding>
         </StyledServiceCardsCol>
-      </Row>
+      </StyledRow>
       <StyledFooterWrapper>
         <Footer />
       </StyledFooterWrapper>

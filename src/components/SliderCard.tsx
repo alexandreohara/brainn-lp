@@ -15,6 +15,12 @@ export const HorizontalScroll = styled.div`
   flex-direction: row;
   overflow: auto;
   white-space: normal;
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+
+  ::-webkit-scrollbar {
+    display: none;
+  }
 `;
 
 const MiniCard = styled.div`

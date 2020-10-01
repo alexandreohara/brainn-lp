@@ -61,6 +61,10 @@ const StyledPrevImgWrapper = styled.div`
   text-align: right;
 `;
 
+const StyledRow = styled(Row)`
+  margin: 0;
+`;
+
 export const ServiceNavButton = (props: ServiceNavButtonProps) => {
   const history = useHistory();
 
@@ -75,7 +79,7 @@ export const ServiceNavButton = (props: ServiceNavButtonProps) => {
   return (
     <StyledServiceNavButton color={props.color}>
       {props.next ? (
-        <Row onClick={handleNextClick}>
+        <StyledRow onClick={handleNextClick}>
           <Col xs={9}>
             <StyledNextContent>
               <StyledTitle>{props.title}</StyledTitle>
@@ -85,9 +89,9 @@ export const ServiceNavButton = (props: ServiceNavButtonProps) => {
           <Col xs={3}>
             <StyledNextPrevImg src={RightArrow} alt={'right-arrow'} />
           </Col>
-        </Row>
+        </StyledRow>
       ) : (
-        <Row onClick={handlePreviousClick}>
+        <StyledRow onClick={handlePreviousClick}>
           <Col xs={3}>
             <StyledPrevImgWrapper>
               <StyledNextPrevImg src={LeftArrow} alt={'left-arrow'} />
@@ -99,7 +103,7 @@ export const ServiceNavButton = (props: ServiceNavButtonProps) => {
               <StyledText>Previous</StyledText>
             </StyledPreviousContent>
           </Col>
-        </Row>
+        </StyledRow>
       )}
     </StyledServiceNavButton>
   );

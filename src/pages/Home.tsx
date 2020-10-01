@@ -1,6 +1,5 @@
 import React from 'react';
 
-import './Home.css';
 import { Col, Row } from 'react-flexbox-grid';
 import Storming from 'assets/images/Storming.svg';
 import Delivery from 'assets/images/Delivery.svg';
@@ -97,10 +96,14 @@ const StyledFooter = styled.div`
   background: ${Colors.lightNavy};
 `;
 
+const StyledRow = styled(Row)`
+  margin: 0;
+`;
+
 const Home = () => {
   return (
     <StyledHome>
-      <Row middle={'xs'}>
+      <StyledRow middle={'xs'}>
         <Col xs={4} sm={6}>
           <StyledHeaderTitle>
             Lean digital innovation that works.
@@ -111,7 +114,7 @@ const Home = () => {
             <img src={TypeLogo} alt={''} width={'100%'} />
           </StyledImage>
         </Col>
-      </Row>
+      </StyledRow>
       <HorizontalScroll>
         <StyledLogos>
           <StyledColumn>

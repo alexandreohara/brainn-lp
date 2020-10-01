@@ -60,6 +60,7 @@ const StyledHeaderText = styled.div`
 const StyledPhotosRow = styled.div`
   text-align: center;
   display: flex;
+  margin: 0;
 `;
 
 const StyledBoardPostitPhoto = styled.div`
@@ -138,11 +139,7 @@ const StyledWritingWallPostitZoomed = styled.img`
 `;
 
 const StyledContent = styled.div`
-  margin: 80px 70px;
-
-  @media (max-width: 1700px) {
-    margin: 80px 64px;
-  }
+  margin: 80px 64px;
 
   @media (max-width: 991px) {
     margin: 40px 16px;
@@ -234,6 +231,18 @@ const StyledVectorRight = styled.img`
   }
 `;
 
+const StyledRow = styled(Row)`
+  margin: 0;
+`;
+
+const StyledRightCardCol = styled(Col)`
+  padding-left: 50px;
+`;
+
+const StyledLeftCardCol = styled(Col)`
+  padding-right: 50px;
+`;
+
 const AboutUs = () => {
   const handleClick = () => window.open(JOB_OPENING_URL, '_blank');
 
@@ -288,7 +297,7 @@ const AboutUs = () => {
       </StyledPhotosRow>
 
       <StyledContent>
-        <Row center={'xs'} start={'lg'}>
+        <StyledRow center={'xs'} start={'lg'}>
           <Col md={12} lg={6}>
             <StyledContentTitle>Excellence</StyledContentTitle>
             <StyledContentText>
@@ -298,10 +307,13 @@ const AboutUs = () => {
               genuinely love what they do. When you love what you do, you excel.
             </StyledContentText>
           </Col>
-          <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
+          <StyledRightCardCol
+            lg={6}
+            className={'hidden-xs hidden-sm hidden-md'}
+          >
             <AboutUsSlider cardList={ABOUT_US_CARDS_1}></AboutUsSlider>
-          </Col>
-        </Row>
+          </StyledRightCardCol>
+        </StyledRow>
       </StyledContent>
 
       <StyledLargePhotoWrapper>
@@ -309,10 +321,10 @@ const AboutUs = () => {
       </StyledLargePhotoWrapper>
 
       <StyledContent>
-        <Row center={'xs'} start={'lg'}>
-          <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
+        <StyledRow center={'xs'} start={'lg'}>
+          <StyledLeftCardCol lg={6} className={'hidden-xs hidden-sm hidden-md'}>
             <AboutUsSlider cardList={ABOUT_US_CARDS_2}></AboutUsSlider>
-          </Col>
+          </StyledLeftCardCol>
           <Col md={12} lg={6}>
             <StyledContentTitle>Teamwork</StyledContentTitle>
             <StyledContentText>
@@ -322,7 +334,7 @@ const AboutUs = () => {
               ambitious goals as important as the results itself.
             </StyledContentText>
           </Col>
-        </Row>
+        </StyledRow>
       </StyledContent>
 
       <StyledLargePhotoWrapper>
@@ -330,7 +342,7 @@ const AboutUs = () => {
       </StyledLargePhotoWrapper>
 
       <StyledContent>
-        <Row center={'xs'} start={'lg'}>
+        <StyledRow center={'xs'} start={'lg'}>
           <Col md={12} lg={6}>
             <StyledContentTitle>Learning</StyledContentTitle>
             <StyledContentText>
@@ -342,10 +354,13 @@ const AboutUs = () => {
               why we need to learn. Fast.
             </StyledContentText>
           </Col>
-          <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
+          <StyledRightCardCol
+            lg={6}
+            className={'hidden-xs hidden-sm hidden-md'}
+          >
             <AboutUsSlider cardList={ABOUT_US_CARDS_3}></AboutUsSlider>
-          </Col>
-        </Row>
+          </StyledRightCardCol>
+        </StyledRow>
       </StyledContent>
 
       <StyledButton onClick={handleClick}>
