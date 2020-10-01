@@ -37,6 +37,10 @@ const StyledTitle = styled.div`
   color: ${Colors.white};
   font-size: 32px;
   font-weight: bold;
+
+  @media (max-width: 991px) {
+    font-size: 20px;
+  }
 `;
 
 const StyledText = styled.div`
@@ -44,14 +48,13 @@ const StyledText = styled.div`
   letter-spacing: 0.24em;
 `;
 
-const StyledNextImg = styled.img`
+const StyledNextPrevImg = styled.img`
   margin-top: 17px;
   width: 52px;
-`;
 
-const StyledPreviousImg = styled.img`
-  margin-top: 17px;
-  width: 52px;
+  @media (max-width: 991px) {
+    margin-top: 10px;
+  }
 `;
 
 const StyledPrevImgWrapper = styled.div`
@@ -80,14 +83,14 @@ export const ServiceNavButton = (props: ServiceNavButtonProps) => {
             </StyledNextContent>
           </Col>
           <Col xs={3}>
-            <StyledNextImg src={RightArrow} alt={'right-arrow'} />
+            <StyledNextPrevImg src={RightArrow} alt={'right-arrow'} />
           </Col>
         </Row>
       ) : (
         <Row onClick={handlePreviousClick}>
           <Col xs={3}>
             <StyledPrevImgWrapper>
-              <StyledPreviousImg src={LeftArrow} alt={'left-arrow'} />
+              <StyledNextPrevImg src={LeftArrow} alt={'left-arrow'} />
             </StyledPrevImgWrapper>
           </Col>
           <Col xs={9}>
