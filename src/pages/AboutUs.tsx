@@ -60,6 +60,7 @@ const StyledHeaderText = styled.div`
 const StyledPhotosRow = styled.div`
   text-align: center;
   display: flex;
+  margin: 0;
 `;
 
 const StyledBoardPostitPhoto = styled.div`
@@ -234,6 +235,10 @@ const StyledVectorRight = styled.img`
   }
 `;
 
+const StyledRow = styled(Row)`
+  margin: 0;
+`;
+
 const AboutUs = () => {
   const handleClick = () => window.open(JOB_OPENING_URL, '_blank');
 
@@ -288,7 +293,7 @@ const AboutUs = () => {
       </StyledPhotosRow>
 
       <StyledContent>
-        <Row center={'xs'} start={'lg'}>
+        <StyledRow center={'xs'} start={'lg'}>
           <Col md={12} lg={6}>
             <StyledContentTitle>Excellence</StyledContentTitle>
             <StyledContentText>
@@ -301,7 +306,7 @@ const AboutUs = () => {
           <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
             <AboutUsSlider cardList={ABOUT_US_CARDS_1}></AboutUsSlider>
           </Col>
-        </Row>
+        </StyledRow>
       </StyledContent>
 
       <StyledLargePhotoWrapper>
@@ -309,7 +314,7 @@ const AboutUs = () => {
       </StyledLargePhotoWrapper>
 
       <StyledContent>
-        <Row center={'xs'} start={'lg'}>
+        <StyledRow center={'xs'} start={'lg'}>
           <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
             <AboutUsSlider cardList={ABOUT_US_CARDS_2}></AboutUsSlider>
           </Col>
@@ -322,7 +327,7 @@ const AboutUs = () => {
               ambitious goals as important as the results itself.
             </StyledContentText>
           </Col>
-        </Row>
+        </StyledRow>
       </StyledContent>
 
       <StyledLargePhotoWrapper>
@@ -330,7 +335,7 @@ const AboutUs = () => {
       </StyledLargePhotoWrapper>
 
       <StyledContent>
-        <Row center={'xs'} start={'lg'}>
+        <StyledRow center={'xs'} start={'lg'}>
           <Col md={12} lg={6}>
             <StyledContentTitle>Learning</StyledContentTitle>
             <StyledContentText>
@@ -345,7 +350,7 @@ const AboutUs = () => {
           <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
             <AboutUsSlider cardList={ABOUT_US_CARDS_3}></AboutUsSlider>
           </Col>
-        </Row>
+        </StyledRow>
       </StyledContent>
 
       <StyledButton onClick={handleClick}>

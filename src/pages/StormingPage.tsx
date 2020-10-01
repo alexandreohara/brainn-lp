@@ -122,7 +122,7 @@ const StyledNavButtonCol = styled(Col)`
   padding: 0;
 `;
 
-const StyledNavButtonRow = styled(Row)`
+const StyledRow = styled(Row)`
   margin: 0;
 `;
 
@@ -130,7 +130,7 @@ const StormingPage = () => {
   return (
     <>
       <StyledHeader>
-        <Row bottom={'xs'}>
+        <StyledRow bottom={'xs'}>
           <Col xs={6}>
             <StyledHeaderText>
               <StyledServices>SERVICES</StyledServices>
@@ -143,7 +143,7 @@ const StormingPage = () => {
           <Col xs={6}>
             <img src={Storming} width={'100%'} alt={'storming'} />
           </Col>
-        </Row>
+        </StyledRow>
       </StyledHeader>
       <StyledContentWrapper>
         <StyledPhrase>
@@ -161,7 +161,7 @@ const StormingPage = () => {
           </StyledHowWeDo>
         </StyledHowWeDoWrapper>
 
-        <Row>
+        <StyledRow>
           <StyledServiceAspect sm={12} md={6} lg={4}>
             <ServiceAspect
               color={Colors.purple}
@@ -223,10 +223,10 @@ const StormingPage = () => {
               }
             />
           </StyledServiceAspect>
-        </Row>
+        </StyledRow>
       </StyledContentWrapper>
 
-      <StyledNavButtonRow>
+      <StyledRow>
         <StyledNavButtonCol xs={6}>
           <ServiceNavButton
             title={'Augmentation'}
@@ -242,7 +242,7 @@ const StormingPage = () => {
             nextServiceUrl={Routes.delivery}
           />
         </StyledNavButtonCol>
-      </StyledNavButtonRow>
+      </StyledRow>
 
       <StyledFooterWrapper>
         <Footer />

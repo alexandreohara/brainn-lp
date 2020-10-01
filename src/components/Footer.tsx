@@ -91,10 +91,14 @@ const StyledLink = styled.a`
   }
 `;
 
+const StyledRow = styled(Row)`
+  margin: 0;
+`;
+
 export const Footer = () => {
   return (
     <StyledFooter>
-      <Row>
+      <StyledRow>
         <Col md={12} lg={6}>
           <StyledTextWrapper color={'#546E82'} fontWeight={'bold'}>
             We do digital.
@@ -188,7 +192,7 @@ export const Footer = () => {
             <StyledMap src={WorldMap} alt={'world-map'} />
           </StyledMapWrapper>
         </Col>
-      </Row>
+      </StyledRow>
     </StyledFooter>
   );
 };

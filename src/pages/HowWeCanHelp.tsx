@@ -98,11 +98,15 @@ const StyledVectorRight = styled.img`
   }
 `;
 
+const StyledRow = styled(Row)`
+  margin: 0;
+`;
+
 const HowWeCanHelp = () => {
   return (
     <>
       <StyledPageWrapper>
-        <Row>
+        <StyledRow>
           <StyledHeaderCol md={12} lg={5}>
             <StyledHeader>How we can help</StyledHeader>
           </StyledHeaderCol>
@@ -158,7 +162,7 @@ const HowWeCanHelp = () => {
               </StyledButton>
             </StyledServiceAspects>
           </Col>
-        </Row>
+        </StyledRow>
       </StyledPageWrapper>
       <StyledFooterWrapper>
         <Footer />
