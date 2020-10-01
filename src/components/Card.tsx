@@ -21,15 +21,19 @@ const StyledCard = styled.div.attrs((props: any) => ({
 `;
 
 const StyledTextColumn = styled(Col)`
-  padding: 4%;
+  padding: 50px;
   color: white;
+
+  @media (max-width: 991px) {
+    padding: 24px;
+  }
 `;
 
 const StyledTitle = styled.div`
   color: white;
   font-weight: bold;
   font-size: 80px;
-  line-height: 101px;
+  margin-bottom: 16px;
 
   @media (max-width: 1205px) {
     font-size: 65px;

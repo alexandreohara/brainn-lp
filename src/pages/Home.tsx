@@ -89,7 +89,7 @@ const StyledPadding = styled.div`
   padding: 64px;
 
   @media (max-width: 991px) {
-    padding-left: 20px;
+    padding: 24px 16px;
   }
 `;
 
@@ -162,24 +162,22 @@ const Home = () => {
           ))}
         </HorizontalScroll>
         <VerticalSeparator size={64} />
-        <Col>
-          {cardSections.map((props: any, index) => {
-            return (
-              <React.Fragment key={index}>
-                <HomeCard
-                  color={props.color}
-                  title={props.title}
-                  textFirst={props.textFirst}
-                  image={props.image}
-                  description={props.description}
-                  url={props.url}
-                />
-                ;
-                <VerticalSeparator size={64} />
-              </React.Fragment>
-            );
-          })}
-        </Col>
+        {cardSections.map((props: any, index) => {
+          return (
+            <React.Fragment key={index}>
+              <HomeCard
+                color={props.color}
+                title={props.title}
+                textFirst={props.textFirst}
+                image={props.image}
+                description={props.description}
+                url={props.url}
+              />
+              ;
+              <VerticalSeparator size={64} />
+            </React.Fragment>
+          );
+        })}
       </StyledPadding>
       <StyledFooter>
         <Footer />
