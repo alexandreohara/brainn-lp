@@ -9,6 +9,8 @@ import DataPurple from 'assets/icons/DataPurple.svg';
 import Prototype from 'assets/icons/Prototype.svg';
 import Architecture from 'assets/icons/Architecture.svg';
 import VectorRight from 'assets/icons/VectorRight.svg';
+import { useHistory } from 'react-router-dom';
+import { Routes } from 'consts/routes';
 
 const StyledPageWrapper = styled.div`
   background-color: ${Colors.black};
@@ -103,6 +105,10 @@ const StyledRow = styled(Row)`
 `;
 
 const HowWeCanHelp = () => {
+  const history = useHistory();
+
+  const handleClick = () => history.push(Routes.services ?? '');
+
   return (
     <>
       <StyledPageWrapper>
@@ -152,7 +158,7 @@ const HowWeCanHelp = () => {
                   }
                 />
               </StyledAspectWrapper>
-              <StyledButton>
+              <StyledButton onClick={handleClick}>
                 <StyledButtonTitle>Interested?</StyledButtonTitle>
                 <StyledButtonTitle>Meet our process</StyledButtonTitle>
                 <StyledSeeMore>
