@@ -15,29 +15,36 @@ const StyledPageWrapper = styled.div`
   padding-top: 80px;
 `;
 
+const StyledHeaderCol = styled(Col)`
+  padding-top: 200px;
+  padding-bottom: 100px;
+
+  @media (max-width: 991px) {
+    padding: 0;
+  }
+`;
+
 const StyledHeader = styled.div`
   font-size: 88px;
   font-weight: bold;
   color: ${Colors.white};
   overflow-x: hidden;
   margin-left: 64px;
-  margin-top: 300px;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 100px;
+  width: 302px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 44px;
-    padding: 40px 20px;
+    padding: 20px 20px 40px;
     margin-top: 0;
-  }
-`;
-
-const StyledInlineHeader = styled.div`
-  @media (max-width: 767px) {
-    display: inline;
+    width: 152px;
   }
 `;
 
 const StyledServiceAspects = styled.div`
-  background-color: #031d30;
+  background-color: ${Colors.navy};
   padding-bottom: 40px;
   padding-top: 32px;
 `;
@@ -47,7 +54,7 @@ const StyledAspectWrapper = styled.div`
 `;
 
 const StyledFooterWrapper = styled.div`
-  background-color: #072337;
+  background-color: ${Colors.lightNavy};
 `;
 
 const StyledButton = styled.div`
@@ -58,7 +65,7 @@ const StyledButton = styled.div`
   text-align: center;
   color: ${Colors.white};
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     padding: 22px;
   }
 `;
@@ -67,7 +74,7 @@ const StyledButtonTitle = styled.div`
   font-size: 48px;
   font-weight: bold;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 30px;
   }
 `;
@@ -77,7 +84,7 @@ const StyledSeeMore = styled.div`
   font-weight: 600;
   margin-top: 32px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     font-size: 18px;
   }
 `;
@@ -86,7 +93,7 @@ const StyledVectorRight = styled.img`
   width: 12px;
   margin-left: 12px;
 
-  @media (max-width: 767px) {
+  @media (max-width: 991px) {
     width: 8px;
   }
 `;
@@ -96,14 +103,10 @@ const HowWeCanHelp = () => {
     <>
       <StyledPageWrapper>
         <Row>
-          <Col sm={12} md={5} style={{ display: 'flex' }}>
-            <StyledHeader>
-              <StyledInlineHeader>How </StyledInlineHeader>
-              <StyledInlineHeader>we can </StyledInlineHeader>
-              <StyledInlineHeader>help </StyledInlineHeader>
-            </StyledHeader>
-          </Col>
-          <Col sm={12} md={7}>
+          <StyledHeaderCol md={12} lg={5}>
+            <StyledHeader>How we can help</StyledHeader>
+          </StyledHeaderCol>
+          <Col md={12} lg={7}>
             <StyledServiceAspects>
               <StyledAspectWrapper>
                 <ServiceAspect
