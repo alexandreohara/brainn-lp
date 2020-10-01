@@ -139,11 +139,7 @@ const StyledWritingWallPostitZoomed = styled.img`
 `;
 
 const StyledContent = styled.div`
-  margin: 80px 70px;
-
-  @media (max-width: 1700px) {
-    margin: 80px 64px;
-  }
+  margin: 80px 64px;
 
   @media (max-width: 991px) {
     margin: 40px 16px;
@@ -239,6 +235,14 @@ const StyledRow = styled(Row)`
   margin: 0;
 `;
 
+const StyledRightCardCol = styled(Col)`
+  padding-left: 50px;
+`;
+
+const StyledLeftCardCol = styled(Col)`
+  padding-right: 50px;
+`;
+
 const AboutUs = () => {
   const handleClick = () => window.open(JOB_OPENING_URL, '_blank');
 
@@ -303,9 +307,12 @@ const AboutUs = () => {
               genuinely love what they do. When you love what you do, you excel.
             </StyledContentText>
           </Col>
-          <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
+          <StyledRightCardCol
+            lg={6}
+            className={'hidden-xs hidden-sm hidden-md'}
+          >
             <AboutUsSlider cardList={ABOUT_US_CARDS_1}></AboutUsSlider>
-          </Col>
+          </StyledRightCardCol>
         </StyledRow>
       </StyledContent>
 
@@ -315,9 +322,9 @@ const AboutUs = () => {
 
       <StyledContent>
         <StyledRow center={'xs'} start={'lg'}>
-          <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
+          <StyledLeftCardCol lg={6} className={'hidden-xs hidden-sm hidden-md'}>
             <AboutUsSlider cardList={ABOUT_US_CARDS_2}></AboutUsSlider>
-          </Col>
+          </StyledLeftCardCol>
           <Col md={12} lg={6}>
             <StyledContentTitle>Teamwork</StyledContentTitle>
             <StyledContentText>
@@ -347,9 +354,12 @@ const AboutUs = () => {
               why we need to learn. Fast.
             </StyledContentText>
           </Col>
-          <Col lg={6} className={'hidden-xs hidden-sm hidden-md'}>
+          <StyledRightCardCol
+            lg={6}
+            className={'hidden-xs hidden-sm hidden-md'}
+          >
             <AboutUsSlider cardList={ABOUT_US_CARDS_3}></AboutUsSlider>
-          </Col>
+          </StyledRightCardCol>
         </StyledRow>
       </StyledContent>
 
